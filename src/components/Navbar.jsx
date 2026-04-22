@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions }) {
+function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user, onLogout }) {
   return (
     <header className="sticky top-0 z-20 border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur">
       <div className="flex h-20 items-center justify-between px-6">
@@ -43,12 +43,16 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions }) {
             </select>
           </label>
           <div className="text-right">
-            <p className="text-sm font-semibold text-gray-900">Admin User</p>
-            <p className="text-xs text-gray-500">City Operations</p>
+            <p className="text-sm font-semibold text-gray-900">{user.name}</p>
+            <p className="text-xs capitalize text-gray-500">{user.role}</p>
           </div>
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white shadow-sm ring-4 ring-blue-50">
-            AU
-          </div>
+          <button
+            type="button"
+            onClick={onLogout}
+            className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-100"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const links = [
+const baseLinks = [
   { name: 'Dashboard', path: '/dashboard', icon: 'dashboard' },
   { name: 'Water Quality', path: '/water', icon: 'water' },
   { name: 'Air Quality', path: '/air', icon: 'air' },
@@ -13,6 +13,7 @@ const iconPaths = {
   water: 'M12 3s6 6.1 6 10.2A6 6 0 0 1 6 13.2C6 9.1 12 3 12 3Z',
   air: 'M4 14.5a4.5 4.5 0 0 1 6.7-3.9A5.5 5.5 0 0 1 21 13.5a3.5 3.5 0 0 1-3.5 3.5H8.5A4.5 4.5 0 0 1 4 14.5Z',
   accidents: 'M12 4 21 20H3L12 4Zm0 5v4m0 4h.01',
+  admin: 'M4 19h16M7 19V9m5 10V5m5 14v-7',
 };
 
 function SidebarIcon({ name }) {
@@ -30,7 +31,9 @@ function SidebarIcon({ name }) {
   );
 }
 
-function Sidebar({ isOpen, onClose }) {
+function Sidebar({ isOpen, onClose, role }) {
+  const links = role === 'admin' ? [...baseLinks, { name: 'Admin Data', path: '/admin', icon: 'admin' }] : baseLinks;
+
   const linkClass = ({ isActive }) =>
     [
       'flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200',
