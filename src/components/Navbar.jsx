@@ -1,6 +1,16 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext.jsx';
 
 function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions }) {
+  const navigate = useNavigate();
+  const { isAuthenticated, logout, role, user } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/dashboard');
+  };
+
   return (
     <header className="sticky top-0 z-20 border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur">
       <div className="flex h-20 items-center justify-between px-6">
@@ -42,13 +52,37 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions }) {
               ))}
             </select>
           </label>
+          <Link
+            to="/admin/upload"
+            className="rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
+          >
+            Admin Data
+          </Link>
           <div className="text-right">
-            <p className="text-sm font-semibold text-gray-900">Admin User</p>
-            <p className="text-xs text-gray-500">City Operations</p>
+            <p className="text-sm font-semibold text-gray-900">
+              {isAuthenticated ? user?.email || 'UrbanIQ User' : 'Guest Access'}
+            </p>
+            <p className="text-xs uppercase tracking-wide text-gray-500">{isAuthenticated ? role : 'Public Dashboard'}</p>
           </div>
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white shadow-sm ring-4 ring-blue-50">
-            AU
+            {isAuthenticated ? (user?.email?.[0] || role?.[0] || 'U').toUpperCase() : 'G'}
           </div>
+          {isAuthenticated ? (
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-gray-800"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-700"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </header>

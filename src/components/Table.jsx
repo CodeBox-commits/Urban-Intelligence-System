@@ -19,15 +19,23 @@ function Table({ columns, data }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 bg-white">
-            {data.map((row) => (
-              <tr key={row.id} className="odd:bg-gray-50 transition-colors duration-200 hover:bg-blue-50/70">
-                {columns.map((column) => (
-                  <td key={column.key} className="whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-700">
-                    {row[column.key]}
-                  </td>
-                ))}
+            {data.length ? (
+              data.map((row) => (
+                <tr key={row.id} className="odd:bg-gray-50 transition-colors duration-200 hover:bg-blue-50/70">
+                  {columns.map((column) => (
+                    <td key={column.key} className="whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-700">
+                      {row[column.key]}
+                    </td>
+                  ))}
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={columns.length} className="px-4 py-8 text-center text-sm font-medium text-gray-500">
+                  No data available for the selected filters.
+                </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>

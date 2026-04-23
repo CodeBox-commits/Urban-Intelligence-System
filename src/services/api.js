@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
-  timeout: 2500,
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000',
+  timeout: 5000,
 });
 
 const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -279,20 +279,139 @@ export const predictWaterQuality = (params) => {
   const turbidity = Number(params.turbidity);
   const chloramines = Number(params.chloramines);
   const solids = Number(params.solids);
+  const sulfate = Number(params.sulfate);
+  const conductivity = Number(params.conductivity);
+  const organicCarbon = Number(params.organic_carbon);
+  const hardness = Number(params.hardness);
+  const temperature = Number(params.temperature);
+  const dissolvedOxygen = Number(params.dissolved_oxygen);
 
-  const isPotable = ph >= 6.5 && ph <= 8.5 && turbidity <= 5 && chloramines <= 4 && solids <= 25000;
+  const heuristicScore =
+    (ph >= 6.4 && ph <= 8.6 ? 1 : 0) +
+    (turbidity <= 5 ? 1 : 0) +
+    (chloramines <= 4.5 ? 1 : 0) +
+    (solids <= 24000 ? 1 : 0) +
+    (sulfate >= 160 && sulfate <= 360 ? 1 : 0) +
+    (conductivity >= 180 && conductivity <= 540 ? 1 : 0) +
+    (organicCarbon <= 18 ? 1 : 0) +
+    (hardness >= 80 && hardness <= 260 ? 1 : 0) +
+    (temperature <= 30 ? 1 : 0) +
+    (dissolvedOxygen >= 5.5 ? 1 : 0);
+  const isPotable = heuristicScore >= 7;
   const fallback = {
     country: 'India',
     state: DEFAULT_STATE,
     zone: params.zone || 'Hyderabad',
-    result: isPotable ? 'Potable' : 'Not Potable',
-    confidence: isPotable ? 88 : 82,
+    potability: isPotable ? 1 : 0,
+    confidence: isPotable ? 0.86 : 0.81,
   };
 
   return withFallback(
-    () => api.post('/water/predict', params),
+    () => api.post('/predict/water', params),
     fallback,
     'API unavailable. Showing mock water prediction.',
-    (data) => isValidApiData(data, fallback) && Boolean(data.result)
+    (data) => isValidApiData(data, fallback) && typeof data.potability !== 'undefined'
+  );
+};
+
+export const predictAQICategory = (params) => {
+  const pm25 = Number(params.pm25);
+  const pm10 = Number(params.pm10);
+  const no2 = Number(params.no2);
+  const so2 = Number(params.so2);
+  const co = Number(params.co);
+  const o3 = Number(params.o3);
+  const nh3 = Number(params.nh3);
+  const temperature = Number(params.temperature);
+  const humidity = Number(params.humidity);
+  const windSpeed = Number(params.wind_speed);
+
+  const score =
+    0.5 * pm25 +
+    0.18 * pm10 +
+    0.12 * no2 +
+    0.08 * so2 +
+    18 * co +
+    0.08 * o3 +
+    0.05 * nh3 +
+    0.12 * humidity -
+    1.7 * windSpeed +
+    Math.max(0, temperature - 32);
+
+  let aqiCategory = 'Severe';
+  if (score <= 60) aqiCategory = 'Good';
+  else if (score <= 110) aqiCategory = 'Moderate';
+  else if (score <= 170) aqiCategory = 'Poor';
+  else if (score <= 240) aqiCategory = 'Very Poor';
+
+  const fallback = {
+    aqi_category: aqiCategory,
+    confidence: 0.84,
+  };
+
+  return withFallback(
+    () => api.post('/predict/aqi', params),
+    fallback,
+    'API unavailable. Showing mock AQI prediction.',
+    (data) => isValidApiData(data, fallback) && Boolean(data.aqi_category)
+  );
+};
+
+export const predictAccidentRisk = (params) => {
+  const visibility = Number(params.visibility);
+  const speedLimit = Number(params.speed_limit);
+
+  const weatherScore = {
+    Clear: 0,
+    Drizzle: 1,
+    Rain: 2,
+    Fog: 3,
+    Storm: 4,
+  }[params.weather] || 0;
+
+  const roadScore = {
+    Rural: 0,
+    Urban: 1,
+    Highway: 2,
+    Intersection: 3,
+  }[params.road_type] || 0;
+
+  const lightingScore = {
+    Daylight: 0,
+    'Dawn/Dusk': 1,
+    'Night-lit': 2,
+    'Night-unlit': 3,
+  }[params.lighting] || 0;
+
+  const trafficScore = {
+    Low: 0,
+    Medium: 1,
+    High: 2,
+    'Very High': 3,
+  }[params.traffic_density] || 0;
+
+  const timeScore = {
+    Morning: 1,
+    Afternoon: 0,
+    Evening: 2,
+    Night: 3,
+  }[params.time_of_day] || 0;
+
+  const totalRisk = weatherScore + roadScore + lightingScore + trafficScore + timeScore + Math.max(0, 5 - visibility) + speedLimit / 35;
+
+  let accidentRisk = 'High';
+  if (totalRisk <= 7) accidentRisk = 'Low';
+  else if (totalRisk <= 11) accidentRisk = 'Medium';
+
+  const fallback = {
+    accident_risk: accidentRisk,
+    confidence: 0.83,
+  };
+
+  return withFallback(
+    () => api.post('/predict/accident', params),
+    fallback,
+    'API unavailable. Showing mock accident prediction.',
+    (data) => isValidApiData(data, fallback) && Boolean(data.accident_risk)
   );
 };

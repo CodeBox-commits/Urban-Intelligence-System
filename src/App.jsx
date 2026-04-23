@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar.jsx';
 import Navbar from './components/Navbar.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Water from './pages/Water.jsx';
 import Air from './pages/Air.jsx';
 import Accident from './pages/Accident.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+import AdminUpload from './pages/AdminUpload.jsx';
 import { DEFAULT_STATE, stateOptions } from './services/api.js';
 
 function App() {
@@ -27,9 +31,19 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard selectedState={selectedState} />} />
-            <Route path="/water" element={<Water />} />
-            <Route path="/air" element={<Air />} />
-            <Route path="/accidents" element={<Accident />} />
+            <Route path="/water" element={<Water selectedState={selectedState} />} />
+            <Route path="/air" element={<Air selectedState={selectedState} />} />
+            <Route path="/accidents" element={<Accident selectedState={selectedState} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route
+              path="/admin/upload"
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <AdminUpload selectedState={selectedState} />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
       </div>
