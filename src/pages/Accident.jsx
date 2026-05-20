@@ -24,7 +24,7 @@ const defaultAccident = {
 
 function Accident({ selectedState = DEFAULT_STATE }) {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAdmin, isAuthenticated } = useAuth();
   const [filters, setFilters] = useState({
     zone: `All ${selectedState}`,
     ...getDefaultDateRange(),
@@ -89,6 +89,7 @@ function Accident({ selectedState = DEFAULT_STATE }) {
 
     setPredicting(true);
     setPredictionError('');
+    setPredictionResult(null);
     const response = await predictAccidentRisk(predictionForm);
 
     if (response.error) {
@@ -109,12 +110,14 @@ function Accident({ selectedState = DEFAULT_STATE }) {
           <h1 className="text-xl font-semibold tracking-tight text-gray-900">Accident Risk</h1>
           <p className="mt-1 text-sm text-gray-500">Zone-wise totals and day-wise incident trends for Telangana monitoring.</p>
         </div>
-        <Link
-          to="/admin/upload"
-          className="inline-flex w-fit rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
-        >
-          Admin Data
-        </Link>
+        {isAdmin && (
+          <Link
+            to="/admin/upload"
+            className="inline-flex w-fit rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
+          >
+            Admin Data
+          </Link>
+        )}
       </div>
 
       {error && <AlertBox>{error}</AlertBox>}
@@ -155,7 +158,10 @@ function Accident({ selectedState = DEFAULT_STATE }) {
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <NoDataState title="No zone incident data" description="Upload accident records or change the filters." />
+            <NoDataState
+              title="No zone incident data"
+              description={isAdmin ? 'Upload accident records or change the filters.' : 'No accident records match the current filters.'}
+            />
           )}
         </ChartCard>
 
@@ -185,7 +191,10 @@ function Accident({ selectedState = DEFAULT_STATE }) {
               </LineChart>
             </ResponsiveContainer>
           ) : (
-            <NoDataState title="No accident trend data" description="Adjust the filters or upload incident data from the admin panel." />
+            <NoDataState
+              title="No accident trend data"
+              description={isAdmin ? 'Adjust the filters or upload incident data from the admin panel.' : 'No accident records match the selected date range.'}
+            />
           )}
         </ChartCard>
       </div>

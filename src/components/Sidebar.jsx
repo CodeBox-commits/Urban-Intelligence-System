@@ -33,8 +33,8 @@ function SidebarIcon({ name }) {
 }
 
 function Sidebar({ isOpen, onClose }) {
-  const { role } = useAuth();
-  const links = role === 'admin' ? [...baseLinks, { name: 'Admin Upload', path: '/admin/upload', icon: 'upload' }] : baseLinks;
+  const { isAdmin } = useAuth();
+  const links = isAdmin ? [...baseLinks, { name: 'Admin Upload', path: '/admin/upload', icon: 'upload' }] : baseLinks;
 
   const linkClass = ({ isActive }) =>
     [

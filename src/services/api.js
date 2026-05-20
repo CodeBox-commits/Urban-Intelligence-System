@@ -188,32 +188,6 @@ const getDashboardMockData = (state = DEFAULT_STATE) => {
   };
 };
 
-const mockAirData = {
-  aqi: 84,
-  category: 'Moderate',
-  pollutants: [
-    { name: 'PM2.5', value: 42 },
-    { name: 'PM10', value: 68 },
-    { name: 'NO2', value: 31 },
-    { name: 'SO2', value: 18 },
-    { name: 'CO', value: 12 },
-    { name: 'O3', value: 27 },
-  ],
-};
-
-const mockAccidentData = {
-  riskScore: 42,
-  level: 'Medium',
-  zones: [
-    { zone: 'Hyderabad', incidents: 27 },
-    { zone: 'Warangal', incidents: 18 },
-    { zone: 'Karimnagar', incidents: 9 },
-    { zone: 'Nizamabad', incidents: 11 },
-    { zone: 'Khammam', incidents: 19 },
-    { zone: 'Mahbubnagar', incidents: 24 },
-  ],
-};
-
 const isValidApiData = (data, fallback) => {
   if (Array.isArray(fallback)) {
     return Array.isArray(data);
@@ -239,6 +213,22 @@ const withFallback = async (request, fallback, message, validate = isValidApiDat
   }
 };
 
+const withRequiredApi = async (request, validate, message) => {
+  try {
+    const response = await request();
+    if (!validate(response.data)) {
+      throw new Error('Invalid API response');
+    }
+
+    return { data: response.data, error: null };
+  } catch (error) {
+    return {
+      data: null,
+      error: error?.response?.data?.detail || error?.message || message,
+    };
+  }
+};
+
 export const fetchDashboardData = (selectedState = DEFAULT_STATE) => {
   const fallback = getDashboardMockData(selectedState);
 
@@ -257,22 +247,6 @@ export const fetchDashboardData = (selectedState = DEFAULT_STATE) => {
       Array.isArray(data.alerts)
   );
 };
-
-export const fetchAirQualityData = () =>
-  withFallback(
-    () => api.get('/air'),
-    mockAirData,
-    'API unavailable. Showing mock air quality data.',
-    (data) => isValidApiData(data, mockAirData) && Array.isArray(data.pollutants)
-  );
-
-export const fetchAccidentData = () =>
-  withFallback(
-    () => api.get('/accidents'),
-    mockAccidentData,
-    'API unavailable. Showing mock accident data.',
-    (data) => isValidApiData(data, mockAccidentData) && Array.isArray(data.zones)
-  );
 
 export const predictWaterQuality = (params) => {
   const ph = Number(params.ph);
@@ -314,104 +288,16 @@ export const predictWaterQuality = (params) => {
   );
 };
 
-export const predictAQICategory = (params) => {
-  const pm25 = Number(params.pm25);
-  const pm10 = Number(params.pm10);
-  const no2 = Number(params.no2);
-  const so2 = Number(params.so2);
-  const co = Number(params.co);
-  const o3 = Number(params.o3);
-  const nh3 = Number(params.nh3);
-  const temperature = Number(params.temperature);
-  const humidity = Number(params.humidity);
-  const windSpeed = Number(params.wind_speed);
-
-  const score =
-    0.5 * pm25 +
-    0.18 * pm10 +
-    0.12 * no2 +
-    0.08 * so2 +
-    18 * co +
-    0.08 * o3 +
-    0.05 * nh3 +
-    0.12 * humidity -
-    1.7 * windSpeed +
-    Math.max(0, temperature - 32);
-
-  let aqiCategory = 'Severe';
-  if (score <= 60) aqiCategory = 'Good';
-  else if (score <= 110) aqiCategory = 'Moderate';
-  else if (score <= 170) aqiCategory = 'Poor';
-  else if (score <= 240) aqiCategory = 'Very Poor';
-
-  const fallback = {
-    aqi_category: aqiCategory,
-    confidence: 0.84,
-  };
-
-  return withFallback(
+export const predictAQICategory = (params) =>
+  withRequiredApi(
     () => api.post('/predict/aqi', params),
-    fallback,
-    'API unavailable. Showing mock AQI prediction.',
-    (data) => isValidApiData(data, fallback) && Boolean(data.aqi_category)
+    (data) => data && typeof data === 'object' && Boolean(data.aqi_category) && typeof data.confidence !== 'undefined',
+    'AQI prediction service is unavailable.'
   );
-};
 
-export const predictAccidentRisk = (params) => {
-  const visibility = Number(params.visibility);
-  const speedLimit = Number(params.speed_limit);
-
-  const weatherScore = {
-    Clear: 0,
-    Drizzle: 1,
-    Rain: 2,
-    Fog: 3,
-    Storm: 4,
-  }[params.weather] || 0;
-
-  const roadScore = {
-    Rural: 0,
-    Urban: 1,
-    Highway: 2,
-    Intersection: 3,
-  }[params.road_type] || 0;
-
-  const lightingScore = {
-    Daylight: 0,
-    'Dawn/Dusk': 1,
-    'Night-lit': 2,
-    'Night-unlit': 3,
-  }[params.lighting] || 0;
-
-  const trafficScore = {
-    Low: 0,
-    Medium: 1,
-    High: 2,
-    'Very High': 3,
-  }[params.traffic_density] || 0;
-
-  const timeScore = {
-    Morning: 1,
-    Afternoon: 0,
-    Evening: 2,
-    Night: 3,
-  }[params.time_of_day] || 0;
-
-  const totalRisk = weatherScore + roadScore + lightingScore + trafficScore + timeScore + Math.max(0, 5 - visibility) + speedLimit / 35;
-
-  let accidentRisk = 'High';
-  if (totalRisk <= 7) accidentRisk = 'Low';
-  else if (totalRisk <= 11) accidentRisk = 'Medium';
-
-  const fallback = {
-    accident_risk: accidentRisk,
-    confidence: 0.83,
-  };
-
-  return withFallback(
+export const predictAccidentRisk = (params) =>
+  withRequiredApi(
     () => api.post('/predict/accident', params),
-    fallback,
-    'API unavailable. Showing mock accident prediction.',
-    (data) => isValidApiData(data, fallback) && Boolean(data.accident_risk)
+    (data) => data && typeof data === 'object' && Boolean(data.accident_risk) && typeof data.confidence !== 'undefined',
+    'Accident prediction service is unavailable.'
   );
-};

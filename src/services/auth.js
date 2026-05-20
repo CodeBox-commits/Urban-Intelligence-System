@@ -6,28 +6,43 @@ const defaultAuthState = {
   role: 'guest',
 };
 
-const getRoleFromUser = (user) => user?.user_metadata?.role || user?.app_metadata?.role || null;
+export const USER_ROLES = {
+  ADMIN: 'admin',
+  USER: 'user',
+  GUEST: 'guest',
+};
+
+const VALID_ROLES = new Set(Object.values(USER_ROLES));
+
+export const normalizeRole = (role) => {
+  const normalizedRole = typeof role === 'string' ? role.trim().toLowerCase() : '';
+  return VALID_ROLES.has(normalizedRole) ? normalizedRole : USER_ROLES.USER;
+};
+
+export const isAdminRole = (role) => normalizeRole(role) === USER_ROLES.ADMIN;
+
+const getAppRoleFromUser = (user) => user?.app_metadata?.role || null;
 
 export const resolveUserRole = async (user) => {
-  if (!user) return 'guest';
+  if (!user) return USER_ROLES.GUEST;
 
-  const metadataRole = getRoleFromUser(user);
-  if (metadataRole) return metadataRole;
+  const appRole = getAppRoleFromUser(user);
+  if (appRole) return normalizeRole(appRole);
 
   if (!isSupabaseConfigured || !supabase) {
-    return 'user';
+    return USER_ROLES.USER;
   }
 
   try {
     const { data, error } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle();
     if (!error && data?.role) {
-      return data.role;
+      return normalizeRole(data.role);
     }
   } catch {
-    return 'user';
+    return USER_ROLES.USER;
   }
 
-  return 'user';
+  return USER_ROLES.USER;
 };
 
 export const getInitialAuthState = async () => {
@@ -94,7 +109,7 @@ export const signUpWithEmailPassword = async ({ email, password }) => {
     password,
     options: {
       data: {
-        role: 'user',
+        role: USER_ROLES.USER,
       },
       ...(emailRedirectTo ? { emailRedirectTo } : {}),
     },

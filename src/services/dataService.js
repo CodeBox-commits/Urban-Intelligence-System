@@ -2,24 +2,6 @@ import Papa from 'papaparse';
 import { DEFAULT_STATE, regionConfig } from './api.js';
 import { supabase, isSupabaseConfigured } from './supabaseClient.js';
 
-const AQI_MOCK_SEED = {
-  Hyderabad: [84, 82, 86, 88, 90, 85, 83, 84, 87, 89, 86, 84, 82, 84],
-  Warangal: [72, 70, 69, 73, 75, 72, 70, 71, 74, 76, 73, 71, 70, 72],
-  Karimnagar: [58, 57, 59, 60, 61, 58, 56, 57, 59, 60, 58, 57, 56, 58],
-  Nizamabad: [62, 61, 63, 64, 65, 62, 60, 61, 63, 64, 62, 61, 60, 62],
-  Khammam: [70, 68, 71, 73, 74, 71, 69, 70, 72, 73, 71, 70, 68, 70],
-  Mahbubnagar: [79, 77, 80, 82, 83, 79, 76, 77, 80, 81, 79, 78, 77, 79],
-};
-
-const ACCIDENT_MOCK_SEED = {
-  Hyderabad: [6, 5, 7, 8, 9, 6, 5, 7, 8, 9, 7, 6, 5, 6],
-  Warangal: [4, 3, 5, 5, 6, 4, 3, 4, 5, 6, 4, 4, 3, 4],
-  Karimnagar: [2, 2, 3, 3, 4, 2, 2, 2, 3, 4, 3, 2, 2, 2],
-  Nizamabad: [3, 2, 3, 4, 4, 3, 2, 3, 4, 4, 3, 2, 2, 3],
-  Khammam: [4, 4, 5, 6, 6, 4, 4, 5, 5, 6, 5, 4, 4, 4],
-  Mahbubnagar: [5, 5, 6, 7, 8, 5, 5, 6, 7, 8, 6, 5, 5, 5],
-};
-
 const toIsoDate = (date) => date.toISOString().split('T')[0];
 
 export const getDefaultDateRange = (daysBack = 13) => {
@@ -33,63 +15,15 @@ export const getDefaultDateRange = (daysBack = 13) => {
   };
 };
 
-const getDateSeries = (length = 14) => {
-  const endDate = new Date();
-  const dates = [];
-
-  for (let index = length - 1; index >= 0; index -= 1) {
-    const date = new Date(endDate);
-    date.setDate(endDate.getDate() - index);
-    dates.push(toIsoDate(date));
-  }
-
-  return dates;
-};
-
 export const getZoneOptionsForState = (state = DEFAULT_STATE) => {
   const config = regionConfig[state] || regionConfig[DEFAULT_STATE];
   return [`All ${config.state}`, ...config.zones.map((zone) => zone.zone)];
-};
-
-const getMockAqiRows = (state = DEFAULT_STATE) => {
-  const config = regionConfig[state] || regionConfig[DEFAULT_STATE];
-  const dates = getDateSeries();
-
-  return config.zones.flatMap((zone) =>
-    dates.map((date, index) => ({
-      country: config.country,
-      state: config.state,
-      zone: zone.zone,
-      date,
-      aqi: AQI_MOCK_SEED[zone.zone][index],
-    }))
-  );
 };
 
 const getSeverityLabel = (count) => {
   if (count >= 7) return 'High';
   if (count >= 4) return 'Medium';
   return 'Low';
-};
-
-const getMockAccidentRows = (state = DEFAULT_STATE) => {
-  const config = regionConfig[state] || regionConfig[DEFAULT_STATE];
-  const dates = getDateSeries();
-
-  return config.zones.flatMap((zone) =>
-    dates.map((date, index) => {
-      const accidentCount = ACCIDENT_MOCK_SEED[zone.zone][index];
-
-      return {
-        country: config.country,
-        state: config.state,
-        zone: zone.zone,
-        date,
-        accident_count: accidentCount,
-        severity: getSeverityLabel(accidentCount),
-      };
-    })
-  );
 };
 
 const groupByDate = (rows, valueKey, reducer) =>
@@ -165,39 +99,67 @@ const getRiskLevel = (score) => {
   return 'Low';
 };
 
+const buildEmptyAqiAnalytics = (state = DEFAULT_STATE) => ({
+  zoneOptions: getZoneOptionsForState(state),
+  currentAqi: null,
+  category: 'No Data',
+  pollutants: [],
+  trend: [],
+  latestDate: null,
+  dataSource: 'supabase',
+});
+
+const buildEmptyAccidentAnalytics = (state = DEFAULT_STATE) => ({
+  zoneOptions: getZoneOptionsForState(state),
+  totalIncidents: 0,
+  riskScore: 0,
+  riskLevel: 'No Data',
+  trend: [],
+  zoneTotals: [],
+  dataSource: 'supabase',
+});
+
+const getSupabaseConfigError = () =>
+  !isSupabaseConfigured || !supabase
+    ? 'Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.'
+    : null;
+
 export const fetchAQIAnalytics = async (filters) => {
   const state = filters.state || DEFAULT_STATE;
   const zoneOptions = getZoneOptionsForState(state);
-  let rows = getMockAqiRows(state);
-  let errorMessage = !isSupabaseConfigured
-    ? 'Supabase not configured. Showing mock AQI analytics.'
-    : null;
+  const configError = getSupabaseConfigError();
 
-  if (isSupabaseConfigured && supabase) {
-    let query = supabase.from('aqi_data').select('id,state,zone,date,aqi').eq('state', state).order('date', {
-      ascending: true,
-    });
-
-    if (filters.zone && !filters.zone.startsWith('All ')) {
-      query = query.eq('zone', filters.zone);
-    }
-    if (filters.startDate) {
-      query = query.gte('date', filters.startDate);
-    }
-    if (filters.endDate) {
-      query = query.lte('date', filters.endDate);
-    }
-
-    const { data, error } = await query;
-
-    if (!error && Array.isArray(data)) {
-      rows = data.map((row) => ({ country: 'India', ...row }));
-      errorMessage = null;
-    } else if (error) {
-      errorMessage = error.message;
-    }
+  if (configError) {
+    return {
+      error: configError,
+      data: buildEmptyAqiAnalytics(state),
+    };
   }
 
+  let query = supabase.from('aqi_data').select('id,state,zone,date,aqi').eq('state', state).order('date', {
+    ascending: true,
+  });
+
+  if (filters.zone && !filters.zone.startsWith('All ')) {
+    query = query.eq('zone', filters.zone);
+  }
+  if (filters.startDate) {
+    query = query.gte('date', filters.startDate);
+  }
+  if (filters.endDate) {
+    query = query.lte('date', filters.endDate);
+  }
+
+  const { data, error } = await query;
+
+  if (error) {
+    return {
+      error: error.message,
+      data: buildEmptyAqiAnalytics(state),
+    };
+  }
+
+  const rows = Array.isArray(data) ? data.map((row) => ({ country: 'India', ...row })) : [];
   const filteredRows = filterRows(rows, filters);
   const latestRows = getLatestRows(filteredRows);
   const currentAqi = latestRows.length
@@ -206,7 +168,7 @@ export const fetchAQIAnalytics = async (filters) => {
   const trend = groupByDate(filteredRows, 'aqi', averageValues);
 
   return {
-    error: errorMessage,
+    error: null,
     data: {
       zoneOptions,
       currentAqi,
@@ -214,7 +176,7 @@ export const fetchAQIAnalytics = async (filters) => {
       pollutants: currentAqi !== null ? buildPollutants(currentAqi) : [],
       trend,
       latestDate: latestRows[0]?.date || null,
-      dataSource: isSupabaseConfigured && !errorMessage ? 'supabase' : 'mock',
+      dataSource: 'supabase',
     },
   };
 };
@@ -222,38 +184,41 @@ export const fetchAQIAnalytics = async (filters) => {
 export const fetchAccidentAnalytics = async (filters) => {
   const state = filters.state || DEFAULT_STATE;
   const zoneOptions = getZoneOptionsForState(state);
-  let rows = getMockAccidentRows(state);
-  let errorMessage = !isSupabaseConfigured
-    ? 'Supabase not configured. Showing mock accident analytics.'
-    : null;
+  const configError = getSupabaseConfigError();
 
-  if (isSupabaseConfigured && supabase) {
-    let query = supabase
-      .from('accident_data')
-      .select('id,state,zone,date,accident_count,severity')
-      .eq('state', state)
-      .order('date', { ascending: true });
-
-    if (filters.zone && !filters.zone.startsWith('All ')) {
-      query = query.eq('zone', filters.zone);
-    }
-    if (filters.startDate) {
-      query = query.gte('date', filters.startDate);
-    }
-    if (filters.endDate) {
-      query = query.lte('date', filters.endDate);
-    }
-
-    const { data, error } = await query;
-
-    if (!error && Array.isArray(data)) {
-      rows = data.map((row) => ({ country: 'India', ...row }));
-      errorMessage = null;
-    } else if (error) {
-      errorMessage = error.message;
-    }
+  if (configError) {
+    return {
+      error: configError,
+      data: buildEmptyAccidentAnalytics(state),
+    };
   }
 
+  let query = supabase
+    .from('accident_data')
+    .select('id,state,zone,date,accident_count,severity')
+    .eq('state', state)
+    .order('date', { ascending: true });
+
+  if (filters.zone && !filters.zone.startsWith('All ')) {
+    query = query.eq('zone', filters.zone);
+  }
+  if (filters.startDate) {
+    query = query.gte('date', filters.startDate);
+  }
+  if (filters.endDate) {
+    query = query.lte('date', filters.endDate);
+  }
+
+  const { data, error } = await query;
+
+  if (error) {
+    return {
+      error: error.message,
+      data: buildEmptyAccidentAnalytics(state),
+    };
+  }
+
+  const rows = Array.isArray(data) ? data.map((row) => ({ country: 'India', ...row })) : [];
   const filteredRows = filterRows(rows, filters);
   const trend = groupByDate(filteredRows, 'accident_count', sumValues);
   const zoneTotals = buildZoneTotals(filteredRows, 'accident_count').map((row) => ({
@@ -266,7 +231,7 @@ export const fetchAccidentAnalytics = async (filters) => {
   const riskLevel = filteredRows.length ? getRiskLevel(riskScore) : 'No Data';
 
   return {
-    error: errorMessage,
+    error: null,
     data: {
       zoneOptions,
       totalIncidents,
@@ -274,9 +239,23 @@ export const fetchAccidentAnalytics = async (filters) => {
       riskLevel,
       trend,
       zoneTotals,
-      dataSource: isSupabaseConfigured && !errorMessage ? 'supabase' : 'mock',
+      dataSource: 'supabase',
     },
   };
+};
+
+const hasValue = (value) => value !== undefined && value !== null && String(value).trim() !== '';
+const toFiniteNumber = (value) => {
+  const numberValue = Number(value);
+  return Number.isFinite(numberValue) ? numberValue : null;
+};
+
+const normalizeSeverity = (severity, accidentCount) => {
+  const normalizedSeverity = typeof severity === 'string' ? severity.trim().toLowerCase() : '';
+  if (normalizedSeverity === 'high') return 'High';
+  if (normalizedSeverity === 'medium') return 'Medium';
+  if (normalizedSeverity === 'low') return 'Low';
+  return getSeverityLabel(accidentCount);
 };
 
 const normalizeKeys = (row) =>
@@ -298,24 +277,34 @@ export const parseCsvFile = (file) =>
 export const normalizeDatasetRows = (datasetType, rows, state = DEFAULT_STATE) => {
   if (datasetType === 'aqi_data') {
     return rows
-      .filter((row) => row.zone && row.date && row.aqi)
       .map((row) => ({
         state: row.state || state,
         zone: row.zone,
         date: row.date,
-        aqi: Number(row.aqi),
-      }));
+        aqi: toFiniteNumber(row.aqi),
+      }))
+      .filter((row) => hasValue(row.zone) && hasValue(row.date) && row.aqi !== null);
   }
 
   if (datasetType === 'accident_data') {
     return rows
-      .filter((row) => row.zone && row.date && row.accident_count)
+      .map((row) => {
+        const accidentCount = toFiniteNumber(row.accident_count);
+        return {
+          state: row.state || state,
+          zone: row.zone,
+          date: row.date,
+          accident_count: accidentCount,
+          severity: normalizeSeverity(row.severity, accidentCount || 0),
+        };
+      })
+      .filter((row) => hasValue(row.zone) && hasValue(row.date) && row.accident_count !== null)
       .map((row) => ({
         state: row.state || state,
         zone: row.zone,
         date: row.date,
-        accident_count: Number(row.accident_count),
-        severity: row.severity || getSeverityLabel(Number(row.accident_count)),
+        accident_count: Math.trunc(row.accident_count),
+        severity: row.severity,
       }));
   }
 

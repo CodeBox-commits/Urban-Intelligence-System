@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import LoadingSkeleton from './LoadingSkeleton.jsx';
+import { normalizeRole } from '../services/auth.js';
 
 function AccessDenied() {
   return (
@@ -26,7 +27,7 @@ function ProtectedRoute({ children, requiredRole }) {
     return <Navigate to={`/login?redirect=${redirect}`} replace />;
   }
 
-  if (requiredRole && role !== requiredRole) {
+  if (requiredRole && normalizeRole(role) !== normalizeRole(requiredRole)) {
     return <AccessDenied />;
   }
 

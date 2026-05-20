@@ -24,7 +24,7 @@ const defaultAir = {
 
 function Air({ selectedState = DEFAULT_STATE }) {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAdmin, isAuthenticated } = useAuth();
   const [filters, setFilters] = useState({
     zone: `All ${selectedState}`,
     ...getDefaultDateRange(),
@@ -92,6 +92,7 @@ function Air({ selectedState = DEFAULT_STATE }) {
 
     setPredicting(true);
     setPredictionError('');
+    setPredictionResult(null);
     const response = await predictAQICategory(predictionForm);
 
     if (response.error) {
@@ -112,12 +113,14 @@ function Air({ selectedState = DEFAULT_STATE }) {
           <h1 className="text-xl font-semibold tracking-tight text-gray-900">Air Quality</h1>
           <p className="mt-1 text-sm text-gray-500">Day-wise AQI analytics for Telangana zones with date-range filtering.</p>
         </div>
-        <Link
-          to="/admin/upload"
-          className="inline-flex w-fit rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
-        >
-          Admin Data
-        </Link>
+        {isAdmin && (
+          <Link
+            to="/admin/upload"
+            className="inline-flex w-fit rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
+          >
+            Admin Data
+          </Link>
+        )}
       </div>
 
       {error && <AlertBox>{error}</AlertBox>}
@@ -158,7 +161,10 @@ function Air({ selectedState = DEFAULT_STATE }) {
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <NoDataState title="No pollutant data" description="Upload AQI data or change the current filters." />
+            <NoDataState
+              title="No pollutant data"
+              description={isAdmin ? 'Upload AQI data or change the current filters.' : 'No AQI records match the current filters.'}
+            />
           )}
         </ChartCard>
 
@@ -188,7 +194,10 @@ function Air({ selectedState = DEFAULT_STATE }) {
               </LineChart>
             </ResponsiveContainer>
           ) : (
-            <NoDataState title="No AQI trend data" description="Adjust the date range or upload records from the admin panel." />
+            <NoDataState
+              title="No AQI trend data"
+              description={isAdmin ? 'Adjust the date range or upload records from the admin panel.' : 'No AQI records match the selected date range.'}
+            />
           )}
         </ChartCard>
       </div>

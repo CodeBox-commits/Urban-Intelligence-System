@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
   getInitialAuthState,
+  isAdminRole,
   resolveUserRole,
   signInWithEmailPassword,
   signUpWithEmailPassword,
@@ -100,6 +101,7 @@ export function AuthProvider({ children }) {
       role,
       authLoading,
       isAuthenticated: Boolean(session?.user),
+      isAdmin: isAdminRole(role),
       login,
       signup,
       logout,

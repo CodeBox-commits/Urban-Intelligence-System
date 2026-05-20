@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 
 function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions }) {
   const navigate = useNavigate();
-  const { isAuthenticated, logout, role, user } = useAuth();
+  const { isAdmin, isAuthenticated, logout, role, user } = useAuth();
 
   const handleLogout = async () => {
     await logout();
@@ -52,12 +52,14 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions }) {
               ))}
             </select>
           </label>
-          <Link
-            to="/admin/upload"
-            className="rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
-          >
-            Admin Data
-          </Link>
+          {isAdmin && (
+            <Link
+              to="/admin/upload"
+              className="rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
+            >
+              Admin Data
+            </Link>
+          )}
           <div className="text-right">
             <p className="text-sm font-semibold text-gray-900">
               {isAuthenticated ? user?.email || 'UrbanIQ User' : 'Guest Access'}
