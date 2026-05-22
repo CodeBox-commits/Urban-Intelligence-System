@@ -3,8 +3,8 @@ import React from 'react';
 function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user, onLogout }) {
   return (
     <header className="sticky top-0 z-20 border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur">
-      <div className="flex h-20 items-center justify-between px-6">
-        <div className="flex items-center gap-4">
+      <div className="flex h-20 items-center justify-between gap-4 px-6">
+        <div className="flex min-w-0 items-center gap-4">
           <button
             type="button"
             className="rounded-xl border border-gray-100 bg-white p-2.5 text-gray-600 shadow-sm transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 lg:hidden"
@@ -21,14 +21,14 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user,
               />
             </svg>
           </button>
-          <div>
+          <div className="min-w-0">
             <p className="text-sm font-medium text-gray-500">Predictive Analytics System</p>
-            <h2 className="text-xl font-semibold text-gray-900">UrbanIQ Dashboard</h2>
+            <h2 className="truncate text-xl font-semibold text-gray-900">UrbanIQ Dashboard</h2>
           </div>
         </div>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <label className="flex items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2">
+        <div className="hidden shrink-0 items-center gap-5 md:flex">
+          <label className="flex shrink-0 items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2">
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">State</span>
             <select
               value={selectedState}
@@ -42,14 +42,16 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user,
               ))}
             </select>
           </label>
-          <div className="text-right">
-            <p className="text-sm font-semibold text-gray-900">{user.name}</p>
+          <div className="min-w-20 max-w-32 text-right lg:max-w-40">
+            <p className="truncate text-sm font-semibold text-gray-900" title={user.name}>
+              {user.name}
+            </p>
             <p className="text-xs capitalize text-gray-500">{user.role}</p>
           </div>
           <button
             type="button"
             onClick={onLogout}
-            className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-100"
+            className="shrink-0 rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-100"
           >
             Logout
           </button>
