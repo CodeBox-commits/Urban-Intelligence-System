@@ -1,0 +1,35 @@
+{
+  "weighted_f1": 0.6318577271841929,
+  "macro_f1": 0.596184560780834,
+  "roc_auc": 0.6630078125,
+  "train_rows": 2620,
+  "test_rows": 656,
+  "target": "Potability",
+  "report": {
+    "0": {
+      "precision": 0.6711538461538461,
+      "recall": 0.8725,
+      "f1-score": 0.758695652173913,
+      "support": 400.0
+    },
+    "1": {
+      "precision": 0.625,
+      "recall": 0.33203125,
+      "f1-score": 0.4336734693877551,
+      "support": 256.0
+    },
+    "accuracy": 0.6615853658536586,
+    "macro avg": {
+      "precision": 0.648076923076923,
+      "recall": 0.602265625,
+      "f1-score": 0.596184560780834,
+      "support": 656.0
+    },
+    "weighted avg": {
+      "precision": 0.6531425891181989,
+      "recall": 0.6615853658536586,
+      "f1-score": 0.6318577271841929,
+      "support": 656.0
+    }
+  }
+}

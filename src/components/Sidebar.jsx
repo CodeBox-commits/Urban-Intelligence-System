@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext.jsx';
 
 const baseLinks = [
   { name: 'Dashboard', path: '/dashboard', icon: 'dashboard' },
@@ -14,7 +13,7 @@ const iconPaths = {
   water: 'M12 3s6 6.1 6 10.2A6 6 0 0 1 6 13.2C6 9.1 12 3 12 3Z',
   air: 'M4 14.5a4.5 4.5 0 0 1 6.7-3.9A5.5 5.5 0 0 1 21 13.5a3.5 3.5 0 0 1-3.5 3.5H8.5A4.5 4.5 0 0 1 4 14.5Z',
   accidents: 'M12 4 21 20H3L12 4Zm0 5v4m0 4h.01',
-  upload: 'M12 16V8m0 0-3.5 3.5M12 8l3.5 3.5M5 18h14',
+  admin: 'M4 19h16M7 19V9m5 10V5m5 14v-7',
 };
 
 function SidebarIcon({ name }) {
@@ -32,9 +31,8 @@ function SidebarIcon({ name }) {
   );
 }
 
-function Sidebar({ isOpen, onClose }) {
-  const { isAdmin } = useAuth();
-  const links = isAdmin ? [...baseLinks, { name: 'Admin Upload', path: '/admin/upload', icon: 'upload' }] : baseLinks;
+function Sidebar({ isOpen, onClose, role }) {
+  const links = role === 'admin' ? [...baseLinks, { name: 'Admin Data', path: '/admin', icon: 'admin' }] : baseLinks;
 
   const linkClass = ({ isActive }) =>
     [
