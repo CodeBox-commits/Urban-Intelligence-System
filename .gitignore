@@ -2,3 +2,6 @@ node_modules/
 dist/
 vite-dev*.log
 .env
+.vite/
+__pycache__/
+*.py[cod]
