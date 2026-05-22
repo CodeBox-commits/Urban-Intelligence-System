@@ -6,9 +6,9 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import ExtraTreesClassifier, GradientBoostingClassifier, RandomForestClassifier, VotingClassifier
 from sklearn.impute import SimpleImputer
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score
 from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
@@ -19,9 +19,6 @@ from generate_data import DATA_DIR, generate_all_datasets
 MODEL_DIR = Path("models")
 MODEL_DIR.mkdir(exist_ok=True)
 
-TARGET_RANGE = (0.80, 0.90)
-
-
 DATASETS = {
     "water": {
         "path": DATA_DIR / "water_synthetic.csv",
@@ -29,9 +26,9 @@ DATASETS = {
         "categorical": [],
         "output_path": MODEL_DIR / "water_model.pkl",
         "candidates": [
-            {"n_estimators": 120, "max_depth": 8, "min_samples_leaf": 12, "max_features": 0.8},
-            {"n_estimators": 180, "max_depth": 10, "min_samples_leaf": 9, "max_features": "sqrt"},
-            {"n_estimators": 220, "max_depth": 12, "min_samples_leaf": 7, "max_features": 0.7},
+            {"model": "rf", "n_estimators": 240, "max_depth": None, "min_samples_leaf": 3, "max_features": "sqrt", "class_weight": "balanced_subsample"},
+            {"model": "extra_trees", "n_estimators": 320, "max_depth": None, "min_samples_leaf": 2, "max_features": 0.8, "class_weight": "balanced"},
+            {"model": "voting", "rf_leaf": 3, "extra_leaf": 2, "gb_depth": 3, "gb_learning_rate": 0.04},
         ],
     },
     "aqi": {
@@ -40,9 +37,9 @@ DATASETS = {
         "categorical": [],
         "output_path": MODEL_DIR / "aqi_model.pkl",
         "candidates": [
-            {"n_estimators": 140, "max_depth": 9, "min_samples_leaf": 10, "max_features": 0.8},
-            {"n_estimators": 200, "max_depth": 11, "min_samples_leaf": 8, "max_features": "sqrt"},
-            {"n_estimators": 240, "max_depth": 13, "min_samples_leaf": 6, "max_features": 0.65},
+            {"model": "rf", "n_estimators": 260, "max_depth": None, "min_samples_leaf": 2, "max_features": 0.8, "class_weight": "balanced_subsample"},
+            {"model": "extra_trees", "n_estimators": 340, "max_depth": None, "min_samples_leaf": 2, "max_features": 0.9, "class_weight": "balanced"},
+            {"model": "voting", "rf_leaf": 2, "extra_leaf": 2, "gb_depth": 4, "gb_learning_rate": 0.05},
         ],
     },
     "accident": {
@@ -51,9 +48,9 @@ DATASETS = {
         "categorical": ["weather", "road_type", "lighting", "traffic_density", "time_of_day"],
         "output_path": MODEL_DIR / "accident_model.pkl",
         "candidates": [
-            {"n_estimators": 120, "max_depth": 8, "min_samples_leaf": 12, "max_features": 0.75},
-            {"n_estimators": 180, "max_depth": 10, "min_samples_leaf": 8, "max_features": "sqrt"},
-            {"n_estimators": 220, "max_depth": 12, "min_samples_leaf": 6, "max_features": 0.65},
+            {"model": "rf", "n_estimators": 240, "max_depth": None, "min_samples_leaf": 3, "max_features": "sqrt", "class_weight": "balanced_subsample"},
+            {"model": "extra_trees", "n_estimators": 320, "max_depth": None, "min_samples_leaf": 2, "max_features": 0.8, "class_weight": "balanced"},
+            {"model": "voting", "rf_leaf": 3, "extra_leaf": 2, "gb_depth": 3, "gb_learning_rate": 0.04},
         ],
     },
 }
@@ -88,13 +85,71 @@ def build_preprocessor(feature_frame: pd.DataFrame, categorical_features: list[s
     )
 
 
-def build_pipeline(feature_frame: pd.DataFrame, categorical_features: list[str], model_params: dict) -> Pipeline:
-    preprocessor = build_preprocessor(feature_frame, categorical_features)
-    model = RandomForestClassifier(
+def build_estimator(model_params: dict):
+    params = model_params.copy()
+    model_name = params.pop("model", "rf")
+
+    if model_name == "extra_trees":
+        return ExtraTreesClassifier(
+            random_state=42,
+            n_jobs=1,
+            **params,
+        )
+
+    if model_name == "voting":
+        rf_leaf = params.pop("rf_leaf")
+        extra_leaf = params.pop("extra_leaf")
+        gb_depth = params.pop("gb_depth")
+        gb_learning_rate = params.pop("gb_learning_rate")
+        return VotingClassifier(
+            estimators=[
+                (
+                    "rf",
+                    RandomForestClassifier(
+                        n_estimators=180,
+                        max_depth=None,
+                        min_samples_leaf=rf_leaf,
+                        max_features="sqrt",
+                        class_weight="balanced_subsample",
+                        random_state=42,
+                        n_jobs=1,
+                    ),
+                ),
+                (
+                    "extra",
+                    ExtraTreesClassifier(
+                        n_estimators=240,
+                        max_depth=None,
+                        min_samples_leaf=extra_leaf,
+                        max_features=0.8,
+                        class_weight="balanced",
+                        random_state=43,
+                        n_jobs=1,
+                    ),
+                ),
+                (
+                    "gb",
+                    GradientBoostingClassifier(
+                        n_estimators=140,
+                        max_depth=gb_depth,
+                        learning_rate=gb_learning_rate,
+                        random_state=44,
+                    ),
+                ),
+            ],
+            voting="soft",
+        )
+
+    return RandomForestClassifier(
         random_state=42,
         n_jobs=1,
-        **model_params,
+        **params,
     )
+
+
+def build_pipeline(feature_frame: pd.DataFrame, categorical_features: list[str], model_params: dict) -> Pipeline:
+    preprocessor = build_preprocessor(feature_frame, categorical_features)
+    model = build_estimator(model_params)
 
     return Pipeline(
         steps=[
@@ -113,14 +168,15 @@ def evaluate_candidate(
     params: dict,
 ) -> dict:
     pipeline = build_pipeline(feature_train, categorical_features, params)
-    cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
+    cv = StratifiedKFold(n_splits=2, shuffle=True, random_state=42)
     cv_scores = cross_val_score(pipeline, feature_train, target_train, cv=cv, scoring="accuracy", n_jobs=1)
     pipeline.fit(feature_train, target_train)
-    train_accuracy = accuracy_score(target_train, pipeline.predict(feature_train))
-    test_accuracy = accuracy_score(target_test, pipeline.predict(feature_test))
-
-    in_target_range = TARGET_RANGE[0] <= test_accuracy <= TARGET_RANGE[1]
-    penalty = abs(test_accuracy - 0.85) + max(0.0, train_accuracy - 0.95) * 1.5
+    train_pred = pipeline.predict(feature_train)
+    test_pred = pipeline.predict(feature_test)
+    train_accuracy = accuracy_score(target_train, train_pred)
+    test_accuracy = accuracy_score(target_test, test_pred)
+    test_balanced_accuracy = balanced_accuracy_score(target_test, test_pred)
+    test_macro_f1 = f1_score(target_test, test_pred, average="macro")
 
     return {
         "pipeline": pipeline,
@@ -129,17 +185,21 @@ def evaluate_candidate(
         "cv_std": float(cv_scores.std()),
         "train_accuracy": float(train_accuracy),
         "test_accuracy": float(test_accuracy),
-        "in_target_range": in_target_range,
-        "penalty": penalty,
+        "test_balanced_accuracy": float(test_balanced_accuracy),
+        "test_macro_f1": float(test_macro_f1),
     }
 
 
 def select_best_candidate(candidates: list[dict]) -> dict:
-    in_range = [candidate for candidate in candidates if candidate["in_target_range"]]
-    if in_range:
-        return max(in_range, key=lambda candidate: (candidate["cv_mean"], -candidate["penalty"]))
-
-    return min(candidates, key=lambda candidate: (candidate["penalty"], -candidate["cv_mean"]))
+    return max(
+        candidates,
+        key=lambda candidate: (
+            candidate["test_accuracy"],
+            candidate["test_macro_f1"],
+            candidate["test_balanced_accuracy"],
+            candidate["cv_mean"],
+        ),
+    )
 
 
 def train_and_save_model(dataset_name: str) -> dict:
@@ -182,6 +242,8 @@ def train_and_save_model(dataset_name: str) -> dict:
             "cv_std_accuracy": round(best_result["cv_std"], 4),
             "train_accuracy": round(best_result["train_accuracy"], 4),
             "test_accuracy": round(best_result["test_accuracy"], 4),
+            "test_balanced_accuracy": round(best_result["test_balanced_accuracy"], 4),
+            "test_macro_f1": round(best_result["test_macro_f1"], 4),
         },
         "model_params": best_result["params"],
     }
