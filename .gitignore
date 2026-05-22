@@ -4,3 +4,4 @@ vite-dev*.log
 .env
 __pycache__/
 *.py[cod]
+.vite/
