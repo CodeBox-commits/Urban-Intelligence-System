@@ -1,0 +1,37 @@
+INFO:     127.0.0.1:56730 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51752 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51754 - "POST /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54663 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54226 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59756 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53324 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53072 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59414 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59683 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59683 - "OPTIONS /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59683 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64499 - "POST /predict/water HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "OPTIONS /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /predict/aqi HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54107 - "OPTIONS /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54107 - "POST /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54770 - "POST /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55374 - "POST /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55374 - "POST /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55374 - "POST /predict/accident HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62314 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55310 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63582 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53909 - "GET /dashboard?state=Telangana HTTP/1.1" 404 Not Found
