@@ -9,17 +9,15 @@ import Air from './pages/Air.jsx';
 import Accident from './pages/Accident.jsx';
 import Login from './pages/Login.jsx';
 import AdminData from './pages/AdminData.jsx';
-import { DEFAULT_STATE, regionConfig, stateOptions } from './services/api.js';
+import { DEFAULT_STATE, DEFAULT_WATER_INPUTS, regionConfig, stateOptions } from './services/api.js';
 
 const STORAGE_KEY = 'urbaniq-zone-data';
 
 const withDefaultWaterInputs = (zone) => ({
   ...zone,
-  waterInputs: zone.waterInputs || {
-    ph: 7.2,
-    turbidity: 3.1,
-    chloramines: 3.2,
-    solids: 18000,
+  waterInputs: {
+    ...DEFAULT_WATER_INPUTS,
+    ...(zone.waterInputs || {}),
   },
 });
 

@@ -9,6 +9,19 @@ const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export const DEFAULT_STATE = 'Telangana';
 
+export const DEFAULT_WATER_INPUTS = {
+  ph: 7.2,
+  hardness: 185,
+  solids: 18000,
+  chloramines: 3.2,
+  sulfate: 310,
+  conductivity: 420,
+  organic_carbon: 11.8,
+  temperature: 24.4,
+  dissolved_oxygen: 7.6,
+  turbidity: 3.1,
+};
+
 export const regionConfig = {
   Telangana: {
     country: 'India',
@@ -26,6 +39,18 @@ export const regionConfig = {
         aqi: 84,
         water_quality: 'Potable',
         water_score: 88,
+        waterInputs: {
+          ph: 7.2,
+          hardness: 185,
+          solids: 18000,
+          chloramines: 3.2,
+          sulfate: 310,
+          conductivity: 420,
+          organic_carbon: 11.8,
+          temperature: 24.4,
+          dissolved_oxygen: 7.6,
+          turbidity: 3.1,
+        },
         risk_score: 76,
         alerts: 6,
         aqiTrend: [78, 82, 84, 90, 86, 80, 84],
@@ -40,6 +65,18 @@ export const regionConfig = {
         aqi: 72,
         water_quality: 'Potable',
         water_score: 82,
+        waterInputs: {
+          ph: 7.4,
+          hardness: 172,
+          solids: 16500,
+          chloramines: 3.0,
+          sulfate: 290,
+          conductivity: 395,
+          organic_carbon: 10.9,
+          temperature: 25.2,
+          dissolved_oxygen: 7.9,
+          turbidity: 2.6,
+        },
         risk_score: 48,
         alerts: 4,
         aqiTrend: [68, 70, 72, 75, 74, 71, 72],
@@ -54,6 +91,18 @@ export const regionConfig = {
         aqi: 58,
         water_quality: 'Potable',
         water_score: 91,
+        waterInputs: {
+          ph: 7.1,
+          hardness: 166,
+          solids: 14800,
+          chloramines: 2.8,
+          sulfate: 275,
+          conductivity: 372,
+          organic_carbon: 10.5,
+          temperature: 23.8,
+          dissolved_oxygen: 8.2,
+          turbidity: 2.1,
+        },
         risk_score: 26,
         alerts: 2,
         aqiTrend: [55, 57, 58, 60, 59, 56, 58],
@@ -68,6 +117,18 @@ export const regionConfig = {
         aqi: 62,
         water_quality: 'Potable',
         water_score: 86,
+        waterInputs: {
+          ph: 7.3,
+          hardness: 178,
+          solids: 15800,
+          chloramines: 3.1,
+          sulfate: 285,
+          conductivity: 388,
+          organic_carbon: 11.2,
+          temperature: 24.9,
+          dissolved_oxygen: 7.8,
+          turbidity: 2.8,
+        },
         risk_score: 31,
         alerts: 3,
         aqiTrend: [60, 61, 62, 65, 63, 61, 62],
@@ -82,6 +143,18 @@ export const regionConfig = {
         aqi: 70,
         water_quality: 'Needs Review',
         water_score: 74,
+        waterInputs: {
+          ph: 6.8,
+          hardness: 212,
+          solids: 24200,
+          chloramines: 4.8,
+          sulfate: 365,
+          conductivity: 545,
+          organic_carbon: 17.2,
+          temperature: 29.1,
+          dissolved_oxygen: 5.2,
+          turbidity: 5.7,
+        },
         risk_score: 52,
         alerts: 5,
         aqiTrend: [65, 68, 70, 73, 72, 69, 70],
@@ -96,6 +169,18 @@ export const regionConfig = {
         aqi: 79,
         water_quality: 'Needs Review',
         water_score: 68,
+        waterInputs: {
+          ph: 6.6,
+          hardness: 226,
+          solids: 26800,
+          chloramines: 5.1,
+          sulfate: 382,
+          conductivity: 568,
+          organic_carbon: 18.6,
+          temperature: 30.4,
+          dissolved_oxygen: 4.8,
+          turbidity: 6.4,
+        },
         risk_score: 69,
         alerts: 7,
         aqiTrend: [74, 76, 79, 82, 80, 77, 79],
@@ -248,45 +333,12 @@ export const fetchDashboardData = (selectedState = DEFAULT_STATE) => {
   );
 };
 
-export const predictWaterQuality = (params) => {
-  const ph = Number(params.ph);
-  const turbidity = Number(params.turbidity);
-  const chloramines = Number(params.chloramines);
-  const solids = Number(params.solids);
-  const sulfate = Number(params.sulfate);
-  const conductivity = Number(params.conductivity);
-  const organicCarbon = Number(params.organic_carbon);
-  const hardness = Number(params.hardness);
-  const temperature = Number(params.temperature);
-  const dissolvedOxygen = Number(params.dissolved_oxygen);
-
-  const heuristicScore =
-    (ph >= 6.4 && ph <= 8.6 ? 1 : 0) +
-    (turbidity <= 5 ? 1 : 0) +
-    (chloramines <= 4.5 ? 1 : 0) +
-    (solids <= 24000 ? 1 : 0) +
-    (sulfate >= 160 && sulfate <= 360 ? 1 : 0) +
-    (conductivity >= 180 && conductivity <= 540 ? 1 : 0) +
-    (organicCarbon <= 18 ? 1 : 0) +
-    (hardness >= 80 && hardness <= 260 ? 1 : 0) +
-    (temperature <= 30 ? 1 : 0) +
-    (dissolvedOxygen >= 5.5 ? 1 : 0);
-  const isPotable = heuristicScore >= 7;
-  const fallback = {
-    country: 'India',
-    state: DEFAULT_STATE,
-    zone: params.zone || 'Hyderabad',
-    potability: isPotable ? 1 : 0,
-    confidence: isPotable ? 0.86 : 0.81,
-  };
-
-  return withFallback(
+export const predictWaterQuality = (params) =>
+  withRequiredApi(
     () => api.post('/predict/water', params),
-    fallback,
-    'API unavailable. Showing mock water prediction.',
-    (data) => isValidApiData(data, fallback) && typeof data.potability !== 'undefined'
+    (data) => data && typeof data === 'object' && typeof data.potability !== 'undefined' && typeof data.confidence !== 'undefined',
+    'Water prediction service is unavailable.'
   );
-};
 
 export const predictAQICategory = (params) =>
   withRequiredApi(

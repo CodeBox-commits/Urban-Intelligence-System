@@ -7,9 +7,15 @@ const numericFields = [
   { name: 'risk_score', label: 'Risk Score (%)' },
   { name: 'alerts', label: 'Active Alerts' },
   { name: 'ph', label: 'pH' },
+  { name: 'hardness', label: 'Hardness' },
   { name: 'turbidity', label: 'Turbidity' },
   { name: 'chloramines', label: 'Chloramines' },
   { name: 'solids', label: 'Solids' },
+  { name: 'sulfate', label: 'Sulfate' },
+  { name: 'conductivity', label: 'Conductivity' },
+  { name: 'organic_carbon', label: 'Organic Carbon' },
+  { name: 'temperature', label: 'Temperature' },
+  { name: 'dissolved_oxygen', label: 'Dissolved Oxygen' },
 ];
 
 function AdminData({ selectedState, zones, onSaveZone }) {
@@ -33,9 +39,15 @@ function AdminData({ selectedState, zones, onSaveZone }) {
       riskLevel: zone.riskLevel,
       alerts: zone.alerts,
       ph: zone.waterInputs?.ph ?? 7,
+      hardness: zone.waterInputs?.hardness ?? 185,
       turbidity: zone.waterInputs?.turbidity ?? 3,
       chloramines: zone.waterInputs?.chloramines ?? 3,
       solids: zone.waterInputs?.solids ?? 18000,
+      sulfate: zone.waterInputs?.sulfate ?? 310,
+      conductivity: zone.waterInputs?.conductivity ?? 420,
+      organic_carbon: zone.waterInputs?.organic_carbon ?? 11.8,
+      temperature: zone.waterInputs?.temperature ?? 24.4,
+      dissolved_oxygen: zone.waterInputs?.dissolved_oxygen ?? 7.6,
     });
     setSavedMessage('');
   }, [zone]);
@@ -60,9 +72,15 @@ function AdminData({ selectedState, zones, onSaveZone }) {
       alerts: Number(form.alerts),
       waterInputs: {
         ph: Number(form.ph),
+        hardness: Number(form.hardness),
         turbidity: Number(form.turbidity),
         chloramines: Number(form.chloramines),
         solids: Number(form.solids),
+        sulfate: Number(form.sulfate),
+        conductivity: Number(form.conductivity),
+        organic_carbon: Number(form.organic_carbon),
+        temperature: Number(form.temperature),
+        dissolved_oxygen: Number(form.dissolved_oxygen),
       },
     });
     setSavedMessage(`Saved ${selectedZone} values.`);

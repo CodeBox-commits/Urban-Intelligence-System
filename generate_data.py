@@ -40,10 +40,10 @@ def generate_water_dataset(n_rows: int = 5500, random_state: int = 42) -> pd.Dat
         - 0.006 * np.abs(hardness - 180)
         - 0.11 * np.maximum(temperature - 27, 0)
         + 0.38 * (dissolved_oxygen - 7.1)
-        + rng.normal(0, 0.24, n_rows)
+        + rng.normal(0, 0.14, n_rows)
     )
     base_potability = (quality_score > 0.0).astype(int)
-    label_flip = rng.random(n_rows) < 0.08
+    label_flip = rng.random(n_rows) < 0.02
     potability = np.where(label_flip, 1 - base_potability, base_potability)
 
     return pd.DataFrame(
@@ -88,15 +88,15 @@ def generate_aqi_dataset(n_rows: int = 5600, random_state: int = 52) -> pd.DataF
         + 0.10 * humidity
         - 1.7 * wind_speed
         + 1.0 * np.maximum(temperature - 32, 0)
-        + rng.normal(0, 7, n_rows)
+        + rng.normal(0, 3.2, n_rows)
     )
 
     thresholds = np.column_stack(
         [
-            rng.normal(58, 4, n_rows),
-            rng.normal(112, 5, n_rows),
-            rng.normal(168, 6, n_rows),
-            rng.normal(245, 8, n_rows),
+            rng.normal(58, 2, n_rows),
+            rng.normal(112, 2.5, n_rows),
+            rng.normal(168, 3, n_rows),
+            rng.normal(245, 4, n_rows),
         ]
     )
 
@@ -114,7 +114,7 @@ def generate_aqi_dataset(n_rows: int = 5600, random_state: int = 52) -> pd.DataF
         else:
             category = labels[4]
 
-        if rng.random() < 0.05:
+        if rng.random() < 0.015:
             current_index = labels.index(category)
             shift = rng.choice([-1, 1])
             current_index = int(np.clip(current_index + shift, 0, len(labels) - 1))
@@ -182,10 +182,10 @@ def generate_accident_dataset(n_rows: int = 5300, random_state: int = 62) -> pd.
         + 0.03 * (speed_limit - 40)
         + 0.55 * np.maximum(4.5 - visibility, 0)
         + 0.6 * ((speed_limit >= 80) & np.isin(weather, ["Rain", "Fog", "Storm"])).astype(float)
-        + rng.normal(0, 0.28, n_rows)
+        + rng.normal(0, 0.14, n_rows)
     )
 
-    bins = np.column_stack([rng.normal(3.8, 0.22, n_rows), rng.normal(6.3, 0.28, n_rows)])
+    bins = np.column_stack([rng.normal(3.8, 0.12, n_rows), rng.normal(6.3, 0.16, n_rows)])
     accident_risk = []
     labels = ["Low", "Medium", "High"]
     for signal, row_bins in zip(risk_signal, bins):
@@ -196,7 +196,7 @@ def generate_accident_dataset(n_rows: int = 5300, random_state: int = 62) -> pd.
         else:
             label = labels[2]
 
-        if rng.random() < 0.04:
+        if rng.random() < 0.015:
             current_index = labels.index(label)
             shift = rng.choice([-1, 1])
             current_index = int(np.clip(current_index + shift, 0, len(labels) - 1))

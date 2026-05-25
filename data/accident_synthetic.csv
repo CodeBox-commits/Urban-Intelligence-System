@@ -23,12 +23,12 @@ Drizzle,7.963,Urban,Night-unlit,Medium,50,Evening,Medium
 Clear,5.292,Highway,Daylight,Medium,30,Afternoon,Low
 Rain,3.578,Highway,Night-lit,High,30,Afternoon,Medium
 Clear,5.0,Rural,Daylight,Medium,30,Morning,Low
-Clear,3.77,Intersection,Night-lit,Very High,60,Morning,Medium
-Rain,0.508,Rural,Daylight,Medium,40,Morning,Medium
+Clear,3.77,Intersection,Night-lit,Very High,60,Morning,High
+Rain,0.508,Rural,Daylight,Medium,40,Morning,High
 Fog,6.74,Highway,Daylight,Medium,40,Evening,Medium
 Rain,5.444,Urban,Daylight,Medium,60,Afternoon,Medium
 Clear,5.174,Highway,Night-unlit,Very High,60,Afternoon,High
-Fog,5.569,Highway,Night-lit,Low,50,Morning,High
+Fog,5.569,Highway,Night-lit,Low,50,Morning,Medium
 Drizzle,4.977,Intersection,Daylight,Low,80,Morning,Medium
 Drizzle,5.186,Highway,Daylight,Low,60,Afternoon,Low
 Drizzle,5.038,Rural,Night-unlit,Medium,80,Evening,High
@@ -36,32 +36,32 @@ Rain,7.045,Urban,Night-lit,Very High,30,Evening,High
 Clear,6.865,Rural,Daylight,High,100,Evening,Medium
 Drizzle,5.749,Highway,Daylight,Very High,60,Evening,Medium
 Fog,5.766,Urban,Daylight,Low,100,Evening,High
-Rain,6.578,Urban,Dawn/Dusk,Low,80,Afternoon,High
+Rain,6.578,Urban,Dawn/Dusk,Low,80,Afternoon,Medium
 Clear,6.013,Urban,Night-lit,High,40,Morning,Medium
-Clear,5.177,Urban,Night-lit,Low,40,Night,Low
+Clear,5.177,Urban,Night-lit,Low,40,Night,Medium
 Drizzle,7.201,Intersection,Night-lit,High,60,Afternoon,High
 Clear,4.229,Urban,Daylight,High,60,Morning,Medium
 Storm,5.657,Highway,Dawn/Dusk,Low,50,Morning,Medium
 Rain,5.2,Intersection,Night-unlit,Low,30,Afternoon,Medium
 Drizzle,7.984,Rural,Night-lit,Medium,100,Afternoon,Medium
 Clear,1.561,Urban,Night-lit,Medium,50,Afternoon,Medium
-Rain,3.202,Highway,Night-lit,High,80,Morning,Medium
-Clear,4.562,Intersection,Daylight,Medium,50,Morning,Medium
+Rain,3.202,Highway,Night-lit,High,80,Morning,High
+Clear,4.562,Intersection,Daylight,Medium,50,Morning,Low
 Drizzle,5.594,Intersection,Daylight,Very High,50,Night,Medium
 Clear,6.718,Urban,Night-lit,High,50,Evening,Medium
 Drizzle,7.433,Intersection,Night-unlit,Medium,80,Morning,High
-Rain,4.671,Urban,Daylight,High,60,Morning,High
+Rain,4.671,Urban,Daylight,High,60,Morning,Medium
 Clear,4.016,Highway,Daylight,High,60,Afternoon,Medium
 Rain,7.309,Urban,Daylight,Medium,50,Evening,Medium
-Clear,4.752,Intersection,Daylight,Very High,80,Morning,High
+Clear,4.752,Intersection,Daylight,Very High,80,Morning,Medium
 Rain,4.002,Intersection,Daylight,Medium,100,Evening,High
 Clear,4.826,Rural,Daylight,Medium,80,Morning,Medium
-Drizzle,3.256,Urban,Daylight,Low,80,Night,Low
-Clear,4.739,Rural,Daylight,Low,50,Morning,Low
+Drizzle,3.256,Urban,Daylight,Low,80,Night,Medium
+Clear,4.739,Rural,Daylight,Low,50,Morning,Medium
 Clear,4.202,Intersection,Night-unlit,Very High,80,Afternoon,High
 Fog,4.75,Urban,Night-unlit,High,50,Afternoon,High
 Drizzle,8.37,Urban,Night-unlit,High,50,Afternoon,Medium
-Drizzle,5.59,Rural,Night-lit,Medium,60,Afternoon,High
+Drizzle,5.59,Rural,Night-lit,Medium,60,Afternoon,Medium
 Rain,4.44,Highway,Night-unlit,Medium,60,Morning,High
 Rain,7.773,Highway,Daylight,High,50,Morning,Medium
 Drizzle,3.184,Intersection,Daylight,Low,80,Evening,Medium
@@ -77,13 +77,13 @@ Drizzle,3.202,Urban,Daylight,High,60,Morning,Medium
 Rain,3.642,Intersection,Night-unlit,High,30,Afternoon,High
 Rain,6.618,Rural,Night-lit,Low,30,Night,Medium
 Rain,7.32,Urban,Daylight,High,50,Morning,Medium
-Storm,5.672,Highway,Daylight,Medium,50,Evening,Medium
+Storm,5.672,Highway,Daylight,Medium,50,Evening,High
 Clear,5.978,Rural,Night-lit,Low,50,Evening,Medium
-Clear,6.556,Highway,Night-lit,Low,50,Morning,Low
-Clear,8.065,Urban,Dawn/Dusk,Medium,40,Morning,Low
-Clear,6.167,Urban,Dawn/Dusk,Very High,60,Afternoon,Low
+Clear,6.556,Highway,Night-lit,Low,50,Morning,Medium
+Clear,8.065,Urban,Dawn/Dusk,Medium,40,Morning,Medium
+Clear,6.167,Urban,Dawn/Dusk,Very High,60,Afternoon,Medium
 Clear,5.332,Highway,Daylight,Low,30,Evening,Low
-Fog,5.139,Intersection,Night-lit,Low,30,Morning,Medium
+Fog,5.139,Intersection,Night-lit,Low,30,Morning,Low
 Fog,8.578,Intersection,Daylight,Very High,40,Night,High
 Storm,4.409,Intersection,Dawn/Dusk,Medium,50,Evening,High
 Rain,2.148,Highway,Night-unlit,Medium,30,Evening,High
@@ -100,15 +100,15 @@ Rain,6.288,Highway,Night-lit,Medium,80,Night,High
 Clear,5.811,Rural,Daylight,Medium,80,Night,Medium
 Drizzle,5.046,Urban,Night-lit,Low,80,Afternoon,Medium
 Drizzle,5.829,Intersection,Night-unlit,Very High,80,Night,High
-Drizzle,5.697,Highway,Night-lit,High,80,Afternoon,Medium
+Drizzle,5.697,Highway,Night-lit,High,80,Afternoon,High
 Drizzle,8.804,Highway,Daylight,Low,50,Night,Medium
 Rain,4.07,Urban,Night-unlit,Very High,60,Morning,High
 Rain,7.367,Intersection,Dawn/Dusk,High,80,Morning,High
 Clear,2.784,Rural,Dawn/Dusk,Medium,60,Night,Medium
-Fog,7.663,Urban,Daylight,High,40,Evening,High
+Fog,7.663,Urban,Daylight,High,40,Evening,Medium
 Drizzle,6.524,Urban,Night-lit,High,40,Morning,Medium
 Fog,5.675,Intersection,Daylight,Low,60,Night,Medium
-Fog,4.719,Highway,Night-lit,Very High,30,Afternoon,Medium
+Fog,4.719,Highway,Night-lit,Very High,30,Afternoon,High
 Rain,3.284,Highway,Dawn/Dusk,Low,60,Evening,High
 Storm,6.497,Urban,Night-lit,Low,80,Afternoon,High
 Clear,4.995,Highway,Dawn/Dusk,Very High,30,Morning,Medium
@@ -123,9 +123,9 @@ Drizzle,7.057,Intersection,Daylight,High,50,Afternoon,Medium
 Rain,10.0,Urban,Night-lit,Low,50,Evening,Medium
 Clear,5.108,Intersection,Night-lit,Medium,80,Afternoon,Medium
 Rain,3.822,Urban,Night-lit,Medium,50,Night,High
-Drizzle,5.681,Urban,Daylight,High,30,Morning,Low
+Drizzle,5.681,Urban,Daylight,High,30,Morning,Medium
 Clear,6.905,Urban,Night-unlit,High,80,Evening,High
-Clear,2.831,Rural,Night-lit,High,60,Afternoon,High
+Clear,2.831,Rural,Night-lit,High,60,Afternoon,Medium
 Clear,7.159,Rural,Night-unlit,Medium,50,Evening,Medium
 Fog,5.513,Rural,Daylight,Medium,100,Evening,High
 Clear,4.681,Intersection,Daylight,Low,60,Morning,Medium
@@ -133,7 +133,7 @@ Drizzle,5.88,Rural,Dawn/Dusk,Medium,80,Afternoon,Medium
 Storm,3.56,Urban,Daylight,Medium,80,Night,High
 Drizzle,7.59,Highway,Night-lit,Low,50,Evening,Medium
 Rain,4.11,Intersection,Night-unlit,Medium,30,Morning,High
-Clear,4.223,Intersection,Night-lit,Low,40,Afternoon,Medium
+Clear,4.223,Intersection,Night-lit,Low,40,Afternoon,Low
 Rain,2.397,Intersection,Dawn/Dusk,Low,100,Morning,High
 Drizzle,5.07,Rural,Night-lit,Medium,50,Night,Medium
 Storm,5.79,Rural,Night-unlit,High,60,Afternoon,High
@@ -146,10 +146,10 @@ Clear,5.867,Urban,Night-lit,Low,80,Morning,Medium
 Clear,1.254,Urban,Daylight,High,80,Evening,High
 Clear,3.7,Highway,Daylight,Medium,50,Morning,Medium
 Drizzle,6.234,Highway,Night-unlit,Medium,40,Morning,Medium
-Drizzle,6.394,Highway,Daylight,Medium,60,Evening,Low
+Drizzle,6.394,Highway,Daylight,Medium,60,Evening,Medium
 Clear,6.707,Urban,Daylight,Very High,50,Morning,Medium
 Drizzle,5.156,Urban,Night-unlit,Low,80,Morning,Medium
-Drizzle,6.581,Intersection,Daylight,Low,60,Morning,Medium
+Drizzle,6.581,Intersection,Daylight,Low,60,Morning,Low
 Drizzle,5.045,Intersection,Night-unlit,High,60,Evening,High
 Drizzle,4.218,Urban,Daylight,Very High,60,Morning,Medium
 Rain,5.467,Urban,Night-lit,Low,60,Night,Medium
@@ -159,10 +159,10 @@ Clear,4.107,Urban,Daylight,Low,50,Morning,Low
 Fog,7.958,Urban,Daylight,Very High,80,Morning,High
 Rain,1.619,Intersection,Daylight,Very High,30,Night,High
 Rain,3.787,Intersection,Night-lit,Very High,50,Morning,High
-Clear,7.844,Rural,Daylight,Very High,40,Morning,Low
+Clear,7.844,Rural,Daylight,Very High,40,Morning,Medium
 Fog,2.852,Urban,Night-lit,Medium,60,Night,High
 Drizzle,6.834,Highway,Night-unlit,Medium,30,Night,Medium
-Rain,4.141,Urban,Daylight,High,60,Morning,High
+Rain,4.141,Urban,Daylight,High,60,Morning,Medium
 Clear,4.002,Highway,Night-lit,Medium,50,Morning,Medium
 Clear,5.967,Rural,Dawn/Dusk,Medium,80,Evening,Medium
 Rain,6.544,Highway,Daylight,Low,50,Evening,Medium
@@ -170,11 +170,11 @@ Clear,4.949,Urban,Daylight,Medium,80,Morning,Medium
 Clear,9.844,Urban,Night-unlit,Medium,60,Afternoon,Medium
 Drizzle,3.845,Intersection,Night-unlit,Medium,60,Night,High
 Drizzle,6.811,Intersection,Night-lit,High,40,Afternoon,Medium
-Drizzle,3.774,Urban,Dawn/Dusk,Very High,30,Night,Medium
+Drizzle,3.774,Urban,Dawn/Dusk,Very High,30,Night,High
 Rain,8.316,Urban,Night-lit,High,60,Morning,High
 Clear,5.514,Rural,Night-lit,Medium,50,Night,Medium
 Drizzle,5.612,Urban,Daylight,Medium,30,Evening,Low
-Drizzle,3.395,Urban,Daylight,Medium,50,Night,High
+Drizzle,3.395,Urban,Daylight,Medium,50,Night,Medium
 Rain,6.705,Urban,Night-unlit,Medium,50,Night,High
 Clear,2.078,Urban,Daylight,Medium,50,Night,Medium
 Rain,3.925,Highway,Night-lit,Medium,60,Morning,High
@@ -193,7 +193,7 @@ Drizzle,4.959,Highway,Daylight,High,80,Afternoon,Medium
 Fog,4.335,Urban,Daylight,Very High,40,Morning,Medium
 Rain,6.099,Highway,Night-unlit,Low,30,Night,High
 Storm,7.076,Urban,Night-unlit,High,30,Evening,High
-Drizzle,4.701,Highway,Night-unlit,High,30,Night,Medium
+Drizzle,4.701,Highway,Night-unlit,High,30,Night,High
 Drizzle,7.689,Intersection,Dawn/Dusk,High,40,Afternoon,Medium
 Fog,7.916,Urban,Daylight,Medium,50,Morning,Medium
 Clear,5.164,Rural,Daylight,High,80,Afternoon,Medium
@@ -208,14 +208,14 @@ Storm,3.785,Rural,Daylight,Medium,100,Evening,High
 Clear,0.4,Rural,Daylight,Low,60,Night,Medium
 Clear,7.013,Highway,Night-lit,Very High,100,Afternoon,High
 Fog,2.218,Rural,Daylight,High,50,Evening,High
-Rain,4.974,Urban,Night-lit,Medium,50,Afternoon,High
+Rain,4.974,Urban,Night-lit,Medium,50,Afternoon,Medium
 Rain,7.408,Intersection,Dawn/Dusk,High,50,Night,High
-Clear,2.578,Highway,Night-lit,Medium,40,Evening,High
+Clear,2.578,Highway,Night-lit,Medium,40,Evening,Medium
 Clear,3.619,Intersection,Daylight,Medium,60,Afternoon,Medium
 Drizzle,4.03,Urban,Night-lit,Medium,60,Night,High
 Drizzle,10.0,Highway,Daylight,Low,40,Afternoon,Low
 Drizzle,1.535,Urban,Night-lit,Medium,30,Morning,Medium
-Clear,5.616,Highway,Daylight,Medium,50,Morning,Low
+Clear,5.616,Highway,Daylight,Medium,50,Morning,Medium
 Drizzle,5.774,Rural,Dawn/Dusk,Low,40,Night,Medium
 Rain,7.53,Rural,Dawn/Dusk,Very High,60,Evening,High
 Fog,8.426,Highway,Night-lit,Low,40,Afternoon,Medium
@@ -227,13 +227,13 @@ Clear,7.395,Intersection,Dawn/Dusk,Low,60,Morning,Medium
 Clear,5.754,Highway,Daylight,High,50,Evening,Medium
 Drizzle,4.926,Urban,Daylight,Low,30,Night,Low
 Clear,6.397,Intersection,Night-lit,High,30,Morning,Medium
-Rain,3.701,Highway,Dawn/Dusk,High,50,Morning,Medium
+Rain,3.701,Highway,Dawn/Dusk,High,50,Morning,High
 Fog,4.394,Highway,Night-lit,Very High,40,Evening,High
-Rain,7.184,Highway,Night-lit,Medium,40,Night,Medium
+Rain,7.184,Highway,Night-lit,Medium,40,Night,High
 Rain,9.263,Urban,Daylight,Medium,80,Night,High
 Clear,5.171,Urban,Daylight,High,40,Night,Medium
 Fog,5.408,Intersection,Night-lit,High,50,Morning,High
-Clear,1.518,Rural,Daylight,Medium,80,Night,Medium
+Clear,1.518,Rural,Daylight,Medium,80,Night,High
 Rain,5.62,Urban,Night-unlit,High,60,Morning,High
 Drizzle,8.033,Rural,Daylight,Medium,30,Morning,Low
 Clear,7.125,Urban,Daylight,Medium,60,Afternoon,Low
@@ -244,7 +244,7 @@ Storm,5.08,Urban,Daylight,Medium,60,Afternoon,Medium
 Clear,9.352,Rural,Daylight,High,60,Evening,Medium
 Drizzle,3.172,Highway,Daylight,Medium,80,Morning,Medium
 Storm,6.199,Urban,Daylight,High,60,Afternoon,High
-Clear,7.224,Urban,Daylight,Very High,30,Morning,Low
+Clear,7.224,Urban,Daylight,Very High,30,Morning,Medium
 Rain,1.874,Highway,Daylight,Medium,40,Night,High
 Rain,1.844,Urban,Night-lit,Low,80,Afternoon,High
 Fog,5.848,Rural,Night-unlit,Very High,80,Evening,High
@@ -253,7 +253,7 @@ Drizzle,4.967,Urban,Night-lit,High,50,Morning,Medium
 Fog,8.168,Highway,Daylight,High,50,Afternoon,Medium
 Rain,5.96,Highway,Night-lit,Low,100,Afternoon,High
 Drizzle,2.545,Highway,Daylight,Medium,60,Afternoon,Medium
-Clear,3.08,Intersection,Night-unlit,Low,30,Afternoon,High
+Clear,3.08,Intersection,Night-unlit,Low,30,Afternoon,Medium
 Drizzle,5.63,Rural,Dawn/Dusk,Medium,60,Night,Medium
 Clear,8.305,Rural,Dawn/Dusk,Very High,40,Morning,Medium
 Clear,4.176,Rural,Night-lit,High,60,Afternoon,Medium
@@ -274,8 +274,8 @@ Clear,6.988,Highway,Night-lit,High,50,Morning,Medium
 Drizzle,4.066,Urban,Night-lit,Medium,50,Evening,Medium
 Rain,4.581,Urban,Daylight,Very High,100,Morning,High
 Clear,0.4,Urban,Night-lit,Medium,50,Afternoon,High
-Rain,7.215,Highway,Daylight,Medium,100,Night,Medium
-Rain,8.08,Rural,Night-unlit,Medium,50,Night,Medium
+Rain,7.215,Highway,Daylight,Medium,100,Night,High
+Rain,8.08,Rural,Night-unlit,Medium,50,Night,High
 Fog,9.616,Highway,Daylight,High,40,Evening,Medium
 Clear,6.192,Rural,Dawn/Dusk,Low,100,Morning,Medium
 Rain,4.205,Highway,Night-lit,High,100,Evening,High
@@ -349,15 +349,15 @@ Fog,4.63,Rural,Daylight,Medium,50,Afternoon,Medium
 Clear,7.771,Urban,Daylight,High,80,Night,Medium
 Rain,5.469,Rural,Dawn/Dusk,Medium,30,Evening,Medium
 Rain,4.943,Urban,Night-lit,Low,40,Morning,Medium
-Clear,7.264,Intersection,Daylight,Low,50,Morning,Medium
+Clear,7.264,Intersection,Daylight,Low,50,Morning,Low
 Clear,2.381,Urban,Dawn/Dusk,Medium,80,Evening,High
-Drizzle,5.858,Highway,Daylight,Medium,40,Afternoon,Low
+Drizzle,5.858,Highway,Daylight,Medium,40,Afternoon,Medium
 Clear,5.699,Urban,Dawn/Dusk,Medium,50,Morning,Medium
 Rain,9.414,Intersection,Night-lit,Medium,40,Evening,High
-Clear,1.016,Urban,Night-lit,Low,60,Morning,High
+Clear,1.016,Urban,Night-lit,Low,60,Morning,Medium
 Clear,7.874,Rural,Daylight,High,80,Afternoon,Medium
 Drizzle,4.692,Highway,Dawn/Dusk,High,60,Night,High
-Drizzle,6.655,Urban,Dawn/Dusk,Medium,40,Evening,Low
+Drizzle,6.655,Urban,Dawn/Dusk,Medium,40,Evening,Medium
 Clear,5.513,Rural,Daylight,Very High,40,Afternoon,Medium
 Rain,6.377,Urban,Night-lit,Low,60,Morning,Medium
 Drizzle,4.332,Highway,Daylight,Medium,100,Evening,High
@@ -369,9 +369,9 @@ Rain,3.461,Intersection,Daylight,Medium,100,Evening,High
 Clear,3.809,Highway,Daylight,Very High,50,Evening,Medium
 Clear,4.631,Urban,Daylight,Very High,40,Night,Medium
 Clear,3.636,Urban,Dawn/Dusk,Medium,40,Afternoon,Medium
-Fog,5.758,Intersection,Daylight,High,40,Morning,High
+Fog,5.758,Intersection,Daylight,High,40,Morning,Medium
 Clear,5.049,Urban,Night-lit,Low,40,Night,Medium
-Fog,4.432,Rural,Night-lit,Low,50,Night,Low
+Fog,4.432,Rural,Night-lit,Low,50,Night,Medium
 Fog,5.221,Urban,Daylight,High,30,Morning,Medium
 Storm,3.966,Highway,Night-lit,Medium,60,Morning,High
 Storm,5.348,Rural,Daylight,Low,30,Night,Medium
@@ -391,7 +391,7 @@ Clear,10.0,Urban,Night-lit,Very High,30,Afternoon,Medium
 Drizzle,6.925,Urban,Daylight,Low,100,Morning,Medium
 Clear,5.395,Urban,Night-lit,High,50,Afternoon,Medium
 Rain,4.397,Rural,Night-lit,High,100,Morning,High
-Rain,5.283,Rural,Dawn/Dusk,Very High,60,Afternoon,Medium
+Rain,5.283,Rural,Dawn/Dusk,Very High,60,Afternoon,High
 Clear,6.891,Intersection,Night-lit,Low,60,Night,Medium
 Drizzle,6.527,Rural,Night-lit,High,60,Afternoon,Medium
 Drizzle,6.244,Rural,Night-lit,Medium,80,Night,High
@@ -401,7 +401,7 @@ Storm,6.253,Rural,Daylight,High,40,Night,High
 Rain,6.479,Urban,Daylight,Very High,60,Night,High
 Storm,3.622,Highway,Daylight,High,50,Night,High
 Drizzle,3.187,Highway,Night-lit,High,60,Afternoon,High
-Drizzle,3.043,Highway,Daylight,High,40,Night,Medium
+Drizzle,3.043,Highway,Daylight,High,40,Night,High
 Clear,4.257,Highway,Daylight,Medium,30,Afternoon,Low
 Drizzle,2.654,Intersection,Dawn/Dusk,Low,100,Afternoon,High
 Rain,0.539,Intersection,Daylight,High,30,Afternoon,High
@@ -410,14 +410,14 @@ Drizzle,7.775,Intersection,Daylight,High,50,Afternoon,Medium
 Rain,2.339,Urban,Dawn/Dusk,Low,60,Evening,High
 Rain,4.561,Intersection,Daylight,Medium,100,Evening,High
 Clear,4.101,Highway,Daylight,Medium,30,Evening,Medium
-Rain,7.992,Urban,Daylight,Medium,50,Night,High
+Rain,7.992,Urban,Daylight,Medium,50,Night,Medium
 Fog,7.114,Highway,Daylight,High,30,Evening,Medium
 Fog,2.986,Rural,Dawn/Dusk,Very High,60,Afternoon,High
 Fog,0.4,Urban,Night-unlit,Low,60,Night,High
 Clear,8.141,Urban,Dawn/Dusk,Medium,30,Afternoon,Low
 Clear,4.168,Highway,Daylight,Low,80,Afternoon,Medium
 Storm,9.238,Urban,Dawn/Dusk,High,40,Evening,High
-Clear,5.194,Urban,Daylight,High,50,Afternoon,Low
+Clear,5.194,Urban,Daylight,High,50,Afternoon,Medium
 Clear,3.946,Urban,Daylight,High,100,Night,High
 Drizzle,8.146,Urban,Daylight,Medium,50,Night,Medium
 Rain,4.085,Urban,Dawn/Dusk,Medium,40,Afternoon,Medium
@@ -468,9 +468,9 @@ Rain,5.403,Highway,Daylight,Medium,30,Afternoon,Medium
 Clear,7.308,Highway,Dawn/Dusk,Very High,50,Evening,High
 Clear,4.358,Rural,Daylight,Medium,100,Evening,Medium
 Rain,3.206,Urban,Dawn/Dusk,High,80,Morning,High
-Clear,5.879,Urban,Daylight,Medium,40,Night,Low
+Clear,5.879,Urban,Daylight,Medium,40,Night,Medium
 Rain,4.593,Urban,Night-lit,Medium,30,Evening,Medium
-Drizzle,7.926,Highway,Dawn/Dusk,High,50,Evening,High
+Drizzle,7.926,Highway,Dawn/Dusk,High,50,Evening,Medium
 Drizzle,5.616,Urban,Daylight,Medium,40,Afternoon,Low
 Fog,4.753,Urban,Daylight,Very High,50,Night,High
 Drizzle,3.597,Urban,Dawn/Dusk,Low,30,Evening,Medium
@@ -478,7 +478,7 @@ Clear,7.504,Urban,Daylight,Low,50,Morning,Low
 Rain,8.784,Urban,Daylight,Low,100,Night,High
 Rain,4.838,Urban,Night-lit,High,50,Afternoon,Medium
 Rain,6.091,Urban,Daylight,Medium,60,Evening,Medium
-Clear,8.184,Urban,Daylight,Low,60,Night,Low
+Clear,8.184,Urban,Daylight,Low,60,Night,Medium
 Rain,2.082,Rural,Daylight,High,30,Afternoon,Medium
 Clear,8.701,Highway,Night-lit,Medium,50,Afternoon,Medium
 Drizzle,6.16,Rural,Dawn/Dusk,Low,80,Evening,Medium
@@ -495,23 +495,23 @@ Clear,7.69,Rural,Daylight,Very High,60,Evening,Medium
 Clear,7.062,Intersection,Daylight,Medium,50,Night,Medium
 Drizzle,4.26,Urban,Daylight,Medium,50,Morning,Medium
 Drizzle,3.373,Urban,Dawn/Dusk,Medium,80,Afternoon,High
-Drizzle,7.33,Highway,Dawn/Dusk,Medium,40,Night,Low
+Drizzle,7.33,Highway,Dawn/Dusk,Medium,40,Night,Medium
 Fog,4.872,Urban,Daylight,Medium,60,Night,High
 Clear,2.309,Intersection,Dawn/Dusk,High,80,Morning,High
 Clear,6.066,Rural,Night-lit,Medium,40,Night,Medium
 Rain,4.805,Urban,Dawn/Dusk,Medium,30,Night,Medium
 Drizzle,4.031,Intersection,Night-lit,Medium,80,Afternoon,High
 Drizzle,4.289,Urban,Night-lit,Very High,50,Morning,Medium
-Clear,6.908,Rural,Dawn/Dusk,High,60,Morning,Medium
+Clear,6.908,Rural,Dawn/Dusk,High,60,Morning,Low
 Rain,6.456,Intersection,Night-lit,Medium,40,Evening,High
 Drizzle,3.647,Urban,Daylight,Medium,40,Evening,Medium
-Clear,7.813,Intersection,Daylight,High,50,Morning,Low
+Clear,7.813,Intersection,Daylight,High,50,Morning,Medium
 Storm,5.919,Highway,Daylight,Medium,40,Afternoon,Medium
-Clear,8.492,Intersection,Night-lit,Very High,40,Morning,High
-Clear,5.463,Urban,Night-lit,Very High,60,Morning,High
+Clear,8.492,Intersection,Night-lit,Very High,40,Morning,Medium
+Clear,5.463,Urban,Night-lit,Very High,60,Morning,Medium
 Clear,6.154,Urban,Night-unlit,Low,50,Night,Medium
 Clear,4.353,Rural,Night-unlit,Medium,80,Afternoon,Medium
-Storm,5.614,Urban,Daylight,High,40,Night,Medium
+Storm,5.614,Urban,Daylight,High,40,Night,High
 Clear,6.504,Intersection,Night-lit,Medium,40,Morning,Medium
 Rain,2.098,Urban,Night-unlit,Medium,60,Morning,High
 Clear,8.525,Rural,Night-lit,Medium,40,Evening,Medium
@@ -522,10 +522,10 @@ Fog,8.699,Urban,Night-unlit,Very High,60,Evening,High
 Drizzle,3.71,Highway,Night-unlit,Medium,80,Evening,High
 Drizzle,7.865,Urban,Night-lit,High,60,Night,High
 Clear,8.011,Highway,Daylight,High,50,Evening,Medium
-Clear,7.941,Urban,Night-unlit,Medium,80,Night,Medium
+Clear,7.941,Urban,Night-unlit,Medium,80,Night,High
 Storm,6.044,Urban,Night-lit,High,80,Afternoon,High
 Clear,7.005,Intersection,Night-lit,Medium,60,Morning,Medium
-Fog,3.732,Rural,Daylight,Very High,60,Evening,Medium
+Fog,3.732,Rural,Daylight,Very High,60,Evening,High
 Rain,3.136,Urban,Dawn/Dusk,High,60,Evening,High
 Clear,8.041,Rural,Daylight,High,80,Evening,Medium
 Drizzle,3.364,Highway,Night-lit,Medium,40,Evening,Medium
@@ -533,11 +533,11 @@ Rain,4.561,Intersection,Night-unlit,Low,40,Morning,Medium
 Clear,9.713,Rural,Dawn/Dusk,Medium,80,Morning,Medium
 Drizzle,5.394,Urban,Night-unlit,High,40,Afternoon,Medium
 Clear,4.743,Intersection,Night-unlit,Very High,30,Morning,Medium
-Fog,5.662,Intersection,Night-lit,Medium,50,Afternoon,Medium
+Fog,5.662,Intersection,Night-lit,Medium,50,Afternoon,High
 Clear,6.816,Rural,Night-lit,Low,60,Night,Medium
 Clear,5.967,Urban,Dawn/Dusk,Medium,60,Night,Medium
 Rain,5.344,Highway,Dawn/Dusk,Medium,50,Night,High
-Fog,5.159,Urban,Daylight,High,60,Afternoon,High
+Fog,5.159,Urban,Daylight,High,60,Afternoon,Medium
 Clear,2.757,Rural,Dawn/Dusk,Low,40,Evening,Medium
 Clear,7.347,Intersection,Daylight,Low,30,Morning,Low
 Fog,2.409,Rural,Night-lit,Low,80,Morning,High
@@ -546,26 +546,26 @@ Drizzle,3.374,Urban,Night-lit,Medium,80,Afternoon,Medium
 Rain,4.9,Urban,Dawn/Dusk,High,30,Evening,Medium
 Drizzle,4.005,Intersection,Daylight,High,50,Afternoon,Medium
 Rain,6.716,Intersection,Night-lit,High,80,Evening,High
-Clear,9.283,Intersection,Night-lit,High,50,Evening,High
-Rain,1.782,Highway,Night-lit,Medium,40,Morning,Medium
+Clear,9.283,Intersection,Night-lit,High,50,Evening,Medium
+Rain,1.782,Highway,Night-lit,Medium,40,Morning,High
 Rain,7.386,Highway,Daylight,Medium,30,Night,Medium
-Clear,5.431,Urban,Dawn/Dusk,Low,100,Evening,Low
-Clear,6.36,Rural,Daylight,Medium,60,Morning,Medium
+Clear,5.431,Urban,Dawn/Dusk,Low,100,Evening,Medium
+Clear,6.36,Rural,Daylight,Medium,60,Morning,Low
 Clear,3.86,Highway,Night-lit,Low,40,Night,Medium
 Clear,4.118,Urban,Daylight,Medium,100,Morning,Medium
 Clear,5.872,Highway,Night-unlit,Medium,30,Morning,Medium
 Clear,6.195,Rural,Daylight,Medium,80,Morning,Medium
 Clear,7.362,Intersection,Night-unlit,Medium,40,Morning,Medium
-Clear,5.698,Rural,Daylight,High,50,Night,Medium
-Clear,4.866,Urban,Dawn/Dusk,Medium,40,Evening,Medium
+Clear,5.698,Rural,Daylight,High,50,Night,High
+Clear,4.866,Urban,Dawn/Dusk,Medium,40,Evening,High
 Storm,6.026,Highway,Night-lit,High,80,Night,High
 Rain,5.291,Rural,Daylight,High,80,Night,High
-Drizzle,3.677,Highway,Night-lit,High,30,Night,Medium
+Drizzle,3.677,Highway,Night-lit,High,30,Night,High
 Clear,5.455,Urban,Night-unlit,Low,40,Evening,Medium
 Clear,7.292,Rural,Daylight,Medium,40,Evening,Low
 Storm,9.807,Intersection,Night-lit,High,80,Night,High
 Rain,4.691,Urban,Daylight,Very High,40,Night,High
-Rain,10.0,Intersection,Daylight,Medium,50,Night,Medium
+Rain,10.0,Intersection,Daylight,Medium,50,Night,High
 Rain,3.691,Rural,Daylight,High,60,Evening,High
 Fog,5.355,Highway,Night-lit,Low,80,Morning,High
 Rain,5.144,Highway,Night-unlit,Low,30,Evening,Medium
@@ -578,8 +578,8 @@ Clear,6.126,Intersection,Night-unlit,Low,60,Morning,Medium
 Clear,4.707,Rural,Night-unlit,High,50,Afternoon,Medium
 Clear,8.239,Urban,Night-lit,Low,60,Night,Medium
 Rain,0.952,Highway,Night-lit,Very High,60,Morning,High
-Drizzle,3.927,Urban,Daylight,Low,60,Night,Low
-Drizzle,1.323,Highway,Daylight,Low,40,Night,High
+Drizzle,3.927,Urban,Daylight,Low,60,Night,Medium
+Drizzle,1.323,Highway,Daylight,Low,40,Night,Medium
 Rain,9.392,Rural,Night-unlit,Medium,60,Morning,High
 Drizzle,5.645,Intersection,Dawn/Dusk,Low,80,Night,Medium
 Drizzle,8.449,Intersection,Daylight,Medium,40,Morning,Medium
@@ -590,7 +590,7 @@ Drizzle,7.387,Urban,Daylight,High,80,Night,High
 Rain,4.484,Urban,Daylight,High,50,Afternoon,Medium
 Clear,4.787,Urban,Daylight,Medium,50,Night,Medium
 Clear,6.727,Intersection,Night-lit,Very High,40,Afternoon,Medium
-Drizzle,6.482,Rural,Night-lit,High,30,Morning,Low
+Drizzle,6.482,Rural,Night-lit,High,30,Morning,Medium
 Fog,9.408,Highway,Dawn/Dusk,Low,80,Afternoon,High
 Clear,1.528,Urban,Daylight,High,60,Night,High
 Clear,5.348,Urban,Daylight,Medium,50,Morning,Low
@@ -598,7 +598,7 @@ Rain,9.003,Rural,Daylight,High,30,Afternoon,Medium
 Clear,5.613,Urban,Night-lit,High,50,Evening,Medium
 Drizzle,0.98,Rural,Night-unlit,Medium,60,Morning,High
 Clear,4.062,Rural,Daylight,Medium,80,Afternoon,Medium
-Drizzle,2.792,Highway,Night-lit,High,60,Evening,High
+Drizzle,2.792,Highway,Night-lit,High,60,Evening,Medium
 Drizzle,7.684,Urban,Night-lit,Very High,30,Morning,Medium
 Fog,6.563,Intersection,Night-lit,Very High,50,Night,High
 Clear,4.097,Rural,Dawn/Dusk,Medium,40,Afternoon,Medium
@@ -614,7 +614,7 @@ Rain,4.958,Urban,Night-lit,Medium,60,Morning,Medium
 Rain,2.414,Highway,Night-unlit,Medium,30,Afternoon,High
 Drizzle,6.35,Intersection,Night-unlit,High,50,Morning,High
 Drizzle,5.583,Highway,Night-unlit,Medium,40,Afternoon,Medium
-Clear,3.253,Highway,Night-lit,High,100,Night,Medium
+Clear,3.253,Highway,Night-lit,High,100,Night,High
 Drizzle,4.113,Urban,Night-lit,Medium,40,Evening,Medium
 Clear,9.468,Highway,Dawn/Dusk,Very High,50,Morning,Medium
 Clear,2.026,Rural,Daylight,High,50,Evening,Medium
@@ -622,7 +622,7 @@ Clear,5.261,Intersection,Dawn/Dusk,High,60,Evening,Medium
 Rain,5.794,Urban,Night-lit,Low,60,Afternoon,Medium
 Drizzle,7.475,Highway,Dawn/Dusk,High,50,Evening,High
 Rain,5.995,Urban,Daylight,Very High,60,Night,High
-Rain,9.769,Urban,Daylight,Very High,50,Afternoon,Medium
+Rain,9.769,Urban,Daylight,Very High,50,Afternoon,Low
 Fog,3.45,Intersection,Night-lit,High,50,Night,High
 Fog,7.349,Rural,Night-unlit,High,60,Afternoon,High
 Clear,7.127,Urban,Night-lit,Medium,100,Morning,Medium
@@ -659,7 +659,7 @@ Rain,2.441,Intersection,Daylight,Very High,60,Evening,High
 Clear,4.809,Rural,Daylight,Low,50,Morning,Low
 Fog,4.906,Urban,Daylight,High,80,Night,High
 Clear,2.959,Urban,Daylight,High,80,Evening,High
-Clear,4.459,Highway,Night-unlit,Very High,50,Morning,Medium
+Clear,4.459,Highway,Night-unlit,Very High,50,Morning,High
 Clear,7.469,Urban,Daylight,Very High,80,Evening,Medium
 Clear,5.15,Urban,Daylight,Low,40,Night,Low
 Rain,3.952,Urban,Daylight,Very High,100,Evening,High
@@ -670,7 +670,7 @@ Clear,3.44,Highway,Night-lit,Medium,30,Afternoon,Medium
 Clear,7.568,Intersection,Daylight,Medium,60,Morning,Medium
 Rain,0.94,Rural,Daylight,High,80,Afternoon,High
 Rain,4.708,Urban,Daylight,Low,60,Evening,Medium
-Rain,5.678,Urban,Night-unlit,High,40,Morning,Medium
+Rain,5.678,Urban,Night-unlit,High,40,Morning,High
 Clear,4.787,Intersection,Daylight,Very High,50,Night,Medium
 Drizzle,4.441,Highway,Night-unlit,Very High,40,Night,High
 Drizzle,3.854,Intersection,Daylight,Medium,60,Morning,Medium
@@ -681,10 +681,10 @@ Rain,5.404,Urban,Night-lit,Medium,40,Morning,Medium
 Clear,8.61,Highway,Night-lit,High,50,Morning,Medium
 Rain,4.565,Intersection,Night-unlit,Medium,60,Evening,High
 Fog,5.919,Urban,Daylight,Medium,50,Evening,Medium
-Clear,5.364,Urban,Daylight,Low,80,Morning,Medium
+Clear,5.364,Urban,Daylight,Low,80,Morning,Low
 Drizzle,4.58,Urban,Night-unlit,High,80,Afternoon,High
 Clear,6.255,Urban,Dawn/Dusk,High,100,Evening,High
-Clear,3.833,Rural,Daylight,High,30,Morning,Medium
+Clear,3.833,Rural,Daylight,High,30,Morning,Low
 Drizzle,1.369,Highway,Daylight,Low,60,Night,High
 Clear,7.923,Urban,Night-unlit,Medium,60,Evening,Medium
 Fog,6.595,Urban,Night-unlit,Medium,30,Evening,High
@@ -704,18 +704,18 @@ Clear,4.096,Urban,Night-lit,Very High,60,Afternoon,Medium
 Clear,5.038,Urban,Night-lit,Medium,60,Afternoon,Medium
 Clear,8.009,Urban,Night-unlit,High,80,Afternoon,High
 Drizzle,6.134,Urban,Dawn/Dusk,Medium,80,Night,High
-Clear,7.321,Rural,Daylight,Medium,100,Night,Low
+Clear,7.321,Rural,Daylight,Medium,100,Night,Medium
 Fog,3.892,Urban,Night-unlit,Medium,50,Afternoon,High
 Clear,5.999,Highway,Dawn/Dusk,Medium,60,Afternoon,Medium
 Clear,5.103,Urban,Daylight,High,60,Morning,Medium
 Rain,5.208,Urban,Dawn/Dusk,Medium,30,Afternoon,Medium
 Drizzle,2.663,Highway,Daylight,Low,40,Afternoon,Medium
-Drizzle,5.517,Urban,Daylight,Medium,50,Night,Low
-Clear,5.885,Urban,Daylight,High,40,Afternoon,Medium
+Drizzle,5.517,Urban,Daylight,Medium,50,Night,Medium
+Clear,5.885,Urban,Daylight,High,40,Afternoon,Low
 Clear,4.356,Highway,Night-unlit,High,60,Evening,High
 Rain,3.223,Urban,Daylight,Low,60,Afternoon,Medium
 Rain,6.718,Highway,Night-lit,Very High,40,Afternoon,High
-Clear,2.961,Urban,Night-lit,High,50,Night,Medium
+Clear,2.961,Urban,Night-lit,High,50,Night,High
 Clear,5.12,Urban,Dawn/Dusk,Low,40,Evening,Medium
 Drizzle,5.056,Rural,Dawn/Dusk,High,100,Afternoon,Medium
 Drizzle,5.3,Highway,Daylight,High,30,Morning,Medium
@@ -735,7 +735,7 @@ Rain,1.773,Urban,Daylight,High,50,Evening,High
 Clear,3.739,Rural,Daylight,Very High,100,Afternoon,Medium
 Clear,4.204,Urban,Night-lit,Medium,100,Morning,Medium
 Clear,4.35,Highway,Daylight,High,50,Afternoon,Medium
-Rain,8.842,Intersection,Daylight,High,50,Night,Medium
+Rain,8.842,Intersection,Daylight,High,50,Night,High
 Rain,7.931,Highway,Night-unlit,Medium,60,Afternoon,High
 Clear,8.648,Urban,Night-lit,Medium,80,Morning,Medium
 Drizzle,3.391,Highway,Dawn/Dusk,High,80,Afternoon,High
@@ -756,12 +756,12 @@ Clear,7.304,Urban,Daylight,Medium,50,Morning,Low
 Storm,6.921,Rural,Daylight,Very High,80,Afternoon,High
 Rain,4.61,Urban,Dawn/Dusk,Medium,30,Evening,Medium
 Rain,4.321,Highway,Dawn/Dusk,High,80,Morning,High
-Rain,5.26,Urban,Night-lit,Medium,50,Evening,High
-Drizzle,4.803,Highway,Daylight,Medium,80,Night,High
+Rain,5.26,Urban,Night-lit,Medium,50,Evening,Medium
+Drizzle,4.803,Highway,Daylight,Medium,80,Night,Medium
 Drizzle,5.891,Urban,Daylight,Low,50,Evening,Low
 Rain,7.572,Urban,Dawn/Dusk,Medium,50,Morning,Medium
-Clear,4.962,Rural,Dawn/Dusk,High,40,Morning,High
-Clear,4.737,Urban,Night-lit,Medium,60,Morning,Low
+Clear,4.962,Rural,Dawn/Dusk,High,40,Morning,Medium
+Clear,4.737,Urban,Night-lit,Medium,60,Morning,Medium
 Clear,6.687,Highway,Night-unlit,High,30,Afternoon,Medium
 Drizzle,4.954,Intersection,Daylight,Medium,50,Night,Medium
 Fog,2.629,Urban,Daylight,Low,60,Night,High
@@ -769,8 +769,8 @@ Clear,2.44,Highway,Dawn/Dusk,High,50,Night,High
 Clear,4.288,Intersection,Dawn/Dusk,Medium,60,Morning,Medium
 Fog,8.854,Urban,Daylight,Low,50,Night,Medium
 Fog,0.808,Intersection,Night-unlit,Low,50,Morning,High
-Clear,6.53,Urban,Dawn/Dusk,Medium,60,Evening,Medium
-Rain,3.174,Highway,Night-unlit,Low,60,Afternoon,High
+Clear,6.53,Urban,Dawn/Dusk,Medium,60,Evening,Low
+Rain,3.174,Highway,Night-unlit,Low,60,Afternoon,Medium
 Drizzle,3.473,Urban,Dawn/Dusk,High,50,Night,High
 Rain,4.74,Urban,Night-lit,High,50,Afternoon,Medium
 Clear,8.298,Rural,Daylight,Very High,40,Morning,Medium
@@ -789,7 +789,7 @@ Clear,5.152,Highway,Daylight,Very High,40,Morning,Medium
 Drizzle,8.006,Urban,Night-unlit,Medium,40,Morning,Medium
 Clear,4.16,Highway,Night-lit,Medium,100,Evening,High
 Rain,6.115,Highway,Night-unlit,High,60,Afternoon,High
-Rain,5.167,Urban,Daylight,Low,60,Morning,Low
+Rain,5.167,Urban,Daylight,Low,60,Morning,Medium
 Fog,8.054,Intersection,Daylight,Medium,80,Morning,High
 Clear,7.048,Intersection,Daylight,Medium,100,Morning,Medium
 Drizzle,4.321,Rural,Dawn/Dusk,Medium,80,Night,Medium
@@ -809,13 +809,13 @@ Drizzle,7.63,Urban,Night-lit,Very High,100,Evening,High
 Storm,4.918,Highway,Night-unlit,Medium,100,Evening,High
 Clear,4.978,Urban,Dawn/Dusk,Medium,80,Morning,Medium
 Clear,8.768,Highway,Dawn/Dusk,Medium,50,Afternoon,Medium
-Storm,5.471,Rural,Night-lit,Low,60,Morning,High
+Storm,5.471,Rural,Night-lit,Low,60,Morning,Medium
 Clear,6.388,Intersection,Night-lit,Very High,50,Night,High
-Clear,8.212,Urban,Dawn/Dusk,Low,50,Afternoon,Medium
+Clear,8.212,Urban,Dawn/Dusk,Low,50,Afternoon,Low
 Clear,2.004,Intersection,Daylight,Very High,40,Evening,High
 Rain,4.272,Urban,Dawn/Dusk,High,30,Afternoon,Medium
 Rain,8.003,Highway,Daylight,Medium,100,Evening,High
-Clear,5.36,Urban,Daylight,Low,60,Night,High
+Clear,5.36,Urban,Daylight,Low,60,Night,Medium
 Rain,7.742,Rural,Night-lit,High,50,Afternoon,Medium
 Rain,8.167,Intersection,Dawn/Dusk,High,100,Afternoon,High
 Fog,8.898,Intersection,Dawn/Dusk,Very High,80,Evening,High
@@ -824,8 +824,8 @@ Rain,4.364,Intersection,Daylight,Medium,80,Night,High
 Fog,2.733,Intersection,Night-unlit,Very High,30,Morning,High
 Drizzle,4.301,Urban,Daylight,Medium,50,Morning,Medium
 Clear,4.157,Urban,Daylight,Low,40,Night,Medium
-Clear,7.042,Urban,Night-lit,Very High,60,Afternoon,Medium
-Drizzle,6.623,Highway,Daylight,Medium,100,Afternoon,High
+Clear,7.042,Urban,Night-lit,Very High,60,Afternoon,High
+Drizzle,6.623,Highway,Daylight,Medium,100,Afternoon,Medium
 Rain,2.839,Rural,Dawn/Dusk,High,30,Evening,High
 Clear,4.506,Urban,Daylight,High,100,Afternoon,Medium
 Rain,3.59,Urban,Night-unlit,Medium,40,Night,High
@@ -833,7 +833,7 @@ Clear,6.653,Urban,Night-unlit,Very High,100,Night,High
 Rain,5.859,Urban,Dawn/Dusk,Very High,30,Night,High
 Rain,7.306,Urban,Daylight,High,50,Afternoon,Medium
 Drizzle,4.822,Rural,Daylight,Medium,50,Night,Medium
-Drizzle,5.023,Intersection,Dawn/Dusk,High,60,Night,Medium
+Drizzle,5.023,Intersection,Dawn/Dusk,High,60,Night,High
 Clear,8.666,Intersection,Daylight,High,80,Morning,Medium
 Rain,7.975,Rural,Dawn/Dusk,Medium,60,Night,High
 Drizzle,5.361,Highway,Daylight,High,40,Night,Medium
@@ -843,7 +843,7 @@ Rain,6.261,Urban,Night-unlit,Low,50,Afternoon,Medium
 Rain,7.216,Intersection,Daylight,Medium,50,Afternoon,Medium
 Storm,3.648,Urban,Daylight,Very High,80,Night,High
 Clear,5.162,Rural,Daylight,High,50,Morning,Medium
-Rain,4.399,Highway,Night-unlit,Very High,80,Night,Medium
+Rain,4.399,Highway,Night-unlit,Very High,80,Night,High
 Rain,7.765,Highway,Night-lit,Medium,60,Morning,High
 Rain,4.498,Urban,Daylight,Medium,50,Night,High
 Clear,3.79,Urban,Daylight,High,60,Evening,Medium
@@ -855,18 +855,18 @@ Clear,3.246,Highway,Night-unlit,Medium,40,Afternoon,Medium
 Clear,5.427,Intersection,Daylight,Medium,60,Night,Medium
 Fog,6.68,Rural,Daylight,Low,80,Evening,Medium
 Drizzle,4.694,Highway,Night-unlit,Medium,80,Afternoon,High
-Clear,9.074,Rural,Daylight,Medium,50,Evening,Medium
+Clear,9.074,Rural,Daylight,Medium,50,Evening,Low
 Drizzle,5.778,Urban,Daylight,Low,60,Night,Medium
-Drizzle,4.788,Urban,Dawn/Dusk,High,80,Afternoon,High
+Drizzle,4.788,Urban,Dawn/Dusk,High,80,Afternoon,Medium
 Rain,2.259,Urban,Daylight,Medium,30,Night,High
 Clear,3.843,Urban,Night-unlit,Very High,50,Evening,High
 Storm,5.263,Urban,Night-unlit,Low,40,Night,High
-Drizzle,3.978,Urban,Daylight,Very High,50,Afternoon,High
+Drizzle,3.978,Urban,Daylight,Very High,50,Afternoon,Medium
 Rain,7.687,Highway,Night-lit,Medium,30,Morning,Medium
-Rain,2.335,Rural,Daylight,High,50,Evening,Medium
+Rain,2.335,Rural,Daylight,High,50,Evening,High
 Rain,2.383,Rural,Daylight,Medium,50,Morning,Medium
 Drizzle,8.543,Urban,Night-lit,High,50,Night,High
-Clear,5.929,Urban,Night-unlit,Medium,60,Night,High
+Clear,5.929,Urban,Night-unlit,Medium,60,Night,Medium
 Clear,2.371,Urban,Daylight,Medium,40,Morning,Medium
 Clear,6.854,Urban,Daylight,Very High,40,Morning,Medium
 Fog,3.568,Urban,Night-lit,High,40,Evening,High
@@ -875,9 +875,9 @@ Clear,6.039,Rural,Night-unlit,Very High,50,Night,High
 Fog,6.672,Urban,Night-lit,Low,100,Evening,High
 Rain,6.742,Urban,Daylight,Very High,50,Afternoon,Medium
 Rain,7.128,Highway,Daylight,Medium,80,Evening,High
-Rain,5.707,Highway,Daylight,Low,50,Morning,Low
+Rain,5.707,Highway,Daylight,Low,50,Morning,Medium
 Drizzle,7.217,Rural,Dawn/Dusk,Medium,60,Evening,Medium
-Rain,5.503,Rural,Night-lit,Low,80,Evening,Medium
+Rain,5.503,Rural,Night-lit,Low,80,Evening,High
 Rain,4.402,Urban,Night-lit,High,80,Morning,High
 Drizzle,6.0,Urban,Daylight,High,30,Night,Medium
 Drizzle,1.916,Highway,Night-unlit,Very High,50,Afternoon,High
@@ -893,7 +893,7 @@ Rain,8.728,Highway,Dawn/Dusk,Very High,100,Afternoon,High
 Drizzle,6.456,Urban,Daylight,High,80,Morning,Medium
 Drizzle,4.308,Highway,Night-lit,Medium,50,Night,Medium
 Clear,8.296,Urban,Daylight,High,60,Afternoon,Medium
-Rain,4.461,Urban,Dawn/Dusk,Low,60,Morning,High
+Rain,4.461,Urban,Dawn/Dusk,Low,60,Morning,Medium
 Rain,7.292,Highway,Night-unlit,High,80,Afternoon,High
 Fog,3.647,Rural,Night-unlit,Medium,80,Morning,High
 Drizzle,4.436,Urban,Daylight,Low,40,Morning,Low
@@ -909,18 +909,18 @@ Drizzle,4.617,Urban,Daylight,Very High,100,Afternoon,High
 Fog,2.117,Highway,Daylight,Low,100,Morning,High
 Rain,5.621,Urban,Daylight,High,60,Afternoon,Medium
 Drizzle,5.576,Urban,Daylight,Low,50,Afternoon,Low
-Drizzle,3.024,Urban,Daylight,High,50,Night,Medium
+Drizzle,3.024,Urban,Daylight,High,50,Night,High
 Clear,2.413,Rural,Daylight,High,40,Morning,Medium
 Clear,9.726,Highway,Daylight,Medium,50,Night,Medium
 Clear,6.657,Rural,Daylight,High,50,Evening,Medium
 Fog,7.717,Urban,Night-unlit,Medium,100,Afternoon,High
 Drizzle,6.539,Intersection,Daylight,High,60,Night,Medium
 Clear,2.472,Urban,Dawn/Dusk,Very High,80,Night,High
-Clear,4.967,Urban,Daylight,Low,60,Evening,Medium
+Clear,4.967,Urban,Daylight,Low,60,Evening,Low
 Clear,4.671,Highway,Daylight,Low,80,Morning,Low
 Clear,3.986,Highway,Daylight,High,50,Evening,Medium
 Rain,5.685,Urban,Daylight,Low,60,Night,Medium
-Clear,1.013,Highway,Dawn/Dusk,High,40,Afternoon,Medium
+Clear,1.013,Highway,Dawn/Dusk,High,40,Afternoon,High
 Clear,2.942,Highway,Night-lit,Very High,80,Night,High
 Clear,5.197,Urban,Daylight,High,80,Afternoon,Medium
 Clear,6.918,Intersection,Daylight,Low,60,Evening,Medium
@@ -935,9 +935,9 @@ Storm,3.255,Urban,Night-lit,High,80,Night,High
 Clear,7.284,Urban,Daylight,Medium,80,Night,Medium
 Drizzle,6.082,Urban,Daylight,High,50,Night,Medium
 Drizzle,4.816,Urban,Daylight,High,60,Night,Medium
-Rain,7.163,Highway,Dawn/Dusk,Medium,60,Night,Medium
+Rain,7.163,Highway,Dawn/Dusk,Medium,60,Night,High
 Fog,5.304,Highway,Dawn/Dusk,Very High,60,Morning,High
-Clear,3.085,Intersection,Daylight,Medium,60,Evening,High
+Clear,3.085,Intersection,Daylight,Medium,60,Evening,Medium
 Rain,5.005,Highway,Dawn/Dusk,High,80,Night,High
 Clear,4.956,Urban,Night-lit,Medium,40,Night,Medium
 Rain,6.8,Urban,Dawn/Dusk,Very High,80,Night,High
@@ -946,11 +946,11 @@ Clear,2.044,Rural,Daylight,Low,50,Afternoon,Low
 Rain,2.59,Urban,Night-unlit,Low,50,Evening,High
 Clear,8.012,Highway,Night-lit,Very High,50,Night,High
 Rain,5.548,Highway,Daylight,High,50,Afternoon,Medium
-Drizzle,7.024,Highway,Night-lit,Very High,60,Afternoon,Medium
+Drizzle,7.024,Highway,Night-lit,Very High,60,Afternoon,High
 Drizzle,9.449,Highway,Daylight,Medium,60,Afternoon,Medium
 Drizzle,3.892,Urban,Night-unlit,High,40,Morning,High
 Rain,8.971,Highway,Daylight,Medium,80,Night,High
-Storm,7.897,Urban,Night-lit,Low,40,Night,High
+Storm,7.897,Urban,Night-lit,Low,40,Night,Medium
 Fog,7.103,Highway,Night-unlit,Medium,30,Morning,Medium
 Clear,8.61,Urban,Daylight,Medium,50,Morning,Low
 Drizzle,6.565,Urban,Daylight,High,40,Night,Medium
@@ -966,10 +966,10 @@ Clear,10.0,Rural,Daylight,Very High,100,Night,High
 Rain,6.194,Urban,Night-unlit,Low,30,Afternoon,Medium
 Storm,8.901,Intersection,Daylight,Low,30,Afternoon,Medium
 Clear,2.858,Highway,Daylight,Low,50,Night,Medium
-Storm,7.396,Urban,Daylight,Medium,40,Night,High
+Storm,7.396,Urban,Daylight,Medium,40,Night,Medium
 Clear,8.735,Urban,Night-lit,Low,80,Morning,Medium
 Drizzle,5.432,Urban,Daylight,Medium,60,Night,Medium
-Fog,6.699,Intersection,Daylight,High,80,Afternoon,Medium
+Fog,6.699,Intersection,Daylight,High,80,Afternoon,High
 Clear,4.036,Urban,Daylight,Medium,50,Afternoon,Medium
 Rain,7.199,Highway,Daylight,Low,50,Night,Medium
 Clear,4.452,Urban,Night-lit,Medium,40,Afternoon,Medium
@@ -981,7 +981,7 @@ Drizzle,2.958,Urban,Dawn/Dusk,High,30,Evening,Medium
 Drizzle,4.71,Intersection,Daylight,Medium,50,Evening,Medium
 Drizzle,4.387,Urban,Night-lit,Medium,60,Morning,Medium
 Clear,2.512,Urban,Daylight,High,80,Evening,High
-Rain,5.437,Highway,Dawn/Dusk,Low,50,Morning,High
+Rain,5.437,Highway,Dawn/Dusk,Low,50,Morning,Medium
 Rain,5.166,Rural,Night-lit,High,80,Night,High
 Clear,3.926,Rural,Night-lit,Very High,40,Morning,Medium
 Clear,6.152,Urban,Dawn/Dusk,Medium,50,Morning,Medium
@@ -992,11 +992,11 @@ Rain,5.26,Highway,Night-unlit,High,80,Evening,High
 Fog,6.564,Rural,Night-lit,Medium,60,Morning,Medium
 Drizzle,5.674,Highway,Daylight,Medium,60,Afternoon,Medium
 Drizzle,5.87,Urban,Night-unlit,High,100,Morning,High
-Clear,6.992,Urban,Daylight,Medium,100,Morning,Low
+Clear,6.992,Urban,Daylight,Medium,100,Morning,Medium
 Rain,3.967,Urban,Daylight,High,60,Night,High
 Rain,3.49,Urban,Night-unlit,High,50,Afternoon,High
 Clear,6.998,Highway,Daylight,Medium,30,Evening,Medium
-Clear,3.795,Rural,Night-lit,Medium,100,Morning,High
+Clear,3.795,Rural,Night-lit,Medium,100,Morning,Medium
 Fog,8.962,Highway,Daylight,Low,60,Night,Medium
 Rain,6.813,Urban,Daylight,Medium,80,Morning,Medium
 Drizzle,2.492,Urban,Dawn/Dusk,Low,80,Morning,Medium
@@ -1013,7 +1013,7 @@ Rain,4.853,Highway,Night-lit,Very High,80,Afternoon,High
 Clear,4.427,Intersection,Daylight,Low,60,Morning,Low
 Drizzle,4.897,Urban,Daylight,High,30,Afternoon,Low
 Clear,4.545,Rural,Night-lit,Medium,40,Evening,Medium
-Drizzle,5.217,Urban,Daylight,Medium,40,Morning,Medium
+Drizzle,5.217,Urban,Daylight,Medium,40,Morning,Low
 Clear,3.912,Urban,Daylight,Low,50,Evening,Medium
 Clear,2.689,Urban,Dawn/Dusk,Medium,60,Night,High
 Drizzle,4.038,Rural,Night-unlit,Medium,80,Morning,High
@@ -1035,9 +1035,9 @@ Fog,4.126,Intersection,Night-unlit,Medium,60,Night,High
 Rain,0.4,Highway,Daylight,High,30,Afternoon,High
 Clear,10.0,Highway,Night-unlit,Low,80,Evening,Medium
 Drizzle,6.554,Highway,Daylight,Low,30,Morning,Low
-Drizzle,5.851,Urban,Night-unlit,High,80,Afternoon,Medium
+Drizzle,5.851,Urban,Night-unlit,High,80,Afternoon,High
 Rain,5.1,Highway,Night-lit,High,30,Night,High
-Drizzle,6.683,Highway,Night-lit,Very High,30,Night,Medium
+Drizzle,6.683,Highway,Night-lit,Very High,30,Night,High
 Drizzle,4.978,Urban,Daylight,Medium,100,Evening,Medium
 Drizzle,4.509,Highway,Night-lit,Medium,60,Evening,High
 Rain,6.514,Urban,Daylight,Low,100,Night,High
@@ -1045,7 +1045,7 @@ Drizzle,4.399,Urban,Daylight,High,50,Morning,Medium
 Clear,4.275,Intersection,Daylight,Medium,40,Afternoon,Medium
 Clear,4.68,Highway,Dawn/Dusk,Medium,60,Afternoon,Medium
 Storm,6.294,Rural,Night-unlit,Medium,50,Morning,High
-Rain,7.912,Urban,Daylight,Low,60,Afternoon,Low
+Rain,7.912,Urban,Daylight,Low,60,Afternoon,Medium
 Clear,0.4,Intersection,Daylight,High,80,Night,High
 Fog,3.459,Rural,Dawn/Dusk,Very High,40,Evening,High
 Rain,8.123,Highway,Daylight,Very High,30,Morning,Medium
@@ -1068,34 +1068,34 @@ Clear,4.658,Urban,Night-unlit,Medium,50,Afternoon,Medium
 Rain,4.027,Urban,Daylight,High,40,Night,Medium
 Clear,5.867,Urban,Daylight,Medium,60,Evening,Medium
 Clear,8.241,Highway,Night-lit,Medium,80,Afternoon,Medium
-Rain,5.051,Intersection,Night-lit,Low,80,Afternoon,Medium
+Rain,5.051,Intersection,Night-lit,Low,80,Afternoon,High
 Clear,3.204,Rural,Night-unlit,Medium,50,Afternoon,Medium
 Clear,2.796,Intersection,Daylight,Medium,60,Afternoon,Medium
-Fog,5.82,Intersection,Daylight,Very High,30,Morning,High
-Rain,3.22,Highway,Night-lit,Medium,60,Afternoon,Low
+Fog,5.82,Intersection,Daylight,Very High,30,Morning,Medium
+Rain,3.22,Highway,Night-lit,Medium,60,Afternoon,High
 Drizzle,2.05,Urban,Daylight,Low,30,Night,Medium
 Storm,7.693,Urban,Dawn/Dusk,High,40,Afternoon,High
 Clear,4.25,Highway,Daylight,High,40,Evening,Medium
 Clear,5.659,Rural,Night-lit,Low,50,Morning,Low
 Clear,7.048,Urban,Night-lit,Low,40,Evening,Medium
 Rain,7.196,Highway,Daylight,Medium,30,Night,Medium
-Drizzle,2.132,Urban,Daylight,Medium,60,Evening,Medium
+Drizzle,2.132,Urban,Daylight,Medium,60,Evening,High
 Rain,8.216,Intersection,Night-lit,Very High,30,Evening,High
-Drizzle,3.859,Highway,Daylight,High,80,Afternoon,High
-Clear,7.64,Intersection,Daylight,Very High,60,Morning,High
+Drizzle,3.859,Highway,Daylight,High,80,Afternoon,Medium
+Clear,7.64,Intersection,Daylight,Very High,60,Morning,Medium
 Rain,4.248,Urban,Night-lit,Medium,50,Morning,Medium
 Drizzle,1.916,Rural,Night-unlit,High,50,Evening,High
 Clear,3.758,Rural,Dawn/Dusk,High,80,Afternoon,Medium
-Drizzle,7.401,Highway,Daylight,Medium,50,Afternoon,Low
+Drizzle,7.401,Highway,Daylight,Medium,50,Afternoon,Medium
 Rain,4.506,Urban,Daylight,Very High,60,Morning,Medium
 Clear,3.715,Rural,Night-unlit,Low,80,Morning,Medium
 Rain,5.801,Urban,Night-unlit,Low,80,Morning,High
-Storm,8.536,Highway,Daylight,Medium,30,Morning,Low
+Storm,8.536,Highway,Daylight,Medium,30,Morning,Medium
 Drizzle,5.401,Rural,Daylight,Medium,50,Morning,Low
 Drizzle,7.544,Highway,Daylight,Medium,100,Morning,Medium
 Clear,7.233,Highway,Night-lit,Medium,80,Afternoon,Medium
 Storm,6.89,Highway,Daylight,Medium,80,Night,High
-Rain,6.111,Highway,Night-unlit,Low,80,Morning,Medium
+Rain,6.111,Highway,Night-unlit,Low,80,Morning,High
 Drizzle,2.801,Urban,Night-lit,Medium,50,Morning,Medium
 Drizzle,7.586,Highway,Night-lit,Medium,100,Morning,High
 Rain,7.901,Rural,Daylight,Very High,60,Afternoon,Medium
@@ -1108,7 +1108,7 @@ Drizzle,10.0,Urban,Night-lit,Low,50,Morning,Medium
 Fog,1.07,Urban,Daylight,High,60,Night,High
 Drizzle,6.031,Urban,Daylight,Very High,50,Night,Medium
 Rain,8.505,Highway,Daylight,Medium,40,Evening,Medium
-Clear,2.462,Rural,Daylight,Very High,60,Afternoon,Medium
+Clear,2.462,Rural,Daylight,Very High,60,Afternoon,Low
 Clear,4.624,Urban,Night-lit,Medium,60,Night,Medium
 Rain,7.452,Rural,Night-lit,Medium,40,Afternoon,Medium
 Rain,7.669,Highway,Night-lit,Medium,60,Afternoon,High
@@ -1127,13 +1127,13 @@ Clear,4.424,Highway,Daylight,High,100,Morning,High
 Drizzle,2.136,Highway,Night-lit,Low,50,Afternoon,Medium
 Fog,2.37,Intersection,Night-unlit,Medium,50,Afternoon,High
 Storm,4.521,Rural,Night-lit,Medium,80,Morning,High
-Rain,7.514,Urban,Night-lit,High,60,Morning,Medium
+Rain,7.514,Urban,Night-lit,High,60,Morning,High
 Clear,9.246,Highway,Dawn/Dusk,Medium,60,Afternoon,Medium
 Rain,2.866,Highway,Dawn/Dusk,Low,40,Night,Medium
 Clear,5.214,Urban,Daylight,Low,30,Night,Low
 Rain,2.582,Highway,Night-unlit,Medium,50,Morning,High
 Rain,6.433,Intersection,Daylight,Medium,50,Afternoon,Medium
-Clear,4.689,Intersection,Daylight,Very High,80,Afternoon,High
+Clear,4.689,Intersection,Daylight,Very High,80,Afternoon,Medium
 Clear,5.651,Urban,Dawn/Dusk,High,50,Afternoon,Medium
 Rain,2.822,Highway,Dawn/Dusk,Very High,80,Morning,High
 Rain,8.937,Intersection,Daylight,High,60,Evening,High
@@ -1145,8 +1145,8 @@ Rain,7.044,Highway,Night-lit,Medium,40,Evening,Medium
 Clear,9.297,Highway,Daylight,Low,40,Evening,Low
 Drizzle,5.819,Urban,Night-lit,Medium,40,Night,Medium
 Fog,5.824,Urban,Dawn/Dusk,Low,100,Afternoon,High
-Clear,5.653,Rural,Night-lit,Medium,100,Evening,High
-Storm,6.859,Urban,Dawn/Dusk,High,50,Morning,Medium
+Clear,5.653,Rural,Night-lit,Medium,100,Evening,Medium
+Storm,6.859,Urban,Dawn/Dusk,High,50,Morning,High
 Clear,4.567,Urban,Night-unlit,Low,40,Morning,Low
 Fog,1.221,Urban,Night-lit,Medium,80,Evening,High
 Rain,5.686,Urban,Daylight,Medium,100,Evening,High
@@ -1157,16 +1157,16 @@ Clear,5.561,Rural,Daylight,Very High,60,Afternoon,Medium
 Rain,5.282,Urban,Night-lit,Very High,100,Night,High
 Clear,6.131,Urban,Daylight,High,60,Evening,Medium
 Clear,4.288,Urban,Daylight,Very High,40,Morning,Medium
-Storm,6.203,Urban,Dawn/Dusk,Low,50,Evening,High
+Storm,6.203,Urban,Dawn/Dusk,Low,50,Evening,Medium
 Clear,5.627,Intersection,Dawn/Dusk,Medium,60,Afternoon,Medium
 Rain,1.971,Urban,Dawn/Dusk,Medium,40,Evening,High
 Drizzle,7.021,Urban,Dawn/Dusk,Low,40,Night,Medium
-Fog,3.542,Rural,Night-unlit,Very High,30,Night,Medium
+Fog,3.542,Rural,Night-unlit,Very High,30,Night,High
 Fog,2.156,Urban,Daylight,Medium,50,Afternoon,High
-Drizzle,1.535,Rural,Dawn/Dusk,Medium,80,Afternoon,Medium
+Drizzle,1.535,Rural,Dawn/Dusk,Medium,80,Afternoon,High
 Clear,1.697,Highway,Daylight,High,100,Evening,High
 Rain,5.405,Intersection,Night-lit,High,50,Evening,High
-Clear,3.944,Urban,Dawn/Dusk,Medium,50,Morning,Low
+Clear,3.944,Urban,Dawn/Dusk,Medium,50,Morning,Medium
 Drizzle,2.272,Urban,Daylight,Very High,100,Evening,High
 Clear,3.997,Intersection,Daylight,Very High,60,Afternoon,Medium
 Clear,1.89,Urban,Dawn/Dusk,Very High,40,Morning,High
@@ -1175,12 +1175,12 @@ Storm,8.194,Highway,Night-lit,Low,40,Afternoon,Medium
 Clear,5.863,Rural,Daylight,Medium,50,Evening,Low
 Clear,9.895,Urban,Daylight,High,50,Night,Medium
 Clear,6.408,Highway,Dawn/Dusk,Medium,50,Night,Medium
-Clear,3.866,Urban,Night-lit,Medium,50,Evening,Medium
+Clear,3.866,Urban,Night-lit,Medium,50,Evening,Low
 Clear,9.132,Urban,Night-unlit,High,60,Night,High
 Clear,5.402,Urban,Daylight,Very High,30,Morning,Medium
-Clear,3.115,Intersection,Dawn/Dusk,High,40,Evening,High
+Clear,3.115,Intersection,Dawn/Dusk,High,40,Evening,Medium
 Rain,3.823,Urban,Daylight,Low,50,Night,Medium
-Clear,5.226,Highway,Daylight,Low,40,Morning,Low
+Clear,5.226,Highway,Daylight,Low,40,Morning,Medium
 Clear,1.237,Urban,Night-unlit,Medium,60,Afternoon,High
 Clear,5.024,Urban,Daylight,High,30,Evening,Medium
 Clear,5.97,Highway,Night-lit,High,50,Morning,Medium
@@ -1202,22 +1202,22 @@ Clear,5.846,Highway,Daylight,Low,50,Night,Medium
 Clear,7.499,Urban,Night-lit,Medium,30,Morning,Medium
 Drizzle,5.465,Rural,Night-lit,Medium,50,Afternoon,Medium
 Rain,2.919,Rural,Night-lit,High,60,Evening,High
-Clear,5.96,Rural,Daylight,Very High,40,Morning,Low
-Fog,7.732,Intersection,Night-lit,Very High,40,Morning,Medium
+Clear,5.96,Rural,Daylight,Very High,40,Morning,Medium
+Fog,7.732,Intersection,Night-lit,Very High,40,Morning,High
 Rain,7.141,Urban,Dawn/Dusk,High,30,Night,High
 Fog,9.517,Rural,Night-unlit,Very High,40,Night,High
-Clear,9.214,Urban,Night-unlit,Medium,80,Afternoon,Low
-Clear,5.725,Rural,Daylight,Very High,80,Evening,Low
+Clear,9.214,Urban,Night-unlit,Medium,80,Afternoon,Medium
+Clear,5.725,Rural,Daylight,Very High,80,Evening,Medium
 Clear,7.189,Highway,Dawn/Dusk,Low,50,Night,Medium
 Drizzle,2.876,Highway,Night-unlit,Medium,100,Evening,High
 Drizzle,6.021,Urban,Daylight,Medium,30,Evening,Low
 Drizzle,3.649,Highway,Night-lit,Medium,60,Evening,High
 Clear,4.979,Highway,Daylight,Medium,30,Morning,Low
-Clear,5.611,Urban,Night-lit,Low,50,Evening,Low
+Clear,5.611,Urban,Night-lit,Low,50,Evening,Medium
 Drizzle,2.435,Highway,Daylight,Low,60,Afternoon,Medium
 Rain,4.383,Urban,Daylight,Medium,40,Night,Medium
 Fog,7.156,Urban,Dawn/Dusk,Low,60,Evening,Medium
-Drizzle,5.259,Rural,Dawn/Dusk,Medium,60,Afternoon,Low
+Drizzle,5.259,Rural,Dawn/Dusk,Medium,60,Afternoon,Medium
 Drizzle,7.128,Intersection,Night-lit,Medium,60,Night,High
 Fog,3.626,Intersection,Daylight,Medium,60,Morning,High
 Rain,3.124,Intersection,Daylight,High,50,Afternoon,High
@@ -1226,7 +1226,7 @@ Drizzle,4.498,Intersection,Dawn/Dusk,High,50,Morning,Medium
 Drizzle,5.798,Urban,Daylight,Very High,40,Morning,Medium
 Clear,4.916,Rural,Daylight,Medium,40,Afternoon,Low
 Clear,7.378,Rural,Daylight,Medium,40,Afternoon,Low
-Clear,4.389,Highway,Night-lit,Medium,80,Morning,Medium
+Clear,4.389,Highway,Night-lit,Medium,80,Morning,Low
 Fog,7.73,Urban,Daylight,Medium,40,Morning,Medium
 Fog,5.68,Urban,Night-unlit,High,100,Evening,High
 Clear,3.995,Urban,Daylight,High,30,Morning,Low
@@ -1245,7 +1245,7 @@ Clear,7.218,Intersection,Daylight,Low,60,Morning,Medium
 Clear,5.487,Rural,Daylight,Very High,80,Morning,Medium
 Fog,0.687,Urban,Dawn/Dusk,High,50,Evening,High
 Rain,5.88,Urban,Night-lit,Medium,30,Night,Medium
-Drizzle,3.304,Rural,Dawn/Dusk,Very High,50,Evening,Medium
+Drizzle,3.304,Rural,Dawn/Dusk,Very High,50,Evening,High
 Rain,1.764,Rural,Dawn/Dusk,Very High,40,Night,High
 Storm,2.522,Highway,Daylight,High,30,Evening,High
 Drizzle,6.407,Rural,Daylight,Medium,80,Morning,Medium
@@ -1258,12 +1258,12 @@ Rain,5.056,Intersection,Night-unlit,Low,40,Morning,Medium
 Drizzle,7.307,Highway,Night-unlit,Very High,40,Morning,High
 Fog,3.463,Urban,Night-lit,Medium,50,Night,High
 Clear,6.952,Intersection,Night-unlit,Low,80,Evening,High
-Fog,8.085,Intersection,Night-lit,Medium,40,Afternoon,High
+Fog,8.085,Intersection,Night-lit,Medium,40,Afternoon,Medium
 Rain,7.02,Highway,Night-lit,Very High,80,Afternoon,High
 Clear,8.283,Rural,Night-lit,Very High,50,Evening,Medium
 Clear,2.416,Urban,Daylight,Medium,50,Night,Medium
 Fog,4.791,Urban,Night-lit,Low,60,Night,High
-Rain,4.056,Rural,Night-lit,Low,50,Morning,High
+Rain,4.056,Rural,Night-lit,Low,50,Morning,Medium
 Rain,5.095,Urban,Daylight,High,100,Afternoon,High
 Drizzle,7.704,Highway,Night-lit,Very High,40,Evening,High
 Clear,4.409,Highway,Night-unlit,Very High,100,Afternoon,High
@@ -1279,8 +1279,8 @@ Clear,7.448,Highway,Night-lit,Medium,50,Night,Medium
 Clear,5.107,Urban,Daylight,Low,100,Morning,Medium
 Rain,9.893,Urban,Daylight,Very High,80,Evening,High
 Drizzle,6.602,Highway,Night-lit,Medium,60,Afternoon,Medium
-Clear,3.467,Intersection,Daylight,Medium,60,Night,High
-Rain,5.301,Intersection,Night-unlit,Medium,40,Morning,Medium
+Clear,3.467,Intersection,Daylight,Medium,60,Night,Medium
+Rain,5.301,Intersection,Night-unlit,Medium,40,Morning,High
 Clear,6.426,Urban,Night-lit,High,40,Afternoon,Medium
 Fog,3.374,Urban,Dawn/Dusk,Low,50,Morning,Medium
 Clear,6.339,Urban,Night-lit,Very High,40,Afternoon,Medium
@@ -1296,7 +1296,7 @@ Rain,6.999,Rural,Night-lit,Medium,40,Night,Medium
 Drizzle,6.189,Highway,Daylight,High,30,Afternoon,Medium
 Clear,7.125,Urban,Night-unlit,Medium,50,Afternoon,Medium
 Drizzle,5.434,Highway,Dawn/Dusk,Low,30,Evening,Medium
-Rain,5.751,Rural,Daylight,High,50,Afternoon,Low
+Rain,5.751,Rural,Daylight,High,50,Afternoon,Medium
 Rain,6.913,Highway,Dawn/Dusk,High,50,Afternoon,Medium
 Clear,3.826,Urban,Night-lit,Medium,60,Afternoon,Medium
 Clear,6.669,Urban,Night-unlit,High,60,Morning,Medium
@@ -1345,14 +1345,14 @@ Storm,9.036,Urban,Daylight,High,50,Morning,Medium
 Rain,6.611,Rural,Daylight,High,40,Night,Medium
 Drizzle,4.407,Intersection,Daylight,High,100,Evening,High
 Drizzle,4.1,Rural,Daylight,Medium,40,Night,Medium
-Rain,6.52,Highway,Daylight,Medium,40,Night,High
+Rain,6.52,Highway,Daylight,Medium,40,Night,Medium
 Rain,4.682,Rural,Night-lit,Very High,80,Evening,High
 Drizzle,7.231,Urban,Night-lit,Low,80,Morning,Medium
 Drizzle,5.42,Urban,Night-lit,Medium,50,Afternoon,Medium
 Drizzle,3.722,Urban,Night-lit,Medium,60,Morning,Medium
 Drizzle,4.111,Intersection,Daylight,High,100,Morning,High
 Drizzle,3.113,Urban,Night-lit,Medium,30,Morning,Medium
-Drizzle,5.741,Highway,Daylight,Medium,30,Night,Low
+Drizzle,5.741,Highway,Daylight,Medium,30,Night,Medium
 Fog,7.189,Rural,Dawn/Dusk,Low,40,Evening,Medium
 Clear,6.542,Rural,Daylight,Medium,40,Evening,Low
 Drizzle,3.416,Urban,Dawn/Dusk,High,60,Night,High
@@ -1370,7 +1370,7 @@ Clear,6.326,Rural,Daylight,Medium,100,Afternoon,Medium
 Rain,3.523,Highway,Night-lit,Medium,40,Night,High
 Drizzle,3.62,Urban,Night-lit,Low,50,Afternoon,Medium
 Rain,4.871,Urban,Daylight,Medium,50,Evening,Medium
-Clear,5.039,Intersection,Daylight,High,100,Evening,Medium
+Clear,5.039,Intersection,Daylight,High,100,Evening,High
 Rain,6.586,Urban,Night-lit,High,80,Evening,High
 Drizzle,2.075,Urban,Night-lit,Medium,80,Morning,High
 Drizzle,2.739,Intersection,Night-unlit,Low,50,Night,High
@@ -1383,14 +1383,14 @@ Clear,4.932,Highway,Daylight,Medium,60,Evening,Medium
 Drizzle,4.186,Urban,Night-lit,Low,50,Evening,Medium
 Storm,7.358,Rural,Dawn/Dusk,Medium,40,Morning,Medium
 Clear,5.816,Intersection,Dawn/Dusk,Medium,30,Morning,Medium
-Fog,3.381,Highway,Daylight,Low,40,Evening,Low
+Fog,3.381,Highway,Daylight,Low,40,Evening,Medium
 Fog,4.888,Intersection,Night-unlit,High,50,Morning,High
 Rain,5.566,Urban,Daylight,Medium,30,Evening,Medium
 Clear,5.374,Rural,Daylight,Medium,60,Morning,Low
 Storm,5.038,Intersection,Night-unlit,High,30,Morning,High
 Clear,5.433,Urban,Night-lit,Medium,80,Afternoon,Medium
 Clear,3.728,Rural,Dawn/Dusk,High,40,Morning,Medium
-Rain,7.403,Urban,Daylight,Medium,60,Afternoon,High
+Rain,7.403,Urban,Daylight,Medium,60,Afternoon,Medium
 Clear,7.434,Intersection,Night-lit,High,80,Afternoon,Medium
 Rain,5.728,Urban,Daylight,Low,80,Afternoon,Medium
 Clear,5.204,Urban,Daylight,High,100,Night,High
@@ -1402,29 +1402,29 @@ Clear,0.4,Urban,Daylight,Medium,100,Morning,High
 Storm,0.4,Urban,Night-unlit,High,30,Evening,High
 Drizzle,7.826,Urban,Night-unlit,Medium,80,Morning,Medium
 Rain,4.351,Rural,Daylight,Medium,50,Afternoon,Medium
-Drizzle,0.613,Highway,Daylight,High,30,Morning,Medium
+Drizzle,0.613,Highway,Daylight,High,30,Morning,High
 Rain,1.058,Intersection,Daylight,Medium,30,Evening,High
-Drizzle,6.44,Rural,Daylight,High,40,Morning,Low
+Drizzle,6.44,Rural,Daylight,High,40,Morning,Medium
 Drizzle,2.142,Urban,Daylight,Medium,50,Evening,High
-Fog,7.992,Urban,Night-unlit,Low,40,Morning,High
+Fog,7.992,Urban,Night-unlit,Low,40,Morning,Medium
 Fog,5.278,Highway,Daylight,Low,30,Night,Medium
 Clear,6.904,Urban,Daylight,Medium,30,Afternoon,Low
 Rain,10.0,Highway,Night-lit,Low,40,Afternoon,Medium
 Fog,8.169,Highway,Dawn/Dusk,Medium,60,Afternoon,High
-Rain,6.725,Urban,Daylight,Medium,80,Evening,Medium
-Clear,4.063,Intersection,Daylight,High,40,Afternoon,Medium
+Rain,6.725,Urban,Daylight,Medium,80,Evening,High
+Clear,4.063,Intersection,Daylight,High,40,Afternoon,High
 Clear,8.457,Intersection,Dawn/Dusk,Medium,50,Night,Medium
 Storm,9.646,Urban,Daylight,Medium,60,Morning,Medium
 Clear,2.656,Urban,Night-lit,Very High,40,Morning,High
 Drizzle,8.39,Highway,Dawn/Dusk,Low,60,Evening,Medium
-Drizzle,7.524,Rural,Night-lit,Low,60,Morning,Low
+Drizzle,7.524,Rural,Night-lit,Low,60,Morning,Medium
 Rain,0.587,Rural,Dawn/Dusk,Very High,30,Morning,High
 Rain,3.82,Urban,Daylight,Medium,50,Morning,Medium
 Drizzle,3.111,Highway,Dawn/Dusk,Medium,60,Morning,High
 Clear,5.403,Urban,Night-unlit,Medium,40,Night,Medium
 Clear,7.771,Highway,Night-lit,High,50,Evening,Medium
 Rain,10.0,Rural,Night-lit,High,50,Night,High
-Drizzle,5.092,Highway,Daylight,Low,50,Evening,Low
+Drizzle,5.092,Highway,Daylight,Low,50,Evening,Medium
 Fog,3.045,Urban,Daylight,High,80,Afternoon,High
 Fog,7.059,Intersection,Daylight,Low,80,Evening,High
 Clear,1.472,Highway,Night-lit,Medium,60,Night,High
@@ -1444,7 +1444,7 @@ Rain,6.536,Intersection,Daylight,Low,50,Afternoon,Medium
 Drizzle,6.745,Urban,Night-lit,Low,60,Afternoon,Medium
 Drizzle,6.201,Rural,Dawn/Dusk,High,80,Morning,Medium
 Clear,9.283,Intersection,Daylight,Medium,60,Night,Medium
-Rain,5.096,Rural,Daylight,High,60,Night,High
+Rain,5.096,Rural,Daylight,High,60,Night,Medium
 Clear,3.057,Intersection,Night-unlit,High,80,Night,High
 Rain,5.346,Urban,Night-unlit,Very High,50,Afternoon,High
 Drizzle,3.778,Rural,Night-lit,Medium,40,Evening,Medium
@@ -1458,16 +1458,16 @@ Drizzle,5.806,Highway,Night-lit,Low,60,Afternoon,Medium
 Drizzle,2.479,Urban,Night-lit,Very High,50,Night,High
 Fog,2.167,Urban,Dawn/Dusk,Medium,50,Night,High
 Fog,3.557,Urban,Night-lit,Medium,80,Night,High
-Rain,5.576,Urban,Night-lit,Medium,50,Night,Medium
+Rain,5.576,Urban,Night-lit,Medium,50,Night,High
 Clear,5.584,Highway,Night-unlit,Very High,60,Afternoon,High
 Fog,1.86,Highway,Dawn/Dusk,High,100,Morning,High
 Rain,4.573,Highway,Night-lit,Medium,40,Morning,Medium
 Clear,1.923,Urban,Daylight,High,30,Night,Medium
 Clear,3.946,Intersection,Night-lit,High,100,Evening,High
-Rain,8.325,Urban,Dawn/Dusk,Low,60,Night,High
+Rain,8.325,Urban,Dawn/Dusk,Low,60,Night,Medium
 Fog,4.019,Urban,Dawn/Dusk,Very High,50,Evening,High
 Rain,4.399,Intersection,Daylight,Low,50,Afternoon,Medium
-Clear,5.06,Highway,Dawn/Dusk,Very High,50,Night,Medium
+Clear,5.06,Highway,Dawn/Dusk,Very High,50,Night,High
 Clear,6.08,Urban,Night-lit,Medium,40,Evening,Medium
 Rain,3.212,Rural,Night-lit,Very High,80,Night,High
 Rain,6.273,Urban,Dawn/Dusk,Very High,50,Morning,High
@@ -1497,14 +1497,14 @@ Drizzle,2.061,Urban,Night-lit,Medium,40,Morning,Medium
 Drizzle,3.485,Rural,Dawn/Dusk,Low,80,Night,Medium
 Rain,6.36,Intersection,Daylight,Medium,50,Evening,Medium
 Drizzle,5.096,Urban,Dawn/Dusk,Medium,40,Morning,Medium
-Clear,2.033,Intersection,Daylight,Very High,30,Morning,High
+Clear,2.033,Intersection,Daylight,Very High,30,Morning,Medium
 Clear,5.974,Urban,Night-unlit,Low,40,Night,Medium
 Clear,8.116,Intersection,Daylight,High,30,Afternoon,Medium
 Drizzle,5.179,Intersection,Daylight,Medium,40,Afternoon,Medium
 Rain,3.754,Urban,Daylight,Medium,100,Afternoon,High
 Fog,4.258,Intersection,Daylight,High,30,Afternoon,Medium
 Clear,6.837,Urban,Night-lit,Very High,50,Afternoon,Medium
-Clear,3.984,Rural,Dawn/Dusk,Very High,60,Night,Medium
+Clear,3.984,Rural,Dawn/Dusk,Very High,60,Night,High
 Clear,3.867,Highway,Dawn/Dusk,Very High,50,Night,High
 Clear,5.841,Urban,Night-unlit,High,80,Evening,High
 Rain,6.389,Urban,Dawn/Dusk,High,60,Night,High
@@ -1536,19 +1536,19 @@ Drizzle,10.0,Urban,Night-unlit,High,100,Morning,High
 Fog,2.224,Highway,Daylight,Very High,80,Morning,High
 Clear,7.083,Urban,Daylight,Medium,30,Night,Medium
 Clear,4.821,Urban,Night-lit,Low,60,Night,Medium
-Clear,6.302,Highway,Dawn/Dusk,Medium,100,Afternoon,High
+Clear,6.302,Highway,Dawn/Dusk,Medium,100,Afternoon,Medium
 Rain,4.6,Urban,Daylight,Medium,40,Evening,Medium
 Clear,3.705,Rural,Daylight,Low,50,Night,Medium
 Drizzle,3.813,Urban,Daylight,Medium,50,Morning,Medium
 Fog,9.457,Highway,Dawn/Dusk,Medium,100,Night,High
 Rain,2.378,Highway,Daylight,Very High,30,Morning,High
 Rain,7.206,Urban,Daylight,High,40,Afternoon,Medium
-Rain,6.465,Highway,Night-unlit,High,80,Evening,Medium
+Rain,6.465,Highway,Night-unlit,High,80,Evening,High
 Fog,5.43,Urban,Dawn/Dusk,High,50,Evening,High
 Rain,6.064,Urban,Night-lit,Low,50,Afternoon,Medium
 Storm,4.121,Urban,Dawn/Dusk,Medium,40,Afternoon,Medium
 Drizzle,5.348,Urban,Night-lit,Very High,60,Morning,High
-Rain,4.93,Highway,Dawn/Dusk,Low,30,Morning,High
+Rain,4.93,Highway,Dawn/Dusk,Low,30,Morning,Medium
 Drizzle,2.341,Urban,Night-lit,Low,60,Evening,Medium
 Clear,3.497,Highway,Night-unlit,Medium,30,Afternoon,Medium
 Storm,5.31,Urban,Night-unlit,High,50,Afternoon,High
@@ -1556,7 +1556,7 @@ Clear,3.805,Highway,Night-lit,Very High,100,Afternoon,High
 Rain,5.397,Highway,Night-lit,High,80,Afternoon,High
 Clear,3.934,Highway,Night-unlit,Medium,60,Morning,Medium
 Clear,3.465,Rural,Night-unlit,Medium,60,Night,High
-Clear,5.063,Intersection,Night-lit,High,60,Night,Medium
+Clear,5.063,Intersection,Night-lit,High,60,Night,High
 Rain,4.835,Urban,Night-lit,Very High,80,Morning,High
 Rain,5.947,Rural,Daylight,Low,60,Evening,Medium
 Clear,4.483,Highway,Dawn/Dusk,Low,80,Night,Medium
@@ -1565,15 +1565,15 @@ Clear,3.664,Intersection,Daylight,Very High,50,Afternoon,Medium
 Drizzle,5.461,Rural,Daylight,Very High,60,Night,High
 Storm,7.667,Intersection,Dawn/Dusk,Medium,50,Evening,High
 Drizzle,3.906,Rural,Daylight,High,40,Night,Medium
-Storm,9.062,Highway,Night-lit,Medium,50,Afternoon,Medium
+Storm,9.062,Highway,Night-lit,Medium,50,Afternoon,High
 Clear,2.75,Intersection,Daylight,Low,40,Night,Medium
 Clear,7.883,Urban,Night-unlit,Low,50,Night,Medium
-Clear,7.694,Intersection,Daylight,Medium,60,Night,Low
+Clear,7.694,Intersection,Daylight,Medium,60,Night,Medium
 Clear,3.092,Highway,Night-lit,Low,60,Afternoon,Medium
 Fog,6.756,Highway,Night-unlit,Medium,40,Night,High
-Storm,5.579,Urban,Night-lit,Medium,40,Night,High
+Storm,5.579,Urban,Night-lit,Medium,40,Night,Medium
 Rain,2.292,Intersection,Dawn/Dusk,Medium,50,Afternoon,High
-Rain,6.748,Rural,Daylight,Medium,60,Morning,Low
+Rain,6.748,Rural,Daylight,Medium,60,Morning,Medium
 Rain,7.162,Intersection,Daylight,Medium,80,Afternoon,High
 Clear,3.192,Urban,Daylight,Medium,80,Afternoon,Medium
 Storm,6.306,Urban,Daylight,Medium,50,Evening,High
@@ -1588,16 +1588,16 @@ Clear,8.626,Highway,Dawn/Dusk,Medium,40,Night,Medium
 Drizzle,4.953,Intersection,Daylight,Very High,60,Afternoon,Medium
 Drizzle,3.45,Urban,Night-lit,Medium,80,Morning,High
 Rain,6.989,Rural,Night-unlit,Very High,80,Afternoon,High
-Clear,1.675,Urban,Night-lit,Low,100,Afternoon,Medium
+Clear,1.675,Urban,Night-lit,Low,100,Afternoon,High
 Drizzle,3.472,Highway,Night-unlit,High,40,Evening,High
 Fog,7.55,Highway,Daylight,Low,60,Night,Medium
-Rain,4.621,Urban,Daylight,Medium,40,Morning,Medium
+Rain,4.621,Urban,Daylight,Medium,40,Morning,Low
 Clear,7.665,Intersection,Night-lit,High,40,Night,High
-Storm,7.779,Urban,Daylight,Medium,50,Evening,High
+Storm,7.779,Urban,Daylight,Medium,50,Evening,Medium
 Rain,6.634,Rural,Daylight,Medium,50,Morning,Medium
 Drizzle,6.203,Highway,Daylight,High,100,Afternoon,Medium
 Drizzle,4.384,Rural,Daylight,Low,50,Night,Medium
-Fog,4.94,Highway,Daylight,Low,50,Afternoon,Low
+Fog,4.94,Highway,Daylight,Low,50,Afternoon,Medium
 Clear,3.746,Intersection,Night-unlit,Low,80,Evening,High
 Rain,10.0,Intersection,Dawn/Dusk,Low,100,Night,High
 Fog,5.019,Highway,Daylight,Low,60,Night,Medium
@@ -1612,21 +1612,21 @@ Clear,4.882,Highway,Night-lit,High,60,Morning,Medium
 Fog,2.65,Urban,Daylight,Very High,40,Afternoon,High
 Rain,8.193,Rural,Daylight,Medium,50,Evening,Medium
 Clear,6.45,Highway,Night-unlit,Low,30,Afternoon,Medium
-Drizzle,3.876,Urban,Daylight,Low,50,Morning,Medium
+Drizzle,3.876,Urban,Daylight,Low,50,Morning,Low
 Clear,5.894,Intersection,Daylight,Medium,50,Evening,Medium
 Rain,2.709,Intersection,Night-lit,Very High,40,Evening,High
 Rain,6.543,Urban,Daylight,Medium,60,Afternoon,Medium
 Clear,4.372,Highway,Night-unlit,Medium,30,Evening,Medium
 Fog,6.253,Highway,Night-lit,High,80,Morning,High
 Storm,6.281,Urban,Night-unlit,Medium,80,Morning,High
-Storm,7.966,Urban,Daylight,Medium,50,Evening,High
+Storm,7.966,Urban,Daylight,Medium,50,Evening,Medium
 Rain,6.112,Urban,Night-lit,Very High,30,Night,High
-Storm,3.14,Urban,Night-unlit,Very High,50,Evening,High
+Storm,3.14,Urban,Night-unlit,Very High,50,Evening,Medium
 Fog,1.454,Urban,Night-unlit,Low,80,Morning,High
 Rain,2.955,Rural,Night-unlit,Medium,50,Evening,High
 Clear,7.821,Highway,Night-lit,Very High,40,Afternoon,Medium
 Clear,9.26,Urban,Night-unlit,High,60,Afternoon,Medium
-Rain,6.149,Highway,Dawn/Dusk,Low,60,Evening,High
+Rain,6.149,Highway,Dawn/Dusk,Low,60,Evening,Medium
 Clear,5.569,Urban,Night-lit,Low,50,Afternoon,Low
 Rain,4.855,Highway,Dawn/Dusk,High,80,Morning,High
 Rain,3.18,Intersection,Dawn/Dusk,High,80,Afternoon,High
@@ -1648,14 +1648,14 @@ Rain,4.315,Rural,Daylight,Medium,60,Morning,Medium
 Drizzle,3.849,Highway,Daylight,Very High,80,Afternoon,High
 Rain,7.144,Highway,Dawn/Dusk,Low,30,Morning,Medium
 Rain,4.959,Rural,Daylight,Low,80,Afternoon,Medium
-Drizzle,8.366,Urban,Daylight,Low,60,Morning,Medium
+Drizzle,8.366,Urban,Daylight,Low,60,Morning,Low
 Clear,6.48,Intersection,Night-unlit,Medium,80,Morning,High
-Rain,4.749,Urban,Night-lit,Very High,100,Evening,Medium
-Fog,6.175,Rural,Dawn/Dusk,Very High,50,Night,High
+Rain,4.749,Urban,Night-lit,Very High,100,Evening,High
+Fog,6.175,Rural,Dawn/Dusk,Very High,50,Night,Medium
 Drizzle,5.09,Urban,Dawn/Dusk,Very High,40,Morning,Medium
 Drizzle,0.743,Intersection,Night-lit,Medium,60,Afternoon,High
-Drizzle,3.416,Urban,Dawn/Dusk,Medium,40,Night,High
-Storm,5.295,Urban,Dawn/Dusk,Low,60,Evening,High
+Drizzle,3.416,Urban,Dawn/Dusk,Medium,40,Night,Medium
+Storm,5.295,Urban,Dawn/Dusk,Low,60,Evening,Medium
 Drizzle,0.478,Urban,Dawn/Dusk,Very High,50,Morning,High
 Drizzle,4.902,Urban,Night-lit,High,40,Night,Medium
 Drizzle,8.265,Intersection,Night-lit,Very High,100,Morning,High
@@ -1665,16 +1665,16 @@ Clear,4.457,Highway,Daylight,Very High,50,Night,Medium
 Clear,6.185,Rural,Night-lit,Medium,40,Evening,Medium
 Clear,3.419,Urban,Daylight,Very High,50,Evening,Medium
 Clear,7.376,Rural,Daylight,Low,50,Evening,Low
-Rain,8.89,Urban,Dawn/Dusk,Medium,80,Afternoon,Medium
+Rain,8.89,Urban,Dawn/Dusk,Medium,80,Afternoon,High
 Clear,5.107,Urban,Daylight,High,60,Morning,Medium
 Drizzle,3.066,Rural,Night-lit,Very High,50,Evening,High
-Clear,4.365,Urban,Night-unlit,High,30,Night,Medium
+Clear,4.365,Urban,Night-unlit,High,30,Night,High
 Drizzle,3.674,Highway,Night-lit,Medium,50,Afternoon,Medium
 Storm,5.999,Urban,Daylight,Medium,60,Afternoon,Medium
 Rain,7.385,Urban,Night-unlit,Very High,50,Afternoon,High
 Drizzle,9.563,Intersection,Night-lit,Medium,50,Evening,Medium
 Clear,9.815,Urban,Night-unlit,Very High,50,Evening,High
-Fog,3.762,Urban,Night-unlit,Medium,50,Evening,High
+Fog,3.762,Urban,Night-unlit,Medium,50,Evening,Medium
 Drizzle,4.624,Intersection,Night-unlit,Very High,60,Morning,High
 Clear,3.579,Intersection,Night-lit,Low,40,Evening,Medium
 Storm,6.7,Rural,Daylight,High,50,Afternoon,Medium
@@ -1693,7 +1693,7 @@ Clear,3.843,Intersection,Night-lit,High,60,Night,High
 Clear,6.839,Highway,Daylight,High,40,Afternoon,Medium
 Rain,5.112,Highway,Daylight,Low,40,Morning,Medium
 Clear,6.859,Urban,Dawn/Dusk,Medium,40,Afternoon,Low
-Clear,0.809,Urban,Daylight,Medium,40,Night,High
+Clear,0.809,Urban,Daylight,Medium,40,Night,Medium
 Clear,5.85,Highway,Night-lit,High,60,Afternoon,Medium
 Fog,5.357,Rural,Night-unlit,Medium,50,Night,High
 Rain,7.002,Rural,Dawn/Dusk,Very High,100,Evening,High
@@ -1708,12 +1708,12 @@ Clear,4.862,Rural,Night-lit,Low,80,Afternoon,Medium
 Drizzle,4.899,Intersection,Daylight,High,60,Afternoon,Medium
 Rain,2.036,Highway,Daylight,Medium,100,Evening,High
 Rain,3.216,Urban,Night-unlit,Low,60,Night,High
-Drizzle,5.541,Urban,Daylight,Medium,50,Afternoon,Low
+Drizzle,5.541,Urban,Daylight,Medium,50,Afternoon,Medium
 Fog,1.297,Highway,Night-lit,High,50,Night,High
-Storm,1.995,Rural,Daylight,High,80,Night,High
+Storm,1.995,Rural,Daylight,High,80,Night,Medium
 Rain,8.328,Rural,Daylight,Medium,40,Night,Medium
 Rain,5.169,Highway,Daylight,Medium,30,Evening,Medium
-Clear,2.553,Urban,Night-unlit,Very High,40,Morning,Medium
+Clear,2.553,Urban,Night-unlit,Very High,40,Morning,High
 Drizzle,8.271,Urban,Daylight,Medium,50,Afternoon,Medium
 Clear,5.19,Highway,Night-lit,High,40,Evening,Medium
 Clear,5.623,Intersection,Night-lit,Very High,50,Night,High
@@ -1723,7 +1723,7 @@ Rain,4.086,Rural,Daylight,Very High,80,Afternoon,High
 Rain,4.66,Intersection,Daylight,Medium,80,Afternoon,High
 Clear,0.458,Intersection,Night-unlit,High,100,Afternoon,High
 Clear,4.7,Highway,Night-unlit,Medium,30,Afternoon,Medium
-Drizzle,8.265,Intersection,Night-lit,High,40,Night,Medium
+Drizzle,8.265,Intersection,Night-lit,High,40,Night,High
 Clear,3.352,Highway,Dawn/Dusk,Medium,100,Evening,High
 Rain,4.773,Highway,Night-lit,High,30,Evening,Medium
 Drizzle,2.13,Urban,Night-lit,Medium,60,Evening,High
@@ -1733,7 +1733,7 @@ Clear,3.216,Intersection,Night-lit,Medium,80,Night,High
 Fog,5.512,Intersection,Night-lit,Medium,60,Morning,High
 Fog,7.311,Intersection,Dawn/Dusk,Medium,80,Morning,High
 Storm,2.741,Urban,Night-lit,Medium,40,Afternoon,High
-Rain,6.646,Rural,Dawn/Dusk,High,60,Evening,Medium
+Rain,6.646,Rural,Dawn/Dusk,High,60,Evening,High
 Rain,8.898,Rural,Night-lit,Medium,60,Evening,Medium
 Fog,6.593,Highway,Night-lit,Very High,60,Evening,High
 Drizzle,9.342,Urban,Daylight,Low,50,Night,Medium
@@ -1768,7 +1768,7 @@ Drizzle,7.41,Intersection,Night-unlit,High,50,Night,High
 Clear,3.72,Urban,Daylight,High,50,Morning,Medium
 Drizzle,8.855,Intersection,Dawn/Dusk,Medium,50,Night,Medium
 Drizzle,4.742,Intersection,Night-lit,Very High,30,Evening,Medium
-Drizzle,7.607,Urban,Night-lit,Low,40,Night,Low
+Drizzle,7.607,Urban,Night-lit,Low,40,Night,Medium
 Rain,7.769,Intersection,Night-unlit,Very High,50,Night,High
 Rain,5.583,Highway,Daylight,Medium,40,Morning,Medium
 Clear,0.4,Urban,Daylight,Low,40,Evening,Medium
@@ -1783,7 +1783,7 @@ Clear,4.516,Highway,Daylight,Medium,80,Morning,Medium
 Clear,4.494,Rural,Daylight,Very High,60,Evening,Medium
 Rain,4.809,Intersection,Daylight,Very High,60,Morning,High
 Rain,5.402,Urban,Daylight,Low,100,Night,High
-Drizzle,2.368,Urban,Daylight,Low,80,Afternoon,High
+Drizzle,2.368,Urban,Daylight,Low,80,Afternoon,Medium
 Clear,2.688,Highway,Night-unlit,Medium,80,Afternoon,High
 Rain,5.372,Highway,Night-lit,Low,80,Evening,High
 Rain,6.096,Intersection,Night-unlit,Very High,100,Afternoon,High
@@ -1801,7 +1801,7 @@ Rain,3.15,Rural,Night-unlit,Low,80,Morning,High
 Fog,5.189,Intersection,Daylight,Medium,30,Night,Medium
 Fog,6.205,Rural,Night-unlit,Medium,80,Afternoon,High
 Storm,6.325,Urban,Dawn/Dusk,Very High,100,Evening,High
-Drizzle,5.929,Rural,Night-lit,High,60,Night,Medium
+Drizzle,5.929,Rural,Night-lit,High,60,Night,High
 Clear,4.943,Rural,Night-lit,High,60,Night,High
 Rain,1.498,Intersection,Night-lit,Very High,50,Night,High
 Rain,1.472,Highway,Daylight,Low,40,Afternoon,Medium
@@ -1816,7 +1816,7 @@ Storm,3.983,Highway,Daylight,Medium,50,Morning,High
 Clear,5.183,Highway,Daylight,High,50,Afternoon,Medium
 Rain,8.129,Intersection,Daylight,High,40,Morning,Medium
 Clear,5.025,Urban,Daylight,Medium,40,Morning,Low
-Clear,6.658,Urban,Night-lit,Medium,80,Evening,Low
+Clear,6.658,Urban,Night-lit,Medium,80,Evening,Medium
 Clear,4.726,Urban,Night-lit,Medium,50,Morning,Medium
 Storm,3.304,Urban,Night-lit,Low,40,Night,High
 Rain,0.661,Urban,Daylight,Medium,60,Morning,High
@@ -1839,7 +1839,7 @@ Rain,5.607,Urban,Dawn/Dusk,Medium,40,Afternoon,Medium
 Clear,2.671,Urban,Night-lit,Very High,50,Afternoon,High
 Clear,4.288,Highway,Night-lit,Medium,50,Morning,Medium
 Clear,6.128,Highway,Dawn/Dusk,Low,80,Night,Medium
-Drizzle,6.818,Urban,Daylight,Medium,30,Morning,Medium
+Drizzle,6.818,Urban,Daylight,Medium,30,Morning,Low
 Rain,4.919,Highway,Night-unlit,High,60,Evening,High
 Clear,6.707,Rural,Daylight,Medium,50,Afternoon,Low
 Clear,6.402,Urban,Night-lit,Medium,50,Night,Medium
@@ -1856,7 +1856,7 @@ Clear,2.278,Rural,Night-lit,Low,50,Morning,Medium
 Rain,6.729,Rural,Night-unlit,Low,40,Afternoon,Medium
 Clear,8.353,Intersection,Night-lit,High,50,Afternoon,Medium
 Fog,10.0,Intersection,Dawn/Dusk,Medium,50,Night,High
-Clear,7.158,Highway,Night-lit,Very High,40,Afternoon,Low
+Clear,7.158,Highway,Night-lit,Very High,40,Afternoon,Medium
 Drizzle,7.468,Urban,Daylight,Low,60,Evening,Medium
 Clear,7.465,Highway,Night-lit,Medium,40,Morning,Medium
 Rain,5.154,Urban,Daylight,Low,50,Night,Medium
@@ -1866,7 +1866,7 @@ Drizzle,3.515,Urban,Daylight,Low,60,Morning,Medium
 Rain,4.555,Urban,Night-unlit,Very High,50,Morning,High
 Clear,3.308,Urban,Night-unlit,High,60,Night,High
 Clear,8.914,Urban,Daylight,Medium,60,Night,Medium
-Rain,4.603,Highway,Night-unlit,Low,60,Evening,Medium
+Rain,4.603,Highway,Night-unlit,Low,60,Evening,High
 Drizzle,8.311,Urban,Dawn/Dusk,Low,40,Afternoon,Low
 Clear,5.147,Urban,Daylight,High,100,Evening,High
 Clear,5.276,Intersection,Night-unlit,High,80,Morning,High
@@ -1892,12 +1892,12 @@ Rain,5.603,Urban,Daylight,Medium,60,Morning,Medium
 Drizzle,2.266,Urban,Night-lit,High,50,Afternoon,High
 Drizzle,1.883,Urban,Night-unlit,Medium,80,Morning,High
 Rain,5.646,Highway,Night-unlit,Medium,100,Afternoon,High
-Rain,6.223,Urban,Daylight,High,50,Evening,Low
+Rain,6.223,Urban,Daylight,High,50,Evening,Medium
 Storm,6.057,Rural,Night-lit,High,100,Afternoon,High
 Clear,2.381,Urban,Night-unlit,Very High,40,Night,High
 Rain,9.036,Highway,Dawn/Dusk,Low,30,Night,Medium
 Clear,2.588,Urban,Daylight,Medium,40,Night,Medium
-Drizzle,10.0,Urban,Night-lit,High,50,Afternoon,High
+Drizzle,10.0,Urban,Night-lit,High,50,Afternoon,Medium
 Clear,5.659,Highway,Daylight,High,100,Evening,High
 Storm,8.753,Intersection,Night-lit,Very High,40,Night,High
 Rain,3.667,Urban,Daylight,High,100,Night,High
@@ -1905,7 +1905,7 @@ Clear,5.839,Urban,Dawn/Dusk,Low,80,Evening,Medium
 Storm,4.331,Intersection,Dawn/Dusk,Medium,40,Afternoon,High
 Clear,6.511,Rural,Night-lit,Low,100,Evening,Medium
 Drizzle,0.4,Rural,Dawn/Dusk,Low,50,Morning,High
-Rain,6.795,Urban,Dawn/Dusk,Medium,60,Evening,Low
+Rain,6.795,Urban,Dawn/Dusk,Medium,60,Evening,Medium
 Clear,7.005,Urban,Daylight,Very High,100,Evening,High
 Clear,4.934,Highway,Night-unlit,Very High,50,Afternoon,High
 Fog,2.043,Rural,Night-lit,Medium,50,Night,High
@@ -1921,11 +1921,11 @@ Rain,4.601,Intersection,Night-unlit,Medium,50,Afternoon,High
 Fog,3.901,Urban,Night-lit,High,50,Afternoon,High
 Rain,7.182,Intersection,Daylight,Medium,50,Evening,Medium
 Storm,3.501,Urban,Daylight,High,60,Afternoon,High
-Fog,5.053,Urban,Night-lit,Very High,80,Morning,Medium
-Drizzle,6.489,Rural,Dawn/Dusk,High,80,Morning,High
+Fog,5.053,Urban,Night-lit,Very High,80,Morning,High
+Drizzle,6.489,Rural,Dawn/Dusk,High,80,Morning,Medium
 Clear,6.097,Urban,Night-unlit,Low,30,Night,Medium
 Clear,2.725,Rural,Dawn/Dusk,Medium,80,Evening,High
-Rain,6.643,Urban,Daylight,Very High,60,Morning,Medium
+Rain,6.643,Urban,Daylight,Very High,60,Morning,High
 Fog,3.053,Intersection,Dawn/Dusk,Very High,100,Night,High
 Rain,7.844,Intersection,Night-lit,Medium,40,Morning,Medium
 Clear,3.543,Urban,Night-unlit,Medium,60,Night,High
@@ -1942,15 +1942,15 @@ Clear,6.917,Rural,Night-unlit,Very High,60,Morning,Medium
 Rain,7.87,Urban,Night-unlit,High,50,Evening,High
 Rain,7.77,Urban,Daylight,Low,80,Night,Medium
 Drizzle,6.061,Highway,Night-unlit,Low,30,Night,Medium
-Clear,2.181,Highway,Night-lit,High,50,Afternoon,Medium
+Clear,2.181,Highway,Night-lit,High,50,Afternoon,High
 Rain,3.983,Highway,Dawn/Dusk,Low,80,Evening,High
 Clear,4.154,Highway,Dawn/Dusk,Medium,30,Night,Medium
-Clear,4.535,Urban,Daylight,Low,80,Morning,Medium
+Clear,4.535,Urban,Daylight,Low,80,Morning,Low
 Drizzle,0.427,Rural,Night-lit,High,80,Night,High
 Drizzle,5.414,Rural,Daylight,Medium,100,Morning,Medium
-Rain,6.266,Rural,Daylight,High,60,Evening,High
+Rain,6.266,Rural,Daylight,High,60,Evening,Medium
 Clear,3.581,Rural,Night-lit,High,80,Afternoon,Medium
-Clear,8.193,Intersection,Night-unlit,Medium,40,Night,High
+Clear,8.193,Intersection,Night-unlit,Medium,40,Night,Medium
 Clear,6.268,Urban,Night-unlit,High,100,Evening,High
 Drizzle,3.276,Highway,Daylight,Medium,80,Night,High
 Rain,4.745,Intersection,Daylight,Medium,50,Night,Medium
@@ -1974,7 +1974,7 @@ Rain,5.089,Urban,Daylight,Medium,100,Morning,High
 Clear,9.895,Rural,Night-lit,Low,80,Evening,Medium
 Rain,3.578,Highway,Daylight,High,80,Night,High
 Drizzle,2.516,Urban,Daylight,High,40,Evening,Medium
-Clear,8.758,Urban,Daylight,High,30,Evening,Low
+Clear,8.758,Urban,Daylight,High,30,Evening,Medium
 Clear,4.927,Urban,Night-unlit,High,60,Night,High
 Clear,4.16,Intersection,Daylight,Medium,100,Night,High
 Rain,2.912,Intersection,Night-lit,Very High,40,Morning,High
@@ -2003,7 +2003,7 @@ Clear,1.975,Intersection,Night-lit,Medium,100,Morning,High
 Fog,3.655,Rural,Dawn/Dusk,Medium,60,Night,High
 Clear,6.201,Rural,Night-unlit,Very High,60,Afternoon,Medium
 Drizzle,4.169,Urban,Night-lit,Very High,80,Night,High
-Fog,5.948,Urban,Daylight,High,80,Night,High
+Fog,5.948,Urban,Daylight,High,80,Night,Medium
 Clear,6.426,Intersection,Night-lit,Medium,30,Afternoon,Low
 Fog,2.427,Urban,Night-unlit,Low,30,Evening,High
 Fog,6.278,Intersection,Night-unlit,Very High,60,Morning,High
@@ -2020,7 +2020,7 @@ Clear,6.643,Urban,Daylight,Medium,50,Night,Medium
 Drizzle,7.215,Intersection,Night-lit,Low,60,Afternoon,Medium
 Rain,3.37,Rural,Night-lit,Medium,40,Morning,Medium
 Drizzle,8.777,Urban,Night-lit,Medium,30,Night,Medium
-Clear,6.0,Highway,Night-lit,Low,60,Morning,Low
+Clear,6.0,Highway,Night-lit,Low,60,Morning,Medium
 Clear,7.766,Urban,Night-lit,Low,60,Evening,Medium
 Clear,6.035,Intersection,Night-unlit,Medium,40,Morning,Medium
 Rain,4.674,Intersection,Night-unlit,Medium,80,Evening,High
@@ -2030,11 +2030,11 @@ Rain,4.716,Urban,Night-unlit,Medium,100,Morning,High
 Rain,5.475,Intersection,Daylight,Low,40,Evening,Medium
 Rain,5.926,Urban,Dawn/Dusk,High,100,Night,High
 Clear,6.267,Urban,Dawn/Dusk,High,60,Afternoon,Medium
-Rain,9.48,Urban,Dawn/Dusk,High,50,Evening,Medium
+Rain,9.48,Urban,Dawn/Dusk,High,50,Evening,High
 Clear,8.328,Intersection,Daylight,Low,30,Night,Low
 Fog,0.435,Intersection,Daylight,Low,60,Evening,High
 Drizzle,5.227,Urban,Night-unlit,High,60,Night,High
-Rain,7.521,Urban,Daylight,High,40,Night,High
+Rain,7.521,Urban,Daylight,High,40,Night,Medium
 Rain,6.757,Rural,Daylight,Medium,40,Night,Medium
 Rain,4.897,Rural,Daylight,High,30,Morning,Medium
 Drizzle,10.0,Highway,Daylight,Very High,30,Evening,Medium
@@ -2042,7 +2042,7 @@ Clear,4.405,Urban,Daylight,Medium,50,Morning,Low
 Drizzle,0.922,Urban,Daylight,Very High,40,Morning,High
 Storm,2.346,Rural,Dawn/Dusk,Low,60,Evening,High
 Rain,3.856,Highway,Daylight,Very High,50,Afternoon,High
-Clear,4.735,Highway,Night-lit,Low,50,Morning,Low
+Clear,4.735,Highway,Night-lit,Low,50,Morning,Medium
 Clear,4.269,Urban,Night-lit,Medium,40,Evening,Medium
 Clear,4.806,Rural,Daylight,Medium,50,Evening,Medium
 Rain,6.694,Urban,Night-unlit,Low,60,Evening,Medium
@@ -2052,7 +2052,7 @@ Rain,3.17,Urban,Night-lit,High,50,Evening,High
 Rain,5.367,Rural,Night-lit,High,80,Afternoon,High
 Drizzle,1.172,Rural,Daylight,Low,40,Night,Medium
 Clear,4.946,Highway,Daylight,Very High,100,Afternoon,Medium
-Clear,5.86,Urban,Daylight,Low,80,Evening,Low
+Clear,5.86,Urban,Daylight,Low,80,Evening,Medium
 Fog,1.44,Urban,Daylight,Medium,80,Morning,High
 Clear,5.083,Urban,Night-unlit,Medium,60,Evening,Medium
 Drizzle,5.757,Urban,Night-lit,Low,60,Night,Medium
@@ -2062,8 +2062,8 @@ Clear,5.943,Intersection,Night-unlit,Medium,30,Afternoon,Medium
 Clear,4.426,Urban,Night-unlit,High,60,Evening,High
 Rain,7.261,Intersection,Night-lit,Medium,50,Afternoon,Medium
 Clear,5.296,Intersection,Night-lit,Medium,50,Morning,Medium
-Rain,3.781,Urban,Night-unlit,Low,40,Night,Medium
-Clear,5.958,Intersection,Night-lit,Low,100,Night,Medium
+Rain,3.781,Urban,Night-unlit,Low,40,Night,High
+Clear,5.958,Intersection,Night-lit,Low,100,Night,High
 Rain,2.721,Highway,Daylight,Medium,60,Night,High
 Clear,5.575,Intersection,Daylight,High,50,Night,Medium
 Drizzle,6.833,Urban,Night-lit,Low,100,Morning,Medium
@@ -2073,7 +2073,7 @@ Drizzle,3.687,Intersection,Night-unlit,Medium,30,Morning,Medium
 Clear,3.408,Intersection,Night-unlit,Medium,40,Night,High
 Clear,2.941,Intersection,Night-unlit,Low,80,Night,High
 Clear,5.859,Urban,Daylight,High,40,Morning,Medium
-Clear,6.097,Intersection,Daylight,Low,60,Evening,Low
+Clear,6.097,Intersection,Daylight,Low,60,Evening,Medium
 Rain,5.716,Urban,Daylight,High,60,Morning,Medium
 Clear,5.214,Urban,Night-lit,High,40,Night,Medium
 Drizzle,5.351,Urban,Night-lit,High,80,Morning,High
@@ -2084,9 +2084,9 @@ Rain,4.028,Urban,Dawn/Dusk,Medium,40,Evening,Medium
 Fog,6.949,Urban,Daylight,High,60,Morning,Medium
 Rain,7.596,Intersection,Daylight,Low,40,Evening,Medium
 Fog,2.703,Intersection,Daylight,High,80,Afternoon,High
-Clear,3.791,Urban,Night-lit,Medium,100,Afternoon,High
+Clear,3.791,Urban,Night-lit,Medium,100,Afternoon,Medium
 Clear,3.096,Intersection,Daylight,High,60,Morning,Medium
-Rain,6.728,Intersection,Dawn/Dusk,Low,60,Night,Medium
+Rain,6.728,Intersection,Dawn/Dusk,Low,60,Night,High
 Drizzle,3.579,Urban,Night-lit,Medium,50,Afternoon,Medium
 Clear,8.266,Intersection,Night-lit,Low,80,Morning,Medium
 Rain,4.597,Urban,Dawn/Dusk,Low,80,Afternoon,Medium
@@ -2098,17 +2098,17 @@ Rain,4.224,Rural,Daylight,Medium,80,Night,High
 Fog,6.19,Highway,Night-lit,Medium,40,Night,High
 Clear,8.324,Urban,Dawn/Dusk,Medium,80,Morning,Medium
 Clear,6.571,Intersection,Night-lit,Low,100,Morning,Medium
-Clear,9.668,Highway,Dawn/Dusk,Very High,50,Afternoon,High
+Clear,9.668,Highway,Dawn/Dusk,Very High,50,Afternoon,Medium
 Clear,2.271,Rural,Daylight,Medium,30,Evening,Medium
 Clear,4.264,Highway,Daylight,Medium,50,Night,Medium
 Rain,4.459,Highway,Dawn/Dusk,Medium,50,Afternoon,Medium
-Clear,5.785,Highway,Night-lit,High,40,Evening,Medium
+Clear,5.785,Highway,Night-lit,High,40,Evening,Low
 Clear,7.022,Urban,Daylight,Low,50,Evening,Low
 Rain,9.034,Rural,Night-unlit,Low,40,Evening,Medium
 Clear,5.188,Highway,Dawn/Dusk,High,30,Evening,Medium
 Clear,3.462,Rural,Daylight,Medium,80,Afternoon,Medium
 Rain,4.836,Highway,Dawn/Dusk,Medium,30,Night,Medium
-Clear,8.207,Urban,Night-lit,Medium,50,Afternoon,Low
+Clear,8.207,Urban,Night-lit,Medium,50,Afternoon,Medium
 Clear,6.356,Highway,Night-lit,Low,50,Afternoon,Medium
 Rain,3.576,Urban,Night-unlit,Low,60,Night,High
 Rain,6.312,Urban,Daylight,High,60,Night,High
@@ -2120,7 +2120,7 @@ Rain,4.237,Rural,Night-lit,High,60,Afternoon,Medium
 Drizzle,2.926,Urban,Night-unlit,Medium,80,Night,High
 Clear,3.907,Rural,Dawn/Dusk,High,50,Morning,Medium
 Clear,0.4,Rural,Dawn/Dusk,High,40,Evening,High
-Rain,4.158,Rural,Dawn/Dusk,Medium,40,Night,High
+Rain,4.158,Rural,Dawn/Dusk,Medium,40,Night,Medium
 Drizzle,6.198,Intersection,Night-lit,Medium,100,Morning,High
 Clear,3.986,Highway,Daylight,Low,100,Afternoon,Medium
 Clear,2.987,Urban,Night-lit,Medium,80,Morning,Medium
@@ -2135,13 +2135,13 @@ Drizzle,5.265,Rural,Daylight,Low,80,Afternoon,Low
 Rain,5.225,Rural,Daylight,Medium,40,Night,Medium
 Clear,9.854,Rural,Daylight,High,30,Afternoon,Low
 Clear,6.689,Highway,Night-lit,Very High,80,Morning,High
-Clear,3.917,Rural,Dawn/Dusk,Medium,50,Morning,Low
+Clear,3.917,Rural,Dawn/Dusk,Medium,50,Morning,Medium
 Rain,5.091,Highway,Night-lit,Medium,60,Afternoon,Medium
 Rain,4.281,Highway,Night-lit,Very High,80,Evening,High
 Drizzle,3.64,Rural,Daylight,Medium,40,Morning,Medium
 Rain,8.686,Urban,Night-unlit,High,30,Afternoon,Medium
 Clear,8.39,Urban,Night-unlit,Low,100,Afternoon,Medium
-Clear,3.59,Urban,Daylight,Medium,50,Evening,High
+Clear,3.59,Urban,Daylight,Medium,50,Evening,Medium
 Rain,5.363,Rural,Daylight,High,40,Night,Medium
 Drizzle,3.42,Intersection,Daylight,High,50,Afternoon,Medium
 Drizzle,4.854,Intersection,Night-lit,Medium,80,Night,High
@@ -2164,7 +2164,7 @@ Fog,6.327,Urban,Dawn/Dusk,Very High,40,Evening,High
 Clear,3.439,Intersection,Night-lit,Low,30,Morning,Medium
 Rain,3.336,Urban,Night-unlit,Medium,60,Night,High
 Rain,3.98,Urban,Daylight,Very High,80,Night,High
-Clear,7.481,Urban,Dawn/Dusk,Low,80,Night,Low
+Clear,7.481,Urban,Dawn/Dusk,Low,80,Night,Medium
 Rain,6.353,Intersection,Daylight,Low,40,Evening,Medium
 Clear,4.924,Urban,Night-lit,Medium,60,Afternoon,Medium
 Drizzle,3.191,Urban,Daylight,Medium,50,Afternoon,Medium
@@ -2172,7 +2172,7 @@ Rain,3.08,Urban,Daylight,Low,100,Evening,High
 Clear,3.783,Rural,Daylight,High,60,Morning,Medium
 Clear,5.981,Urban,Night-lit,Medium,80,Morning,Medium
 Clear,0.979,Urban,Daylight,High,80,Morning,High
-Clear,3.688,Urban,Night-lit,Medium,60,Evening,Medium
+Clear,3.688,Urban,Night-lit,Medium,60,Evening,High
 Rain,3.956,Urban,Night-lit,Low,80,Morning,High
 Fog,3.381,Urban,Dawn/Dusk,Very High,100,Afternoon,High
 Drizzle,4.569,Rural,Night-unlit,Medium,60,Night,Medium
@@ -2195,8 +2195,8 @@ Fog,5.666,Intersection,Dawn/Dusk,High,40,Night,High
 Clear,7.375,Urban,Daylight,Low,100,Evening,Medium
 Clear,2.86,Urban,Daylight,Very High,40,Morning,Medium
 Fog,6.058,Rural,Daylight,Low,40,Afternoon,Low
-Clear,6.442,Rural,Night-unlit,Low,50,Morning,Low
-Fog,7.548,Highway,Night-unlit,Medium,40,Evening,Medium
+Clear,6.442,Rural,Night-unlit,Low,50,Morning,Medium
+Fog,7.548,Highway,Night-unlit,Medium,40,Evening,High
 Drizzle,6.521,Urban,Night-unlit,Very High,50,Night,High
 Storm,9.125,Urban,Dawn/Dusk,Medium,60,Night,High
 Rain,2.563,Urban,Daylight,Medium,40,Afternoon,Medium
@@ -2223,12 +2223,12 @@ Drizzle,4.267,Intersection,Night-lit,Low,60,Morning,Medium
 Rain,6.315,Highway,Night-lit,Medium,50,Morning,Medium
 Rain,5.026,Urban,Daylight,Medium,40,Morning,Medium
 Clear,1.936,Urban,Night-lit,Medium,50,Afternoon,Medium
-Rain,1.499,Rural,Daylight,Medium,50,Morning,High
+Rain,1.499,Rural,Daylight,Medium,50,Morning,Medium
 Drizzle,0.4,Highway,Daylight,High,50,Night,High
-Clear,5.454,Intersection,Night-lit,High,50,Evening,High
+Clear,5.454,Intersection,Night-lit,High,50,Evening,Medium
 Clear,6.045,Urban,Night-lit,High,60,Afternoon,Medium
 Drizzle,4.939,Urban,Daylight,Medium,50,Morning,Low
-Drizzle,4.456,Highway,Daylight,Very High,100,Afternoon,Medium
+Drizzle,4.456,Highway,Daylight,Very High,100,Afternoon,High
 Clear,6.689,Intersection,Daylight,High,50,Evening,Medium
 Clear,6.231,Intersection,Night-unlit,Very High,40,Morning,Medium
 Drizzle,4.592,Intersection,Daylight,Medium,30,Afternoon,Low
@@ -2244,15 +2244,15 @@ Clear,6.226,Intersection,Dawn/Dusk,High,100,Evening,High
 Storm,4.383,Urban,Daylight,Medium,80,Night,High
 Rain,2.068,Urban,Daylight,Very High,60,Morning,High
 Rain,6.852,Rural,Night-unlit,Low,30,Afternoon,Medium
-Clear,5.031,Rural,Daylight,Medium,60,Afternoon,Medium
+Clear,5.031,Rural,Daylight,Medium,60,Afternoon,Low
 Fog,4.443,Urban,Night-lit,Very High,50,Evening,High
-Fog,5.758,Urban,Dawn/Dusk,Medium,40,Evening,High
-Drizzle,9.134,Rural,Night-lit,High,50,Afternoon,High
-Clear,6.498,Highway,Night-lit,Medium,30,Afternoon,Low
+Fog,5.758,Urban,Dawn/Dusk,Medium,40,Evening,Medium
+Drizzle,9.134,Rural,Night-lit,High,50,Afternoon,Medium
+Clear,6.498,Highway,Night-lit,Medium,30,Afternoon,Medium
 Clear,5.825,Urban,Daylight,Medium,60,Morning,Low
 Clear,0.4,Highway,Dawn/Dusk,Very High,100,Night,High
 Clear,7.104,Rural,Daylight,High,80,Afternoon,Medium
-Fog,4.087,Rural,Daylight,Medium,50,Night,High
+Fog,4.087,Rural,Daylight,Medium,50,Night,Medium
 Fog,4.146,Urban,Night-unlit,High,40,Afternoon,High
 Rain,7.507,Highway,Daylight,Medium,50,Afternoon,Medium
 Clear,4.074,Rural,Daylight,High,100,Morning,Medium
@@ -2263,7 +2263,7 @@ Clear,8.406,Rural,Daylight,Medium,40,Morning,Low
 Rain,0.4,Rural,Night-unlit,High,60,Afternoon,High
 Rain,6.849,Urban,Night-unlit,Medium,80,Afternoon,High
 Clear,7.448,Intersection,Daylight,Very High,100,Morning,High
-Drizzle,5.416,Intersection,Daylight,Very High,60,Morning,High
+Drizzle,5.416,Intersection,Daylight,Very High,60,Morning,Medium
 Rain,4.056,Urban,Night-unlit,Low,100,Morning,High
 Fog,5.57,Highway,Daylight,Low,60,Morning,Medium
 Clear,5.665,Urban,Daylight,Very High,40,Night,Medium
@@ -2275,12 +2275,12 @@ Clear,5.187,Intersection,Night-lit,Low,80,Afternoon,Medium
 Rain,5.712,Highway,Daylight,High,60,Morning,Medium
 Rain,4.295,Urban,Dawn/Dusk,High,50,Afternoon,Medium
 Drizzle,6.331,Highway,Night-lit,Medium,60,Morning,Medium
-Clear,5.61,Urban,Daylight,High,80,Morning,Low
+Clear,5.61,Urban,Daylight,High,80,Morning,Medium
 Clear,2.319,Highway,Dawn/Dusk,High,50,Evening,High
 Clear,6.106,Intersection,Night-unlit,High,100,Night,High
-Rain,4.454,Urban,Daylight,Medium,30,Afternoon,Low
+Rain,4.454,Urban,Daylight,Medium,30,Afternoon,Medium
 Fog,4.659,Urban,Dawn/Dusk,High,80,Morning,High
-Clear,4.845,Rural,Daylight,Low,80,Evening,Low
+Clear,4.845,Rural,Daylight,Low,80,Evening,High
 Drizzle,3.083,Intersection,Night-lit,High,80,Night,High
 Clear,3.857,Urban,Night-lit,Medium,50,Afternoon,Medium
 Clear,3.904,Rural,Night-unlit,High,40,Afternoon,Medium
@@ -2301,24 +2301,24 @@ Storm,1.836,Rural,Night-unlit,Low,50,Night,High
 Drizzle,2.624,Intersection,Night-lit,High,50,Evening,High
 Rain,5.089,Highway,Daylight,High,40,Afternoon,Medium
 Fog,3.644,Intersection,Daylight,Low,40,Afternoon,Medium
-Drizzle,7.176,Urban,Daylight,High,100,Night,Medium
+Drizzle,7.176,Urban,Daylight,High,100,Night,High
 Rain,6.286,Urban,Dawn/Dusk,Medium,80,Afternoon,High
 Clear,1.813,Rural,Daylight,High,40,Afternoon,Medium
 Clear,4.671,Highway,Night-unlit,Low,50,Evening,Medium
 Drizzle,4.79,Highway,Night-unlit,High,100,Evening,High
 Rain,4.435,Urban,Dawn/Dusk,High,100,Afternoon,High
-Rain,3.723,Rural,Night-lit,Low,80,Morning,High
+Rain,3.723,Rural,Night-lit,Low,80,Morning,Medium
 Drizzle,3.636,Highway,Daylight,Low,30,Evening,Medium
 Drizzle,6.718,Highway,Daylight,Very High,60,Morning,Medium
-Rain,6.259,Urban,Night-lit,Medium,50,Afternoon,Low
+Rain,6.259,Urban,Night-lit,Medium,50,Afternoon,Medium
 Fog,4.213,Urban,Night-lit,High,80,Morning,High
 Clear,5.345,Intersection,Night-lit,Medium,40,Morning,Medium
 Rain,8.257,Urban,Daylight,Medium,60,Evening,Medium
-Rain,4.546,Rural,Dawn/Dusk,Very High,50,Morning,Medium
+Rain,4.546,Rural,Dawn/Dusk,Very High,50,Morning,High
 Clear,7.184,Rural,Dawn/Dusk,Medium,50,Afternoon,Medium
 Drizzle,0.4,Highway,Daylight,High,60,Afternoon,High
 Rain,6.027,Urban,Dawn/Dusk,High,100,Evening,High
-Drizzle,6.639,Highway,Night-unlit,Very High,50,Evening,Medium
+Drizzle,6.639,Highway,Night-unlit,Very High,50,Evening,High
 Clear,9.626,Urban,Daylight,High,40,Night,Medium
 Drizzle,5.655,Highway,Daylight,High,50,Evening,Medium
 Clear,6.003,Rural,Daylight,High,40,Afternoon,Low
@@ -2335,7 +2335,7 @@ Drizzle,6.768,Urban,Night-lit,High,100,Morning,High
 Drizzle,8.415,Urban,Night-unlit,High,60,Morning,High
 Drizzle,6.776,Urban,Daylight,Medium,80,Afternoon,Medium
 Storm,10.0,Intersection,Daylight,Very High,40,Afternoon,High
-Clear,5.102,Urban,Night-unlit,High,50,Evening,High
+Clear,5.102,Urban,Night-unlit,High,50,Evening,Medium
 Fog,9.258,Intersection,Night-lit,Medium,30,Night,High
 Clear,1.329,Rural,Night-lit,Medium,30,Evening,Medium
 Drizzle,2.088,Intersection,Daylight,Medium,30,Morning,Medium
@@ -2360,7 +2360,7 @@ Storm,3.88,Urban,Night-unlit,Low,80,Morning,High
 Fog,5.791,Rural,Night-lit,High,80,Evening,High
 Rain,5.979,Urban,Dawn/Dusk,Medium,80,Night,High
 Fog,3.479,Highway,Night-lit,Low,40,Evening,Medium
-Fog,7.224,Intersection,Daylight,Low,60,Evening,High
+Fog,7.224,Intersection,Daylight,Low,60,Evening,Medium
 Fog,3.94,Rural,Night-unlit,Very High,60,Evening,High
 Clear,3.957,Urban,Night-lit,Medium,50,Morning,Medium
 Drizzle,5.084,Urban,Night-lit,High,100,Afternoon,High
@@ -2373,10 +2373,10 @@ Rain,4.666,Urban,Dawn/Dusk,Very High,50,Evening,High
 Rain,6.41,Urban,Daylight,Medium,50,Evening,Medium
 Fog,3.645,Highway,Daylight,High,100,Night,High
 Rain,4.825,Intersection,Night-unlit,Low,60,Evening,High
-Drizzle,5.358,Urban,Daylight,Low,60,Evening,High
+Drizzle,5.358,Urban,Daylight,Low,60,Evening,Medium
 Drizzle,4.933,Rural,Night-lit,High,50,Morning,Medium
 Fog,7.675,Highway,Daylight,Very High,50,Evening,High
-Rain,6.714,Intersection,Night-unlit,Medium,30,Night,Medium
+Rain,6.714,Intersection,Night-unlit,Medium,30,Night,High
 Rain,4.945,Urban,Daylight,Medium,80,Afternoon,Medium
 Fog,3.187,Rural,Daylight,Medium,30,Afternoon,Medium
 Fog,7.186,Intersection,Daylight,Very High,100,Morning,High
@@ -2388,7 +2388,7 @@ Fog,5.29,Highway,Night-lit,Medium,60,Morning,High
 Rain,8.528,Highway,Dawn/Dusk,Medium,60,Afternoon,Medium
 Drizzle,4.64,Urban,Daylight,High,100,Evening,High
 Clear,9.043,Urban,Dawn/Dusk,High,40,Evening,Medium
-Drizzle,6.525,Highway,Daylight,Low,60,Evening,High
+Drizzle,6.525,Highway,Daylight,Low,60,Evening,Medium
 Clear,2.873,Intersection,Daylight,High,40,Morning,Medium
 Drizzle,6.752,Urban,Daylight,High,60,Morning,Medium
 Drizzle,4.888,Highway,Daylight,Low,30,Evening,Low
@@ -2409,7 +2409,7 @@ Clear,6.427,Highway,Dawn/Dusk,High,30,Night,Medium
 Rain,6.281,Urban,Dawn/Dusk,Medium,50,Afternoon,Medium
 Clear,4.977,Intersection,Daylight,Very High,60,Night,Medium
 Rain,6.624,Urban,Daylight,Very High,80,Evening,High
-Rain,3.889,Highway,Dawn/Dusk,Medium,30,Morning,High
+Rain,3.889,Highway,Dawn/Dusk,Medium,30,Morning,Medium
 Rain,4.374,Highway,Night-unlit,Medium,30,Night,High
 Clear,4.822,Highway,Daylight,Medium,50,Morning,Medium
 Rain,7.774,Intersection,Night-unlit,Low,30,Afternoon,Medium
@@ -2422,7 +2422,7 @@ Rain,4.2,Highway,Daylight,Medium,80,Afternoon,Medium
 Clear,3.081,Intersection,Dawn/Dusk,Medium,60,Night,High
 Fog,4.016,Urban,Daylight,High,50,Night,High
 Clear,6.85,Intersection,Night-unlit,Medium,100,Night,High
-Rain,3.673,Urban,Night-unlit,Medium,60,Night,High
+Rain,3.673,Urban,Night-unlit,Medium,60,Night,Medium
 Drizzle,7.978,Intersection,Daylight,High,50,Morning,Medium
 Clear,4.921,Rural,Daylight,High,80,Morning,Medium
 Clear,4.793,Urban,Dawn/Dusk,Medium,50,Afternoon,Medium
@@ -2432,7 +2432,7 @@ Clear,2.861,Urban,Daylight,Low,50,Morning,Medium
 Drizzle,5.95,Highway,Daylight,Low,30,Night,Medium
 Rain,0.506,Urban,Daylight,Medium,80,Evening,High
 Drizzle,0.4,Rural,Dawn/Dusk,Medium,50,Afternoon,High
-Clear,4.855,Intersection,Night-lit,High,80,Afternoon,High
+Clear,4.855,Intersection,Night-lit,High,80,Afternoon,Medium
 Drizzle,6.415,Intersection,Night-lit,Medium,40,Morning,Medium
 Fog,0.971,Intersection,Night-unlit,Medium,30,Afternoon,High
 Rain,4.204,Highway,Dawn/Dusk,High,60,Evening,High
@@ -2449,10 +2449,10 @@ Clear,7.39,Rural,Dawn/Dusk,High,80,Evening,Medium
 Drizzle,6.541,Urban,Dawn/Dusk,Medium,40,Evening,Medium
 Fog,3.373,Urban,Daylight,Medium,40,Afternoon,Medium
 Clear,3.836,Urban,Daylight,Medium,60,Morning,Medium
-Drizzle,5.643,Rural,Night-lit,Very High,30,Night,High
+Drizzle,5.643,Rural,Night-lit,Very High,30,Night,Medium
 Clear,6.197,Urban,Daylight,Very High,50,Morning,Medium
 Clear,6.379,Urban,Night-unlit,Medium,60,Night,High
-Clear,6.656,Rural,Night-unlit,High,80,Afternoon,High
+Clear,6.656,Rural,Night-unlit,High,80,Afternoon,Medium
 Clear,7.461,Rural,Night-lit,Medium,60,Afternoon,Medium
 Clear,6.27,Rural,Night-unlit,Very High,40,Morning,Medium
 Rain,3.513,Urban,Dawn/Dusk,Low,50,Morning,Medium
@@ -2472,7 +2472,7 @@ Rain,6.568,Urban,Night-unlit,Low,60,Afternoon,Medium
 Rain,6.099,Intersection,Daylight,High,50,Morning,Medium
 Drizzle,5.212,Urban,Night-unlit,Medium,60,Morning,Medium
 Drizzle,4.959,Urban,Daylight,Medium,50,Afternoon,Medium
-Drizzle,6.216,Urban,Daylight,High,80,Night,Medium
+Drizzle,6.216,Urban,Daylight,High,80,Night,High
 Rain,4.66,Urban,Daylight,High,100,Morning,High
 Drizzle,7.31,Urban,Daylight,High,40,Night,Medium
 Rain,7.154,Urban,Daylight,Very High,80,Afternoon,High
@@ -2507,7 +2507,7 @@ Fog,3.569,Urban,Night-unlit,Medium,40,Afternoon,High
 Rain,6.007,Urban,Daylight,High,80,Morning,High
 Fog,5.032,Highway,Night-unlit,Very High,60,Morning,High
 Clear,8.567,Highway,Daylight,Low,50,Night,Medium
-Clear,6.618,Urban,Night-lit,Very High,40,Evening,High
+Clear,6.618,Urban,Night-lit,Very High,40,Evening,Medium
 Clear,3.459,Intersection,Night-unlit,Medium,40,Evening,High
 Clear,4.173,Highway,Dawn/Dusk,Medium,100,Evening,High
 Clear,7.148,Urban,Dawn/Dusk,Low,40,Evening,Medium
@@ -2518,9 +2518,9 @@ Drizzle,4.219,Urban,Daylight,Low,30,Evening,Medium
 Clear,3.336,Urban,Daylight,Very High,60,Morning,Medium
 Clear,1.151,Highway,Night-lit,Very High,60,Night,High
 Rain,8.339,Urban,Night-unlit,High,60,Afternoon,High
-Fog,4.921,Rural,Night-lit,High,60,Evening,Medium
-Rain,8.947,Urban,Daylight,High,30,Evening,Low
-Drizzle,4.434,Urban,Daylight,High,100,Morning,High
+Fog,4.921,Rural,Night-lit,High,60,Evening,High
+Rain,8.947,Urban,Daylight,High,30,Evening,Medium
+Drizzle,4.434,Urban,Daylight,High,100,Morning,Medium
 Drizzle,9.875,Rural,Night-lit,Medium,40,Afternoon,Medium
 Drizzle,2.004,Urban,Night-lit,High,100,Evening,High
 Clear,10.0,Rural,Night-unlit,Medium,100,Morning,Medium
@@ -2532,7 +2532,7 @@ Fog,5.544,Rural,Night-unlit,High,40,Morning,High
 Clear,3.642,Urban,Night-lit,Medium,60,Morning,Medium
 Clear,7.172,Rural,Night-lit,Medium,60,Night,Medium
 Rain,5.903,Rural,Night-lit,High,80,Night,High
-Clear,7.577,Urban,Night-lit,High,30,Morning,Low
+Clear,7.577,Urban,Night-lit,High,30,Morning,Medium
 Drizzle,5.391,Rural,Night-lit,Medium,50,Evening,Medium
 Clear,6.371,Rural,Dawn/Dusk,Medium,40,Night,Medium
 Drizzle,6.967,Urban,Daylight,Medium,100,Afternoon,Medium
@@ -2551,15 +2551,15 @@ Clear,6.926,Highway,Dawn/Dusk,High,40,Night,Medium
 Clear,6.486,Rural,Daylight,Very High,60,Afternoon,Medium
 Fog,3.026,Highway,Night-lit,Very High,50,Evening,High
 Rain,6.888,Urban,Night-lit,High,50,Night,High
-Clear,7.401,Urban,Night-lit,Very High,30,Evening,High
+Clear,7.401,Urban,Night-lit,Very High,30,Evening,Medium
 Clear,3.476,Urban,Night-lit,High,80,Evening,High
 Clear,7.543,Urban,Night-lit,High,60,Afternoon,Medium
-Clear,7.243,Highway,Daylight,Very High,80,Night,Medium
+Clear,7.243,Highway,Daylight,Very High,80,Night,High
 Clear,3.053,Urban,Daylight,High,50,Evening,Medium
 Clear,2.926,Urban,Night-lit,High,100,Evening,High
 Clear,4.246,Rural,Dawn/Dusk,Very High,50,Morning,Medium
 Fog,7.195,Urban,Night-lit,Low,60,Night,High
-Rain,4.497,Highway,Night-lit,High,60,Afternoon,Low
+Rain,4.497,Highway,Night-lit,High,60,Afternoon,High
 Rain,4.573,Urban,Daylight,Medium,50,Evening,Medium
 Drizzle,6.041,Intersection,Night-lit,Low,50,Night,Medium
 Rain,0.435,Intersection,Dawn/Dusk,Medium,100,Night,High
@@ -2608,14 +2608,14 @@ Drizzle,2.247,Intersection,Daylight,High,40,Morning,Medium
 Clear,2.935,Intersection,Night-lit,Very High,40,Morning,High
 Storm,3.65,Urban,Night-unlit,High,50,Morning,High
 Clear,3.724,Highway,Dawn/Dusk,Low,60,Morning,Medium
-Clear,4.325,Intersection,Dawn/Dusk,High,40,Evening,High
+Clear,4.325,Intersection,Dawn/Dusk,High,40,Evening,Medium
 Drizzle,7.739,Intersection,Dawn/Dusk,Very High,80,Night,High
-Fog,0.4,Urban,Daylight,Low,30,Evening,Medium
+Fog,0.4,Urban,Daylight,Low,30,Evening,High
 Clear,6.421,Urban,Night-lit,High,50,Afternoon,Medium
 Rain,2.9,Intersection,Daylight,Very High,40,Night,High
 Clear,3.773,Rural,Dawn/Dusk,Medium,80,Night,Medium
 Storm,6.686,Urban,Daylight,Very High,60,Morning,High
-Clear,5.523,Urban,Night-unlit,High,60,Afternoon,High
+Clear,5.523,Urban,Night-unlit,High,60,Afternoon,Medium
 Rain,7.233,Highway,Night-unlit,High,50,Morning,High
 Drizzle,4.248,Highway,Night-lit,Medium,80,Morning,Medium
 Clear,5.351,Rural,Daylight,High,50,Night,Medium
@@ -2631,10 +2631,10 @@ Clear,4.127,Rural,Night-lit,High,60,Afternoon,Medium
 Rain,8.059,Rural,Daylight,Very High,40,Evening,Medium
 Drizzle,8.156,Intersection,Night-unlit,Low,60,Afternoon,Medium
 Drizzle,7.806,Urban,Daylight,High,80,Afternoon,Medium
-Drizzle,6.603,Urban,Night-lit,Medium,80,Afternoon,High
+Drizzle,6.603,Urban,Night-lit,Medium,80,Afternoon,Medium
 Rain,6.07,Urban,Night-lit,Medium,40,Night,Medium
 Drizzle,6.912,Urban,Night-lit,Low,80,Night,Medium
-Drizzle,5.666,Rural,Daylight,Medium,50,Evening,High
+Drizzle,5.666,Rural,Daylight,Medium,50,Evening,Medium
 Drizzle,7.432,Rural,Daylight,Medium,80,Evening,Medium
 Rain,7.49,Urban,Night-unlit,Medium,40,Afternoon,Medium
 Clear,5.13,Urban,Dawn/Dusk,Very High,30,Evening,Medium
@@ -2645,7 +2645,7 @@ Clear,7.928,Rural,Night-lit,Low,60,Afternoon,Low
 Drizzle,7.116,Highway,Night-lit,High,40,Evening,High
 Rain,3.81,Urban,Daylight,High,60,Evening,High
 Drizzle,10.0,Urban,Night-lit,High,40,Night,Medium
-Drizzle,6.652,Rural,Daylight,Very High,40,Night,Low
+Drizzle,6.652,Rural,Daylight,Very High,40,Night,Medium
 Rain,6.23,Urban,Night-unlit,Very High,60,Afternoon,High
 Drizzle,2.317,Urban,Dawn/Dusk,High,60,Morning,High
 Clear,6.198,Highway,Night-unlit,Medium,60,Night,High
@@ -2670,7 +2670,7 @@ Rain,4.909,Rural,Night-unlit,High,50,Afternoon,High
 Storm,3.849,Urban,Dawn/Dusk,High,50,Night,High
 Clear,5.194,Urban,Night-unlit,Very High,50,Morning,Medium
 Clear,8.008,Highway,Daylight,Low,60,Morning,Low
-Rain,7.967,Highway,Daylight,High,50,Night,Medium
+Rain,7.967,Highway,Daylight,High,50,Night,High
 Fog,8.04,Intersection,Daylight,Medium,60,Afternoon,Medium
 Clear,6.079,Intersection,Night-lit,High,30,Morning,Medium
 Rain,6.924,Intersection,Dawn/Dusk,Low,100,Morning,High
@@ -2731,15 +2731,15 @@ Rain,7.756,Highway,Night-lit,Very High,50,Evening,High
 Rain,6.477,Rural,Dawn/Dusk,Low,100,Night,High
 Drizzle,5.005,Urban,Night-unlit,High,40,Evening,High
 Drizzle,3.233,Urban,Dawn/Dusk,Low,60,Night,Medium
-Storm,5.969,Urban,Night-lit,Medium,50,Evening,Medium
+Storm,5.969,Urban,Night-lit,Medium,50,Evening,High
 Drizzle,4.066,Urban,Dawn/Dusk,High,60,Afternoon,Medium
 Storm,6.276,Urban,Daylight,High,40,Evening,Medium
 Fog,8.371,Rural,Dawn/Dusk,Medium,40,Afternoon,Medium
 Drizzle,1.28,Urban,Daylight,High,60,Morning,High
 Clear,8.247,Urban,Daylight,Medium,100,Night,Medium
-Rain,2.041,Urban,Night-unlit,Medium,50,Afternoon,Medium
+Rain,2.041,Urban,Night-unlit,Medium,50,Afternoon,High
 Clear,7.099,Urban,Daylight,High,80,Night,Medium
-Clear,6.245,Urban,Night-lit,Very High,50,Morning,High
+Clear,6.245,Urban,Night-lit,Very High,50,Morning,Medium
 Clear,2.901,Highway,Daylight,High,80,Night,High
 Drizzle,4.215,Urban,Daylight,Very High,50,Night,Medium
 Clear,6.448,Rural,Daylight,High,60,Morning,Medium
@@ -2762,7 +2762,7 @@ Drizzle,3.943,Highway,Dawn/Dusk,Medium,40,Night,Medium
 Rain,6.433,Urban,Night-lit,High,50,Afternoon,Medium
 Rain,2.715,Urban,Night-unlit,Low,100,Morning,High
 Rain,8.34,Urban,Night-lit,Medium,30,Morning,Medium
-Clear,8.069,Urban,Dawn/Dusk,Low,50,Morning,Medium
+Clear,8.069,Urban,Dawn/Dusk,Low,50,Morning,Low
 Clear,5.462,Urban,Daylight,Medium,60,Night,Medium
 Fog,3.871,Urban,Daylight,Medium,60,Night,High
 Drizzle,4.086,Rural,Night-unlit,Medium,80,Evening,High
@@ -2780,15 +2780,15 @@ Clear,7.063,Intersection,Night-lit,Medium,40,Afternoon,Medium
 Fog,2.596,Rural,Night-lit,High,60,Evening,High
 Drizzle,7.995,Rural,Night-unlit,Very High,30,Night,High
 Drizzle,6.192,Rural,Daylight,High,50,Morning,Medium
-Rain,4.857,Rural,Night-lit,Medium,60,Night,Medium
+Rain,4.857,Rural,Night-lit,Medium,60,Night,High
 Clear,5.307,Intersection,Daylight,Medium,50,Afternoon,Medium
 Clear,3.126,Urban,Night-lit,Very High,40,Evening,High
 Drizzle,5.483,Rural,Night-lit,Medium,80,Morning,Medium
 Drizzle,6.23,Urban,Dawn/Dusk,Low,60,Evening,Medium
 Rain,4.525,Urban,Dawn/Dusk,Very High,50,Morning,High
-Drizzle,3.337,Highway,Night-lit,Low,60,Evening,Low
+Drizzle,3.337,Highway,Night-lit,Low,60,Evening,Medium
 Rain,10.0,Rural,Night-lit,Medium,80,Night,High
-Clear,7.484,Rural,Night-lit,Low,50,Afternoon,Medium
+Clear,7.484,Rural,Night-lit,Low,50,Afternoon,Low
 Clear,6.532,Rural,Daylight,High,40,Afternoon,Low
 Clear,6.846,Urban,Night-lit,Very High,100,Evening,High
 Rain,2.94,Urban,Night-lit,High,80,Morning,High
@@ -2796,7 +2796,7 @@ Clear,2.23,Highway,Daylight,Medium,60,Evening,Medium
 Fog,5.945,Highway,Daylight,Very High,80,Evening,High
 Storm,6.238,Urban,Night-lit,High,50,Night,High
 Rain,5.767,Highway,Daylight,Medium,40,Evening,Medium
-Clear,5.789,Rural,Dawn/Dusk,Very High,40,Evening,Low
+Clear,5.789,Rural,Dawn/Dusk,Very High,40,Evening,Medium
 Fog,5.941,Highway,Night-unlit,Low,50,Night,High
 Clear,0.898,Urban,Night-lit,Medium,40,Night,High
 Rain,4.897,Highway,Night-lit,Low,60,Night,Medium
@@ -2823,7 +2823,7 @@ Drizzle,4.595,Intersection,Daylight,Medium,40,Afternoon,Medium
 Drizzle,1.107,Rural,Daylight,Medium,30,Morning,Medium
 Rain,6.881,Highway,Night-unlit,Low,100,Afternoon,High
 Drizzle,3.174,Rural,Night-lit,High,50,Afternoon,Medium
-Drizzle,4.78,Rural,Night-lit,Medium,80,Afternoon,Low
+Drizzle,4.78,Rural,Night-lit,Medium,80,Afternoon,Medium
 Fog,5.632,Highway,Night-lit,Medium,100,Morning,High
 Rain,4.101,Highway,Night-unlit,Medium,50,Night,High
 Rain,2.748,Urban,Night-unlit,High,30,Evening,High
@@ -2835,7 +2835,7 @@ Clear,8.571,Highway,Daylight,Medium,30,Afternoon,Low
 Clear,6.523,Intersection,Daylight,Medium,60,Night,Medium
 Rain,3.264,Urban,Daylight,High,60,Night,High
 Drizzle,8.399,Urban,Night-lit,High,50,Afternoon,Medium
-Drizzle,2.5,Highway,Daylight,Low,60,Evening,Medium
+Drizzle,2.5,Highway,Daylight,Low,60,Evening,High
 Drizzle,4.988,Highway,Daylight,Medium,60,Morning,Medium
 Rain,6.05,Urban,Dawn/Dusk,Medium,50,Morning,Medium
 Rain,4.664,Urban,Daylight,High,30,Night,Medium
@@ -2870,7 +2870,7 @@ Storm,7.264,Intersection,Daylight,Medium,80,Night,High
 Drizzle,4.001,Rural,Dawn/Dusk,High,40,Morning,Medium
 Fog,7.225,Highway,Daylight,Medium,30,Afternoon,Medium
 Clear,3.06,Urban,Night-lit,Medium,80,Night,High
-Rain,6.144,Rural,Night-unlit,Very High,60,Afternoon,Medium
+Rain,6.144,Rural,Night-unlit,Very High,60,Afternoon,High
 Clear,5.416,Intersection,Night-lit,Very High,100,Evening,High
 Rain,7.01,Intersection,Dawn/Dusk,Medium,50,Morning,Medium
 Rain,9.347,Highway,Daylight,Medium,100,Evening,High
@@ -2883,8 +2883,8 @@ Rain,5.981,Highway,Night-unlit,Medium,80,Afternoon,High
 Drizzle,7.726,Urban,Daylight,High,60,Evening,Medium
 Drizzle,4.53,Rural,Night-lit,Low,50,Night,Medium
 Storm,6.737,Urban,Night-lit,Medium,60,Evening,High
-Clear,7.843,Urban,Daylight,Low,80,Afternoon,Medium
-Drizzle,3.926,Intersection,Daylight,Medium,60,Evening,Medium
+Clear,7.843,Urban,Daylight,Low,80,Afternoon,Low
+Drizzle,3.926,Intersection,Daylight,Medium,60,Evening,Low
 Drizzle,7.977,Urban,Night-unlit,Medium,50,Night,High
 Clear,4.416,Intersection,Night-unlit,Low,40,Afternoon,Medium
 Rain,2.264,Urban,Daylight,High,50,Evening,High
@@ -2909,13 +2909,13 @@ Clear,3.655,Intersection,Daylight,Medium,50,Evening,Medium
 Clear,8.453,Urban,Dawn/Dusk,High,40,Night,Medium
 Clear,7.742,Intersection,Night-unlit,Low,60,Evening,Medium
 Storm,4.295,Rural,Daylight,High,30,Evening,Medium
-Drizzle,6.047,Highway,Daylight,Medium,50,Morning,Low
+Drizzle,6.047,Highway,Daylight,Medium,50,Morning,Medium
 Storm,3.263,Highway,Daylight,Very High,100,Evening,High
-Clear,3.246,Urban,Night-lit,Medium,80,Morning,Medium
+Clear,3.246,Urban,Night-lit,Medium,80,Morning,High
 Drizzle,7.545,Urban,Night-lit,High,60,Afternoon,Medium
 Clear,4.665,Rural,Daylight,High,60,Night,Medium
 Clear,3.883,Rural,Daylight,Medium,60,Evening,Medium
-Rain,4.858,Urban,Dawn/Dusk,Low,100,Afternoon,Medium
+Rain,4.858,Urban,Dawn/Dusk,Low,100,Afternoon,High
 Rain,6.204,Urban,Daylight,High,60,Night,High
 Rain,2.922,Rural,Night-lit,Medium,40,Morning,Medium
 Clear,7.898,Rural,Daylight,Medium,60,Night,Medium
@@ -2986,7 +2986,7 @@ Clear,1.946,Rural,Dawn/Dusk,Low,50,Evening,Medium
 Rain,4.756,Highway,Dawn/Dusk,Very High,80,Evening,High
 Drizzle,4.94,Rural,Daylight,High,50,Morning,Medium
 Rain,3.61,Rural,Night-unlit,Low,50,Afternoon,Medium
-Fog,7.748,Highway,Night-lit,Medium,50,Morning,Medium
+Fog,7.748,Highway,Night-lit,Medium,50,Morning,High
 Storm,5.598,Rural,Dawn/Dusk,High,50,Morning,Medium
 Drizzle,4.567,Rural,Night-lit,Very High,50,Afternoon,Medium
 Clear,7.746,Rural,Daylight,Low,80,Evening,Medium
@@ -3003,7 +3003,7 @@ Drizzle,3.075,Rural,Daylight,Medium,40,Morning,Medium
 Drizzle,4.266,Rural,Night-lit,Low,40,Morning,Medium
 Fog,5.391,Rural,Dawn/Dusk,Very High,60,Night,High
 Clear,4.336,Highway,Night-lit,Very High,60,Afternoon,High
-Drizzle,4.226,Highway,Night-lit,Medium,60,Night,Medium
+Drizzle,4.226,Highway,Night-lit,Medium,60,Night,High
 Rain,5.291,Rural,Night-unlit,High,80,Evening,High
 Clear,3.329,Urban,Daylight,High,50,Evening,Medium
 Rain,7.802,Urban,Daylight,Low,60,Afternoon,Medium
@@ -3021,7 +3021,7 @@ Rain,8.515,Intersection,Daylight,Medium,40,Evening,Medium
 Drizzle,3.817,Highway,Daylight,Low,100,Evening,Medium
 Rain,7.616,Urban,Daylight,Medium,50,Afternoon,Medium
 Drizzle,7.611,Highway,Daylight,High,40,Morning,Medium
-Drizzle,4.757,Intersection,Daylight,High,30,Evening,Low
+Drizzle,4.757,Intersection,Daylight,High,30,Evening,Medium
 Drizzle,4.887,Intersection,Night-unlit,Low,100,Afternoon,High
 Clear,4.212,Intersection,Daylight,Low,60,Evening,Medium
 Clear,9.637,Urban,Night-unlit,Very High,80,Evening,High
@@ -3039,11 +3039,11 @@ Clear,0.997,Highway,Night-unlit,High,60,Morning,High
 Drizzle,5.758,Urban,Dawn/Dusk,Low,50,Afternoon,Medium
 Drizzle,8.779,Highway,Daylight,Medium,60,Morning,Medium
 Rain,3.408,Urban,Night-unlit,Low,30,Night,Medium
-Drizzle,3.853,Urban,Night-lit,Medium,60,Morning,High
+Drizzle,3.853,Urban,Night-lit,Medium,60,Morning,Medium
 Drizzle,1.765,Urban,Daylight,Very High,100,Morning,High
 Storm,5.563,Rural,Daylight,Low,40,Evening,Medium
 Drizzle,3.965,Highway,Night-lit,High,60,Afternoon,Medium
-Clear,3.648,Highway,Daylight,Medium,30,Afternoon,Medium
+Clear,3.648,Highway,Daylight,Medium,30,Afternoon,Low
 Rain,5.292,Urban,Daylight,Low,30,Morning,Low
 Clear,8.035,Highway,Dawn/Dusk,Medium,50,Morning,Medium
 Storm,6.448,Rural,Night-unlit,Medium,40,Evening,High
@@ -3061,7 +3061,7 @@ Fog,5.737,Highway,Daylight,Medium,50,Morning,Medium
 Fog,7.499,Urban,Night-lit,High,50,Morning,High
 Fog,5.375,Urban,Daylight,Medium,60,Afternoon,Medium
 Rain,2.183,Intersection,Night-unlit,High,80,Morning,High
-Drizzle,3.54,Rural,Dawn/Dusk,High,100,Morning,High
+Drizzle,3.54,Rural,Dawn/Dusk,High,100,Morning,Medium
 Rain,4.315,Highway,Daylight,Low,100,Afternoon,Medium
 Fog,4.241,Intersection,Daylight,Very High,30,Afternoon,High
 Clear,5.084,Intersection,Dawn/Dusk,High,60,Night,High
@@ -3070,7 +3070,7 @@ Drizzle,9.843,Intersection,Daylight,Low,80,Night,Medium
 Drizzle,5.72,Urban,Night-unlit,High,40,Night,High
 Clear,10.0,Highway,Dawn/Dusk,Very High,100,Night,High
 Clear,5.973,Intersection,Night-lit,High,60,Morning,Medium
-Clear,4.343,Intersection,Night-unlit,High,80,Afternoon,Medium
+Clear,4.343,Intersection,Night-unlit,High,80,Afternoon,High
 Drizzle,5.475,Intersection,Daylight,Very High,60,Afternoon,Medium
 Drizzle,3.274,Rural,Night-unlit,Medium,60,Morning,Medium
 Drizzle,4.349,Urban,Night-lit,Medium,100,Night,High
@@ -3082,31 +3082,31 @@ Rain,5.867,Highway,Daylight,Medium,50,Evening,Medium
 Clear,6.321,Highway,Night-unlit,Low,40,Afternoon,Medium
 Clear,1.136,Urban,Dawn/Dusk,Very High,60,Afternoon,High
 Storm,7.719,Rural,Dawn/Dusk,High,60,Evening,High
-Drizzle,5.101,Highway,Dawn/Dusk,Medium,50,Night,High
-Clear,5.879,Urban,Dawn/Dusk,Low,50,Morning,Medium
+Drizzle,5.101,Highway,Dawn/Dusk,Medium,50,Night,Medium
+Clear,5.879,Urban,Dawn/Dusk,Low,50,Morning,Low
 Rain,7.161,Rural,Daylight,Medium,40,Afternoon,Low
 Drizzle,2.114,Intersection,Daylight,High,60,Morning,High
 Clear,6.55,Urban,Night-unlit,Low,40,Night,Medium
 Storm,4.708,Urban,Night-lit,Low,40,Night,High
 Rain,7.218,Highway,Night-lit,Low,50,Evening,Medium
 Clear,9.519,Urban,Daylight,High,80,Morning,Medium
-Storm,8.94,Intersection,Night-unlit,Very High,40,Afternoon,Medium
+Storm,8.94,Intersection,Night-unlit,Very High,40,Afternoon,High
 Clear,3.091,Rural,Night-lit,Medium,30,Morning,Medium
 Drizzle,9.807,Rural,Dawn/Dusk,High,100,Afternoon,High
 Clear,8.544,Urban,Night-unlit,High,40,Night,Medium
 Drizzle,3.301,Intersection,Dawn/Dusk,High,50,Afternoon,Medium
 Drizzle,3.985,Rural,Daylight,Low,50,Morning,Low
-Drizzle,4.276,Urban,Night-unlit,Medium,40,Morning,High
+Drizzle,4.276,Urban,Night-unlit,Medium,40,Morning,Medium
 Drizzle,5.322,Highway,Night-lit,High,60,Afternoon,Medium
-Fog,4.559,Urban,Dawn/Dusk,Medium,30,Night,Medium
+Fog,4.559,Urban,Dawn/Dusk,Medium,30,Night,High
 Rain,6.565,Urban,Night-unlit,Medium,80,Evening,High
 Clear,6.201,Highway,Dawn/Dusk,Very High,30,Night,Medium
-Drizzle,4.197,Urban,Daylight,Medium,60,Afternoon,Low
+Drizzle,4.197,Urban,Daylight,Medium,60,Afternoon,Medium
 Clear,7.208,Rural,Dawn/Dusk,High,80,Morning,Medium
 Storm,3.169,Rural,Daylight,High,60,Night,High
 Rain,4.892,Rural,Daylight,High,30,Morning,Medium
 Drizzle,0.4,Urban,Daylight,Medium,80,Afternoon,High
-Drizzle,3.812,Highway,Night-lit,High,50,Afternoon,High
+Drizzle,3.812,Highway,Night-lit,High,50,Afternoon,Medium
 Drizzle,7.824,Urban,Dawn/Dusk,Medium,80,Night,High
 Clear,5.001,Rural,Night-unlit,Very High,60,Evening,High
 Clear,3.665,Highway,Daylight,Medium,60,Evening,Medium
@@ -3123,13 +3123,13 @@ Storm,2.838,Urban,Night-unlit,High,60,Night,High
 Fog,3.886,Rural,Daylight,Low,50,Morning,Medium
 Drizzle,4.477,Urban,Dawn/Dusk,Medium,60,Evening,Medium
 Drizzle,3.225,Urban,Night-lit,Medium,50,Afternoon,Medium
-Rain,3.53,Urban,Daylight,Medium,80,Evening,Medium
+Rain,3.53,Urban,Daylight,Medium,80,Evening,High
 Clear,7.272,Urban,Night-unlit,High,30,Night,Medium
 Clear,9.344,Highway,Daylight,High,60,Night,Medium
 Drizzle,5.55,Intersection,Dawn/Dusk,High,60,Night,High
 Clear,6.81,Urban,Night-unlit,Low,40,Evening,Medium
 Clear,2.561,Rural,Daylight,Medium,60,Evening,Medium
-Clear,3.375,Highway,Daylight,Medium,50,Afternoon,Low
+Clear,3.375,Highway,Daylight,Medium,50,Afternoon,Medium
 Drizzle,6.387,Urban,Night-lit,High,60,Afternoon,Medium
 Clear,3.309,Highway,Night-unlit,Medium,60,Evening,High
 Clear,2.864,Urban,Daylight,Medium,60,Night,Medium
@@ -3140,13 +3140,13 @@ Clear,5.741,Highway,Night-lit,Low,40,Evening,Medium
 Rain,5.788,Urban,Night-lit,Very High,60,Night,High
 Storm,6.646,Urban,Night-lit,Medium,50,Morning,High
 Rain,5.744,Urban,Night-unlit,Medium,50,Night,High
-Clear,4.651,Urban,Daylight,High,40,Night,Medium
+Clear,4.651,Urban,Daylight,High,40,Night,Low
 Clear,8.746,Rural,Daylight,High,40,Morning,Low
-Clear,3.75,Highway,Night-unlit,Low,80,Morning,High
+Clear,3.75,Highway,Night-unlit,Low,80,Morning,Medium
 Clear,6.371,Highway,Daylight,Medium,40,Afternoon,Low
 Drizzle,7.611,Highway,Night-lit,Low,100,Morning,Medium
 Drizzle,7.427,Urban,Dawn/Dusk,Medium,40,Night,Medium
-Rain,4.313,Urban,Night-unlit,Low,50,Afternoon,Low
+Rain,4.313,Urban,Night-unlit,Low,50,Afternoon,Medium
 Rain,3.304,Highway,Night-unlit,Low,100,Morning,High
 Clear,4.622,Urban,Night-lit,High,80,Evening,High
 Clear,7.18,Urban,Night-lit,Medium,50,Morning,Medium
@@ -3158,10 +3158,10 @@ Rain,8.99,Rural,Dawn/Dusk,High,60,Evening,High
 Clear,7.354,Urban,Night-unlit,Very High,100,Morning,High
 Fog,4.7,Urban,Daylight,Medium,100,Evening,High
 Clear,4.514,Urban,Dawn/Dusk,Very High,40,Morning,Medium
-Clear,3.523,Intersection,Night-unlit,Medium,50,Night,Medium
+Clear,3.523,Intersection,Night-unlit,Medium,50,Night,High
 Drizzle,5.267,Intersection,Daylight,High,60,Morning,Medium
 Clear,7.682,Rural,Daylight,Very High,50,Evening,Medium
-Fog,5.713,Urban,Night-lit,Medium,60,Evening,Medium
+Fog,5.713,Urban,Night-lit,Medium,60,Evening,High
 Clear,3.605,Intersection,Night-unlit,High,40,Morning,High
 Rain,4.129,Intersection,Night-lit,Medium,30,Afternoon,Medium
 Rain,6.3,Highway,Night-unlit,Very High,40,Morning,High
@@ -3211,7 +3211,7 @@ Clear,6.179,Highway,Daylight,High,80,Morning,Medium
 Clear,4.425,Urban,Daylight,Medium,60,Night,Medium
 Drizzle,3.425,Highway,Night-lit,Medium,100,Night,High
 Clear,8.355,Highway,Daylight,Medium,40,Night,Medium
-Clear,6.7,Urban,Daylight,Very High,30,Afternoon,Low
+Clear,6.7,Urban,Daylight,Very High,30,Afternoon,Medium
 Fog,6.335,Urban,Daylight,Low,80,Morning,Medium
 Rain,7.619,Urban,Daylight,High,60,Morning,Medium
 Clear,4.388,Rural,Night-unlit,Medium,40,Night,Medium
@@ -3227,7 +3227,7 @@ Clear,4.774,Urban,Daylight,High,50,Morning,Medium
 Rain,3.788,Urban,Daylight,Medium,30,Afternoon,Medium
 Rain,2.919,Intersection,Night-unlit,High,80,Night,High
 Rain,4.972,Urban,Daylight,Low,40,Afternoon,Low
-Drizzle,5.794,Urban,Night-unlit,Medium,50,Night,Medium
+Drizzle,5.794,Urban,Night-unlit,Medium,50,Night,High
 Rain,3.959,Rural,Night-lit,Very High,60,Morning,High
 Rain,6.451,Urban,Dawn/Dusk,Medium,30,Night,Medium
 Drizzle,4.839,Rural,Night-lit,Medium,30,Afternoon,Medium
@@ -3248,11 +3248,11 @@ Rain,8.607,Urban,Daylight,Medium,80,Evening,High
 Clear,5.06,Intersection,Night-lit,Medium,40,Afternoon,Medium
 Clear,4.405,Urban,Dawn/Dusk,Low,40,Night,Medium
 Drizzle,5.535,Intersection,Daylight,High,40,Night,Medium
-Clear,5.316,Intersection,Night-lit,High,40,Evening,Low
+Clear,5.316,Intersection,Night-lit,High,40,Evening,Medium
 Rain,6.37,Rural,Daylight,High,60,Afternoon,Medium
 Rain,7.846,Rural,Night-unlit,Medium,60,Morning,Medium
 Clear,6.785,Urban,Night-lit,Medium,60,Morning,Medium
-Fog,3.912,Rural,Daylight,Medium,60,Night,Medium
+Fog,3.912,Rural,Daylight,Medium,60,Night,High
 Clear,0.424,Highway,Dawn/Dusk,Low,60,Night,High
 Clear,4.954,Intersection,Daylight,Low,30,Night,Low
 Clear,5.792,Urban,Daylight,Medium,30,Evening,Low
@@ -3264,7 +3264,7 @@ Clear,9.176,Highway,Night-unlit,Medium,60,Afternoon,Medium
 Clear,5.733,Urban,Daylight,High,50,Night,Medium
 Fog,4.777,Highway,Night-lit,Medium,80,Night,High
 Clear,5.706,Rural,Dawn/Dusk,Medium,40,Morning,Low
-Clear,5.437,Urban,Dawn/Dusk,Low,60,Morning,Medium
+Clear,5.437,Urban,Dawn/Dusk,Low,60,Morning,Low
 Clear,6.054,Urban,Dawn/Dusk,Medium,60,Evening,Medium
 Drizzle,1.271,Urban,Night-lit,High,40,Morning,High
 Rain,3.136,Rural,Night-unlit,Very High,40,Morning,High
@@ -3296,7 +3296,7 @@ Rain,1.225,Urban,Night-lit,High,80,Morning,High
 Rain,3.165,Highway,Night-lit,Low,60,Evening,High
 Rain,2.352,Highway,Night-unlit,High,60,Night,High
 Rain,6.831,Highway,Night-lit,High,80,Night,High
-Rain,7.0,Urban,Dawn/Dusk,Low,50,Night,Low
+Rain,7.0,Urban,Dawn/Dusk,Low,50,Night,Medium
 Clear,7.223,Rural,Night-lit,Medium,80,Evening,Medium
 Drizzle,3.028,Urban,Dawn/Dusk,Low,40,Morning,Medium
 Drizzle,5.656,Urban,Daylight,Low,50,Evening,Medium
@@ -3315,10 +3315,10 @@ Clear,3.035,Urban,Dawn/Dusk,Low,50,Night,Medium
 Drizzle,4.647,Highway,Dawn/Dusk,Very High,50,Evening,High
 Rain,4.441,Rural,Daylight,Very High,100,Morning,High
 Fog,4.34,Rural,Daylight,High,100,Night,High
-Rain,5.421,Intersection,Night-lit,Low,80,Afternoon,Medium
+Rain,5.421,Intersection,Night-lit,Low,80,Afternoon,High
 Clear,4.657,Urban,Daylight,Medium,40,Morning,Low
 Clear,1.116,Highway,Night-lit,High,60,Night,High
-Clear,8.206,Rural,Night-unlit,Medium,50,Morning,Low
+Clear,8.206,Rural,Night-unlit,Medium,50,Morning,Medium
 Rain,4.15,Rural,Night-unlit,Medium,100,Night,High
 Drizzle,4.94,Urban,Night-unlit,Low,60,Morning,Medium
 Clear,6.502,Highway,Daylight,Low,80,Night,Medium
@@ -3375,7 +3375,7 @@ Clear,5.108,Highway,Night-unlit,Medium,50,Night,High
 Clear,10.0,Intersection,Night-lit,Medium,80,Night,High
 Clear,7.35,Rural,Night-lit,Medium,60,Evening,Medium
 Drizzle,6.769,Highway,Night-lit,Medium,60,Night,High
-Clear,5.411,Highway,Daylight,Low,60,Night,Low
+Clear,5.411,Highway,Daylight,Low,60,Night,Medium
 Clear,3.658,Urban,Daylight,High,80,Afternoon,Medium
 Fog,6.759,Urban,Daylight,Very High,40,Night,High
 Clear,6.84,Highway,Night-lit,High,80,Evening,High
@@ -3399,7 +3399,7 @@ Clear,6.904,Highway,Night-unlit,Medium,50,Evening,Medium
 Rain,0.75,Rural,Night-lit,High,40,Night,High
 Rain,4.798,Rural,Daylight,High,40,Night,Medium
 Drizzle,3.36,Highway,Daylight,Medium,50,Evening,Medium
-Rain,7.572,Rural,Dawn/Dusk,Medium,60,Evening,High
+Rain,7.572,Rural,Dawn/Dusk,Medium,60,Evening,Medium
 Drizzle,4.499,Rural,Daylight,Very High,50,Afternoon,Medium
 Storm,6.81,Intersection,Daylight,Medium,40,Night,High
 Drizzle,5.979,Rural,Night-lit,Medium,60,Night,Medium
@@ -3407,7 +3407,7 @@ Drizzle,2.39,Urban,Daylight,Very High,60,Afternoon,High
 Drizzle,7.16,Rural,Dawn/Dusk,Medium,60,Afternoon,Medium
 Fog,6.787,Rural,Night-unlit,Medium,60,Afternoon,Medium
 Fog,5.001,Highway,Daylight,High,60,Afternoon,Medium
-Rain,4.907,Intersection,Night-lit,Medium,80,Night,Medium
+Rain,4.907,Intersection,Night-lit,Medium,80,Night,High
 Clear,8.076,Urban,Daylight,High,40,Afternoon,Low
 Clear,9.211,Highway,Night-unlit,High,40,Afternoon,Medium
 Rain,1.518,Rural,Dawn/Dusk,Very High,60,Afternoon,High
@@ -3417,7 +3417,7 @@ Clear,6.564,Highway,Daylight,High,50,Afternoon,Medium
 Clear,2.993,Highway,Dawn/Dusk,Low,50,Morning,Medium
 Fog,3.708,Urban,Night-lit,Very High,60,Afternoon,High
 Clear,4.678,Urban,Night-lit,Medium,60,Evening,Medium
-Clear,6.133,Highway,Daylight,Medium,40,Morning,Medium
+Clear,6.133,Highway,Daylight,Medium,40,Morning,Low
 Clear,4.765,Highway,Daylight,High,40,Night,Medium
 Drizzle,5.9,Intersection,Night-unlit,High,80,Morning,High
 Storm,5.026,Rural,Dawn/Dusk,Medium,60,Morning,Medium
@@ -3425,10 +3425,10 @@ Drizzle,5.679,Rural,Daylight,High,40,Morning,Medium
 Clear,5.736,Rural,Daylight,Low,50,Afternoon,Low
 Drizzle,6.077,Highway,Daylight,Medium,30,Evening,Medium
 Rain,4.05,Urban,Night-lit,Low,50,Evening,Medium
-Clear,8.455,Urban,Night-lit,Low,60,Evening,Low
-Clear,2.539,Urban,Dawn/Dusk,High,50,Evening,Medium
+Clear,8.455,Urban,Night-lit,Low,60,Evening,Medium
+Clear,2.539,Urban,Dawn/Dusk,High,50,Evening,High
 Drizzle,5.637,Intersection,Daylight,Medium,80,Evening,Medium
-Drizzle,5.186,Intersection,Daylight,Very High,80,Morning,Medium
+Drizzle,5.186,Intersection,Daylight,Very High,80,Morning,High
 Rain,6.056,Urban,Night-unlit,Medium,80,Night,High
 Storm,3.692,Urban,Daylight,Very High,50,Evening,High
 Rain,8.183,Intersection,Night-unlit,Medium,40,Evening,High
@@ -3452,7 +3452,7 @@ Clear,5.92,Urban,Night-unlit,Medium,40,Afternoon,Medium
 Clear,10.0,Urban,Night-lit,Low,60,Morning,Medium
 Clear,3.949,Rural,Daylight,Low,100,Morning,Medium
 Fog,5.708,Rural,Night-lit,High,50,Evening,High
-Rain,6.856,Intersection,Daylight,High,60,Afternoon,High
+Rain,6.856,Intersection,Daylight,High,60,Afternoon,Medium
 Storm,4.234,Rural,Dawn/Dusk,Very High,40,Afternoon,High
 Drizzle,7.168,Intersection,Daylight,Medium,60,Afternoon,Medium
 Drizzle,7.782,Rural,Night-unlit,Low,60,Afternoon,Medium
@@ -3464,13 +3464,13 @@ Clear,4.099,Urban,Daylight,High,60,Afternoon,Medium
 Fog,10.0,Rural,Dawn/Dusk,Low,50,Morning,Medium
 Clear,7.127,Highway,Night-unlit,High,100,Night,High
 Drizzle,4.98,Intersection,Daylight,Medium,80,Night,High
-Rain,7.57,Highway,Night-lit,High,40,Evening,Medium
+Rain,7.57,Highway,Night-lit,High,40,Evening,High
 Clear,4.95,Urban,Dawn/Dusk,Medium,50,Afternoon,Medium
 Clear,5.323,Urban,Night-lit,Medium,60,Evening,Medium
 Fog,7.296,Rural,Dawn/Dusk,High,60,Evening,High
 Clear,2.01,Urban,Night-unlit,Low,30,Afternoon,Medium
 Drizzle,4.393,Urban,Night-unlit,Low,60,Evening,Medium
-Clear,4.013,Highway,Dawn/Dusk,Low,50,Morning,Low
+Clear,4.013,Highway,Dawn/Dusk,Low,50,Morning,Medium
 Clear,5.38,Urban,Night-unlit,Medium,40,Afternoon,Medium
 Fog,5.475,Rural,Daylight,Medium,100,Afternoon,High
 Drizzle,5.7,Urban,Night-unlit,Very High,30,Night,High
@@ -3492,7 +3492,7 @@ Clear,3.707,Rural,Daylight,Medium,50,Afternoon,Low
 Drizzle,7.814,Rural,Dawn/Dusk,High,40,Night,Medium
 Drizzle,5.393,Highway,Night-lit,High,50,Afternoon,Medium
 Drizzle,2.639,Urban,Daylight,Medium,50,Morning,Medium
-Rain,6.519,Intersection,Daylight,Very High,50,Afternoon,High
+Rain,6.519,Intersection,Daylight,Very High,50,Afternoon,Medium
 Drizzle,1.843,Urban,Daylight,High,40,Night,High
 Fog,7.465,Highway,Dawn/Dusk,Very High,50,Morning,High
 Drizzle,5.11,Rural,Dawn/Dusk,Medium,30,Morning,Medium
@@ -3507,10 +3507,10 @@ Fog,4.91,Rural,Night-lit,Low,50,Morning,Medium
 Drizzle,7.67,Urban,Daylight,High,40,Night,Medium
 Clear,3.231,Urban,Daylight,Very High,50,Afternoon,Medium
 Rain,8.111,Intersection,Night-lit,High,50,Evening,High
-Rain,5.556,Urban,Daylight,Medium,80,Evening,Medium
-Rain,6.306,Urban,Daylight,Medium,30,Morning,Low
+Rain,5.556,Urban,Daylight,Medium,80,Evening,High
+Rain,6.306,Urban,Daylight,Medium,30,Morning,Medium
 Rain,6.743,Rural,Daylight,Medium,60,Afternoon,Medium
-Rain,5.457,Urban,Night-lit,High,40,Morning,High
+Rain,5.457,Urban,Night-lit,High,40,Morning,Medium
 Clear,6.31,Intersection,Night-lit,Medium,80,Afternoon,Medium
 Rain,5.565,Urban,Daylight,Medium,40,Evening,Medium
 Clear,5.008,Urban,Dawn/Dusk,High,50,Night,Medium
@@ -3524,7 +3524,7 @@ Clear,6.743,Rural,Daylight,Medium,60,Afternoon,Low
 Drizzle,4.456,Intersection,Night-lit,Very High,40,Afternoon,High
 Rain,7.306,Highway,Daylight,Medium,30,Night,Medium
 Drizzle,5.718,Rural,Daylight,Medium,60,Morning,Medium
-Rain,3.222,Urban,Daylight,High,50,Afternoon,High
+Rain,3.222,Urban,Daylight,High,50,Afternoon,Medium
 Clear,6.301,Highway,Daylight,Very High,60,Afternoon,Medium
 Clear,8.877,Intersection,Daylight,Very High,40,Morning,Medium
 Fog,5.368,Highway,Night-unlit,Medium,60,Morning,High
@@ -3541,8 +3541,8 @@ Clear,8.925,Intersection,Daylight,High,30,Afternoon,Medium
 Clear,3.722,Highway,Daylight,High,100,Evening,High
 Drizzle,8.801,Highway,Night-unlit,High,40,Evening,High
 Drizzle,6.64,Rural,Night-lit,High,60,Afternoon,Medium
-Clear,8.819,Intersection,Daylight,High,40,Morning,Low
-Clear,6.397,Rural,Night-unlit,Medium,30,Morning,Low
+Clear,8.819,Intersection,Daylight,High,40,Morning,Medium
+Clear,6.397,Rural,Night-unlit,Medium,30,Morning,Medium
 Clear,4.457,Rural,Dawn/Dusk,Very High,60,Evening,Medium
 Clear,7.52,Rural,Daylight,Medium,30,Afternoon,Low
 Drizzle,2.334,Highway,Daylight,Medium,30,Evening,Medium
@@ -3559,7 +3559,7 @@ Rain,0.852,Urban,Night-unlit,High,50,Afternoon,High
 Storm,5.358,Rural,Daylight,Very High,100,Afternoon,High
 Drizzle,6.004,Urban,Daylight,Very High,80,Evening,High
 Clear,5.911,Intersection,Night-lit,Medium,40,Evening,Medium
-Clear,4.458,Rural,Night-lit,Very High,60,Morning,High
+Clear,4.458,Rural,Night-lit,Very High,60,Morning,Medium
 Clear,5.662,Urban,Night-lit,High,30,Morning,Medium
 Clear,2.943,Rural,Daylight,Very High,80,Morning,Medium
 Drizzle,6.211,Urban,Night-unlit,Low,100,Night,High
@@ -3590,8 +3590,8 @@ Clear,0.4,Highway,Daylight,High,50,Night,High
 Drizzle,5.996,Intersection,Daylight,High,80,Morning,Medium
 Drizzle,4.236,Rural,Dawn/Dusk,Low,40,Afternoon,Low
 Clear,2.365,Urban,Daylight,High,100,Morning,High
-Drizzle,8.889,Urban,Daylight,Medium,30,Morning,Medium
-Clear,4.325,Urban,Night-unlit,Low,50,Night,Low
+Drizzle,8.889,Urban,Daylight,Medium,30,Morning,Low
+Clear,4.325,Urban,Night-unlit,Low,50,Night,Medium
 Drizzle,2.21,Urban,Night-lit,High,80,Evening,High
 Rain,7.288,Urban,Night-lit,Low,50,Afternoon,Medium
 Drizzle,7.318,Highway,Night-lit,High,60,Night,High
@@ -3600,7 +3600,7 @@ Drizzle,4.767,Rural,Dawn/Dusk,High,40,Afternoon,Medium
 Clear,7.151,Highway,Dawn/Dusk,Medium,80,Afternoon,Medium
 Clear,6.134,Urban,Dawn/Dusk,Medium,30,Night,Medium
 Storm,6.998,Rural,Night-lit,Medium,50,Afternoon,Medium
-Rain,8.948,Intersection,Daylight,Medium,80,Afternoon,Medium
+Rain,8.948,Intersection,Daylight,Medium,80,Afternoon,High
 Clear,5.921,Highway,Daylight,Medium,80,Evening,Medium
 Rain,1.772,Urban,Dawn/Dusk,High,30,Evening,High
 Clear,6.386,Intersection,Night-unlit,Medium,60,Afternoon,Medium
@@ -3633,7 +3633,7 @@ Rain,5.006,Intersection,Daylight,Medium,40,Evening,Medium
 Clear,1.313,Highway,Night-lit,Medium,80,Evening,High
 Storm,4.328,Intersection,Daylight,Medium,80,Evening,High
 Clear,5.148,Rural,Night-lit,Low,60,Morning,Low
-Drizzle,7.228,Urban,Daylight,Low,80,Night,Low
+Drizzle,7.228,Urban,Daylight,Low,80,Night,Medium
 Drizzle,4.958,Rural,Night-lit,High,30,Afternoon,Medium
 Clear,7.456,Urban,Night-lit,High,80,Evening,High
 Clear,7.741,Intersection,Daylight,Medium,30,Evening,Medium
@@ -3645,8 +3645,8 @@ Rain,4.669,Urban,Night-unlit,Low,80,Night,High
 Clear,9.62,Highway,Night-lit,Medium,30,Afternoon,Medium
 Drizzle,3.426,Urban,Daylight,Very High,60,Evening,High
 Clear,4.968,Highway,Daylight,Medium,80,Night,Medium
-Clear,8.96,Rural,Night-unlit,Medium,50,Afternoon,Low
-Clear,4.941,Urban,Daylight,High,30,Morning,Medium
+Clear,8.96,Rural,Night-unlit,Medium,50,Afternoon,Medium
+Clear,4.941,Urban,Daylight,High,30,Morning,Low
 Clear,7.148,Highway,Night-unlit,Low,60,Evening,Medium
 Rain,3.426,Urban,Night-unlit,Low,80,Night,High
 Clear,2.793,Highway,Daylight,Medium,80,Afternoon,Medium
@@ -3657,7 +3657,7 @@ Drizzle,8.233,Urban,Night-lit,Low,60,Night,Medium
 Drizzle,0.926,Highway,Night-unlit,Low,80,Evening,High
 Clear,2.468,Urban,Daylight,High,80,Evening,High
 Drizzle,6.356,Urban,Night-lit,Low,80,Afternoon,Medium
-Clear,2.656,Urban,Daylight,Medium,100,Night,Medium
+Clear,2.656,Urban,Daylight,Medium,100,Night,High
 Clear,9.284,Highway,Night-lit,Medium,100,Afternoon,Medium
 Clear,3.966,Urban,Daylight,High,80,Afternoon,Medium
 Fog,5.624,Urban,Daylight,Very High,50,Night,High
@@ -3670,7 +3670,7 @@ Clear,3.019,Highway,Dawn/Dusk,Medium,40,Afternoon,Medium
 Fog,1.864,Highway,Dawn/Dusk,Low,100,Morning,High
 Clear,5.298,Urban,Daylight,High,100,Afternoon,Medium
 Clear,4.876,Urban,Daylight,Medium,100,Afternoon,Medium
-Clear,7.812,Urban,Daylight,Medium,40,Morning,Medium
+Clear,7.812,Urban,Daylight,Medium,40,Morning,Low
 Drizzle,5.658,Highway,Night-lit,High,40,Morning,Medium
 Drizzle,3.852,Urban,Daylight,Very High,50,Afternoon,Medium
 Clear,6.855,Intersection,Night-lit,Very High,80,Morning,High
@@ -3678,13 +3678,13 @@ Drizzle,6.591,Urban,Daylight,Very High,30,Night,Medium
 Drizzle,7.607,Intersection,Daylight,High,60,Afternoon,Medium
 Rain,9.014,Rural,Night-lit,High,40,Evening,Medium
 Rain,2.643,Highway,Night-lit,Low,100,Night,High
-Clear,10.0,Rural,Daylight,High,100,Evening,High
-Clear,6.376,Urban,Night-lit,High,60,Evening,High
+Clear,10.0,Rural,Daylight,High,100,Evening,Medium
+Clear,6.376,Urban,Night-lit,High,60,Evening,Medium
 Clear,5.896,Urban,Night-unlit,High,50,Night,High
 Clear,4.16,Highway,Night-lit,Low,40,Afternoon,Low
 Fog,8.603,Highway,Night-lit,Medium,80,Evening,High
-Drizzle,6.357,Rural,Daylight,Very High,100,Morning,Medium
-Rain,4.353,Urban,Night-unlit,Very High,50,Night,Medium
+Drizzle,6.357,Rural,Daylight,Very High,100,Morning,High
+Rain,4.353,Urban,Night-unlit,Very High,50,Night,High
 Clear,2.543,Urban,Dawn/Dusk,Medium,50,Evening,Medium
 Rain,8.115,Urban,Night-unlit,Medium,80,Evening,High
 Fog,3.643,Intersection,Daylight,Medium,100,Afternoon,High
@@ -3696,7 +3696,7 @@ Rain,4.44,Urban,Night-lit,Medium,60,Evening,High
 Rain,6.979,Urban,Night-unlit,Medium,40,Night,High
 Clear,3.85,Highway,Night-unlit,Low,50,Afternoon,Medium
 Clear,6.056,Intersection,Daylight,Very High,80,Afternoon,Medium
-Rain,8.22,Rural,Daylight,Medium,50,Morning,Low
+Rain,8.22,Rural,Daylight,Medium,50,Morning,Medium
 Drizzle,3.642,Rural,Daylight,Medium,50,Evening,Medium
 Fog,2.847,Urban,Night-lit,Very High,100,Evening,High
 Clear,6.044,Highway,Daylight,Medium,100,Night,Medium
@@ -3714,7 +3714,7 @@ Rain,0.49,Highway,Dawn/Dusk,High,40,Night,High
 Clear,0.4,Urban,Night-lit,Medium,50,Evening,High
 Storm,7.631,Highway,Night-lit,High,30,Night,High
 Storm,6.783,Rural,Night-lit,Low,100,Night,High
-Clear,5.526,Intersection,Night-unlit,Low,50,Night,High
+Clear,5.526,Intersection,Night-unlit,Low,50,Night,Medium
 Storm,6.311,Urban,Daylight,Very High,100,Night,High
 Rain,4.618,Urban,Night-lit,Very High,50,Morning,High
 Rain,8.293,Urban,Daylight,Medium,40,Afternoon,Medium
@@ -3726,19 +3726,19 @@ Drizzle,4.281,Highway,Night-unlit,Very High,100,Evening,High
 Fog,3.892,Rural,Daylight,Very High,80,Afternoon,High
 Clear,8.102,Rural,Daylight,Medium,40,Morning,Low
 Fog,3.766,Rural,Daylight,High,80,Night,High
-Clear,6.127,Rural,Night-lit,Medium,80,Morning,Low
+Clear,6.127,Rural,Night-lit,Medium,80,Morning,Medium
 Clear,7.635,Rural,Night-unlit,Low,100,Morning,Medium
 Clear,2.586,Urban,Dawn/Dusk,Low,50,Evening,Medium
 Rain,3.622,Intersection,Daylight,Medium,100,Evening,High
 Storm,4.049,Urban,Daylight,High,50,Night,High
-Clear,4.058,Highway,Daylight,Medium,30,Morning,Medium
+Clear,4.058,Highway,Daylight,Medium,30,Morning,Low
 Rain,9.801,Urban,Night-lit,Very High,50,Morning,High
 Storm,4.91,Highway,Daylight,High,100,Evening,High
 Clear,3.982,Rural,Dawn/Dusk,Medium,50,Morning,Medium
 Rain,6.578,Intersection,Night-unlit,Low,50,Afternoon,Medium
 Fog,6.258,Rural,Daylight,High,40,Afternoon,Medium
 Drizzle,7.057,Rural,Dawn/Dusk,High,30,Night,Medium
-Drizzle,9.752,Highway,Night-lit,High,60,Evening,Medium
+Drizzle,9.752,Highway,Night-lit,High,60,Evening,High
 Drizzle,7.819,Highway,Night-unlit,Very High,40,Afternoon,High
 Rain,2.087,Urban,Night-lit,High,80,Afternoon,High
 Clear,3.798,Urban,Night-lit,Very High,80,Afternoon,High
@@ -3792,14 +3792,14 @@ Fog,2.939,Intersection,Dawn/Dusk,Medium,50,Afternoon,High
 Clear,9.8,Urban,Night-lit,Very High,30,Morning,Medium
 Fog,10.0,Highway,Daylight,Low,60,Evening,Medium
 Drizzle,7.12,Urban,Daylight,High,80,Afternoon,Medium
-Rain,4.605,Rural,Night-lit,High,40,Afternoon,Low
+Rain,4.605,Rural,Night-lit,High,40,Afternoon,Medium
 Clear,8.639,Urban,Dawn/Dusk,Very High,50,Morning,Medium
 Drizzle,2.079,Highway,Night-lit,Very High,30,Morning,High
 Drizzle,5.097,Intersection,Daylight,High,60,Afternoon,Medium
 Storm,5.552,Urban,Night-lit,High,60,Evening,High
 Fog,5.107,Rural,Daylight,High,60,Night,High
 Drizzle,3.75,Urban,Night-lit,Very High,100,Afternoon,High
-Drizzle,5.574,Rural,Dawn/Dusk,Medium,60,Evening,High
+Drizzle,5.574,Rural,Dawn/Dusk,Medium,60,Evening,Medium
 Clear,6.229,Highway,Daylight,Very High,40,Afternoon,Medium
 Clear,2.229,Intersection,Daylight,Medium,100,Morning,High
 Drizzle,4.61,Highway,Night-lit,Very High,40,Evening,High
@@ -3812,7 +3812,7 @@ Storm,3.814,Urban,Night-unlit,Low,50,Morning,High
 Drizzle,7.424,Intersection,Daylight,Medium,30,Afternoon,Low
 Clear,8.065,Highway,Night-lit,Medium,50,Morning,Medium
 Clear,6.922,Urban,Daylight,High,50,Evening,Medium
-Clear,7.598,Intersection,Night-lit,High,100,Afternoon,Medium
+Clear,7.598,Intersection,Night-lit,High,100,Afternoon,High
 Drizzle,5.959,Urban,Night-lit,Very High,80,Night,High
 Fog,5.453,Highway,Daylight,Medium,40,Afternoon,Medium
 Rain,5.47,Highway,Night-lit,High,100,Night,High
@@ -3820,7 +3820,7 @@ Clear,7.463,Urban,Daylight,High,30,Afternoon,Low
 Clear,4.201,Intersection,Daylight,Medium,50,Evening,Medium
 Clear,7.146,Rural,Daylight,Medium,60,Morning,Low
 Drizzle,5.37,Urban,Night-lit,Medium,50,Morning,Medium
-Clear,3.977,Urban,Daylight,Medium,60,Morning,Low
+Clear,3.977,Urban,Daylight,Medium,60,Morning,Medium
 Clear,4.281,Urban,Daylight,Low,30,Afternoon,Low
 Rain,2.711,Urban,Dawn/Dusk,High,60,Night,High
 Clear,5.234,Rural,Daylight,Low,100,Evening,Medium
@@ -3841,7 +3841,7 @@ Clear,5.274,Rural,Night-lit,High,60,Morning,Medium
 Clear,9.421,Rural,Night-unlit,Low,100,Morning,Medium
 Rain,3.594,Urban,Daylight,Medium,100,Afternoon,High
 Clear,4.614,Intersection,Dawn/Dusk,Very High,40,Night,High
-Rain,6.876,Rural,Night-lit,Low,40,Afternoon,Low
+Rain,6.876,Rural,Night-lit,Low,40,Afternoon,Medium
 Clear,6.254,Highway,Night-unlit,High,80,Morning,High
 Drizzle,5.71,Intersection,Night-lit,Low,50,Evening,Medium
 Drizzle,4.391,Urban,Dawn/Dusk,Very High,50,Night,High
@@ -3851,12 +3851,12 @@ Storm,3.098,Intersection,Daylight,Low,50,Afternoon,Medium
 Rain,3.308,Urban,Daylight,Medium,40,Afternoon,Medium
 Rain,7.312,Highway,Daylight,High,50,Evening,High
 Clear,5.367,Urban,Daylight,Low,40,Morning,Low
-Drizzle,1.853,Urban,Night-lit,Medium,50,Night,Medium
+Drizzle,1.853,Urban,Night-lit,Medium,50,Night,High
 Clear,5.195,Urban,Night-unlit,Medium,60,Night,High
 Clear,5.139,Urban,Night-unlit,Low,60,Morning,Medium
 Fog,5.078,Urban,Night-lit,Low,80,Evening,High
 Clear,6.578,Urban,Night-lit,Medium,60,Evening,Medium
-Clear,6.159,Urban,Night-unlit,High,80,Evening,Medium
+Clear,6.159,Urban,Night-unlit,High,80,Evening,High
 Drizzle,4.75,Urban,Daylight,Very High,100,Evening,High
 Drizzle,5.471,Highway,Daylight,Medium,50,Morning,Medium
 Fog,2.294,Urban,Daylight,High,60,Morning,High
@@ -3888,19 +3888,19 @@ Clear,3.842,Intersection,Dawn/Dusk,Medium,40,Evening,Medium
 Clear,3.988,Urban,Night-unlit,Medium,50,Night,Medium
 Rain,1.536,Urban,Night-lit,Medium,80,Night,High
 Clear,1.977,Rural,Daylight,Very High,50,Morning,Medium
-Rain,8.598,Urban,Daylight,High,60,Morning,High
+Rain,8.598,Urban,Daylight,High,60,Morning,Medium
 Clear,1.356,Urban,Dawn/Dusk,Very High,50,Evening,High
 Drizzle,9.192,Urban,Daylight,High,40,Evening,Medium
-Clear,6.506,Intersection,Night-unlit,Medium,50,Morning,High
+Clear,6.506,Intersection,Night-unlit,Medium,50,Morning,Medium
 Clear,6.037,Intersection,Daylight,Medium,60,Evening,Medium
 Rain,6.701,Rural,Dawn/Dusk,Very High,60,Evening,High
 Rain,5.33,Urban,Night-unlit,High,50,Evening,High
-Rain,4.805,Intersection,Dawn/Dusk,Medium,60,Morning,Medium
+Rain,4.805,Intersection,Dawn/Dusk,Medium,60,Morning,High
 Clear,3.727,Rural,Dawn/Dusk,High,50,Evening,Medium
 Rain,5.474,Urban,Daylight,High,30,Night,Medium
 Clear,4.247,Highway,Night-unlit,Low,60,Evening,Medium
 Rain,8.496,Urban,Night-lit,Very High,100,Morning,High
-Clear,5.516,Urban,Night-unlit,Very High,30,Evening,High
+Clear,5.516,Urban,Night-unlit,Very High,30,Evening,Medium
 Rain,4.713,Highway,Night-lit,Very High,50,Night,High
 Clear,2.497,Rural,Dawn/Dusk,High,40,Night,High
 Drizzle,7.282,Highway,Night-unlit,Medium,60,Night,High
@@ -3922,7 +3922,7 @@ Clear,2.848,Intersection,Night-lit,High,60,Afternoon,High
 Clear,3.7,Highway,Night-lit,Medium,80,Night,High
 Drizzle,5.81,Rural,Daylight,High,30,Afternoon,Low
 Fog,5.546,Urban,Daylight,Low,100,Afternoon,High
-Rain,4.401,Intersection,Night-lit,High,40,Afternoon,Medium
+Rain,4.401,Intersection,Night-lit,High,40,Afternoon,High
 Rain,3.796,Intersection,Night-unlit,Medium,60,Night,High
 Rain,7.073,Highway,Night-unlit,Medium,30,Evening,Medium
 Drizzle,2.041,Urban,Night-lit,High,60,Night,High
@@ -3949,7 +3949,7 @@ Drizzle,2.692,Highway,Night-lit,Very High,80,Evening,High
 Clear,7.331,Urban,Daylight,High,80,Morning,Medium
 Drizzle,3.354,Urban,Night-unlit,Medium,80,Night,High
 Drizzle,5.635,Highway,Night-lit,High,50,Morning,Medium
-Fog,4.949,Highway,Daylight,Medium,60,Morning,Medium
+Fog,4.949,Highway,Daylight,Medium,60,Morning,Low
 Fog,2.002,Highway,Dawn/Dusk,Low,100,Afternoon,High
 Fog,3.611,Urban,Daylight,High,80,Morning,High
 Drizzle,6.33,Rural,Daylight,Very High,50,Afternoon,Medium
@@ -3958,7 +3958,7 @@ Drizzle,7.459,Intersection,Night-unlit,Medium,80,Night,High
 Clear,2.098,Rural,Daylight,Low,30,Afternoon,Low
 Drizzle,0.837,Rural,Daylight,Medium,80,Morning,High
 Clear,3.975,Urban,Night-lit,High,30,Night,Medium
-Clear,9.139,Intersection,Dawn/Dusk,Medium,80,Evening,Low
+Clear,9.139,Intersection,Dawn/Dusk,Medium,80,Evening,Medium
 Rain,6.894,Intersection,Night-lit,Medium,30,Evening,Medium
 Clear,5.21,Urban,Night-lit,Low,40,Night,Medium
 Drizzle,3.895,Urban,Night-unlit,Low,80,Afternoon,Medium
@@ -3981,15 +3981,15 @@ Clear,7.365,Urban,Dawn/Dusk,Low,50,Morning,Low
 Drizzle,6.669,Highway,Dawn/Dusk,High,30,Night,Medium
 Fog,6.89,Urban,Daylight,Medium,80,Evening,High
 Drizzle,5.985,Intersection,Daylight,High,40,Morning,Medium
-Storm,9.927,Urban,Daylight,Medium,50,Night,Medium
+Storm,9.927,Urban,Daylight,Medium,50,Night,High
 Clear,2.84,Urban,Night-unlit,Very High,30,Afternoon,High
 Fog,1.865,Urban,Daylight,High,40,Afternoon,High
 Drizzle,6.552,Rural,Daylight,High,80,Night,Medium
-Clear,4.652,Rural,Night-unlit,High,60,Morning,Low
+Clear,4.652,Rural,Night-unlit,High,60,Morning,Medium
 Clear,2.977,Urban,Dawn/Dusk,High,40,Morning,Medium
 Clear,7.591,Urban,Night-unlit,Medium,80,Morning,High
 Drizzle,8.064,Urban,Daylight,High,50,Night,Medium
-Clear,3.136,Highway,Daylight,High,60,Evening,High
+Clear,3.136,Highway,Daylight,High,60,Evening,Medium
 Drizzle,4.933,Rural,Night-lit,Medium,40,Morning,Medium
 Clear,4.461,Highway,Daylight,High,40,Night,Medium
 Clear,1.518,Urban,Daylight,Medium,30,Morning,Medium
@@ -3997,7 +3997,7 @@ Clear,3.638,Rural,Daylight,High,40,Night,Medium
 Clear,3.709,Urban,Night-lit,Low,80,Evening,Medium
 Drizzle,4.254,Highway,Night-unlit,Medium,30,Evening,Medium
 Fog,2.007,Urban,Night-unlit,High,100,Evening,High
-Rain,10.0,Urban,Daylight,Medium,50,Afternoon,Medium
+Rain,10.0,Urban,Daylight,Medium,50,Afternoon,High
 Drizzle,4.469,Intersection,Night-lit,Low,100,Afternoon,Medium
 Clear,4.528,Rural,Night-unlit,High,50,Afternoon,Medium
 Drizzle,1.962,Rural,Dawn/Dusk,Medium,30,Afternoon,Medium
@@ -4022,8 +4022,8 @@ Drizzle,4.078,Urban,Night-lit,Low,60,Night,Medium
 Clear,5.175,Rural,Dawn/Dusk,Low,80,Afternoon,Low
 Clear,6.223,Urban,Dawn/Dusk,Low,60,Afternoon,Low
 Clear,7.069,Urban,Night-lit,Very High,80,Afternoon,High
-Rain,5.789,Rural,Daylight,High,60,Morning,Low
-Rain,9.123,Urban,Night-lit,High,60,Night,Medium
+Rain,5.789,Rural,Daylight,High,60,Morning,Medium
+Rain,9.123,Urban,Night-lit,High,60,Night,High
 Rain,5.396,Highway,Daylight,Low,50,Evening,Medium
 Storm,4.953,Highway,Daylight,High,40,Evening,High
 Clear,3.205,Rural,Night-lit,High,50,Afternoon,Medium
@@ -4033,24 +4033,24 @@ Drizzle,4.838,Rural,Daylight,Very High,30,Evening,Medium
 Fog,3.211,Rural,Night-unlit,High,50,Night,High
 Rain,3.114,Highway,Dawn/Dusk,Very High,80,Morning,High
 Fog,4.908,Intersection,Daylight,Medium,80,Night,High
-Clear,3.765,Urban,Night-unlit,Medium,60,Morning,High
+Clear,3.765,Urban,Night-unlit,Medium,60,Morning,Medium
 Clear,3.745,Intersection,Dawn/Dusk,Medium,60,Afternoon,Medium
 Rain,3.132,Intersection,Daylight,High,40,Afternoon,Medium
 Drizzle,5.145,Urban,Daylight,High,80,Morning,Medium
 Rain,4.527,Highway,Night-unlit,High,100,Evening,High
 Clear,2.193,Highway,Night-lit,Medium,30,Night,High
 Rain,2.088,Intersection,Daylight,Very High,80,Afternoon,High
-Clear,3.428,Intersection,Daylight,Low,60,Evening,Medium
+Clear,3.428,Intersection,Daylight,Low,60,Evening,Low
 Clear,4.841,Urban,Daylight,High,80,Evening,Medium
 Drizzle,6.923,Rural,Dawn/Dusk,Medium,60,Evening,Medium
 Fog,6.705,Rural,Daylight,High,80,Afternoon,High
 Fog,9.768,Urban,Night-lit,Medium,100,Evening,High
 Drizzle,1.745,Urban,Night-lit,Low,100,Night,High
 Clear,4.259,Intersection,Daylight,High,30,Night,Medium
-Clear,5.678,Highway,Daylight,Medium,40,Afternoon,Medium
+Clear,5.678,Highway,Daylight,Medium,40,Afternoon,Low
 Drizzle,5.694,Intersection,Daylight,Low,100,Night,Medium
 Clear,4.465,Urban,Night-lit,Low,60,Afternoon,Medium
-Drizzle,4.222,Intersection,Night-lit,Medium,40,Afternoon,Medium
+Drizzle,4.222,Intersection,Night-lit,Medium,40,Afternoon,Low
 Rain,5.967,Highway,Night-unlit,High,100,Evening,High
 Drizzle,3.13,Highway,Dawn/Dusk,Medium,80,Night,High
 Fog,4.538,Rural,Dawn/Dusk,Medium,50,Morning,Medium
@@ -4059,12 +4059,12 @@ Clear,5.962,Intersection,Night-unlit,Medium,60,Night,High
 Clear,3.798,Intersection,Night-lit,High,80,Afternoon,High
 Drizzle,6.359,Urban,Dawn/Dusk,Low,40,Morning,Low
 Clear,7.54,Urban,Night-lit,High,40,Evening,Medium
-Clear,6.129,Rural,Night-lit,High,100,Morning,High
+Clear,6.129,Rural,Night-lit,High,100,Morning,Medium
 Drizzle,8.892,Rural,Night-lit,Medium,50,Afternoon,Medium
 Drizzle,3.237,Urban,Night-lit,Medium,50,Night,High
 Drizzle,2.888,Intersection,Night-lit,High,50,Evening,High
 Clear,7.48,Urban,Night-lit,High,50,Morning,Medium
-Rain,6.051,Urban,Night-lit,High,30,Evening,High
+Rain,6.051,Urban,Night-lit,High,30,Evening,Medium
 Clear,4.376,Intersection,Daylight,Very High,50,Morning,Medium
 Storm,6.951,Intersection,Night-unlit,High,40,Night,High
 Fog,4.771,Rural,Night-lit,Low,30,Night,Medium
@@ -4085,7 +4085,7 @@ Clear,5.078,Highway,Dawn/Dusk,Medium,30,Morning,Medium
 Rain,5.147,Urban,Night-lit,Medium,50,Afternoon,Medium
 Rain,3.745,Intersection,Dawn/Dusk,High,30,Evening,High
 Clear,4.773,Rural,Dawn/Dusk,High,80,Morning,Medium
-Drizzle,4.242,Highway,Night-lit,Medium,40,Morning,Low
+Drizzle,4.242,Highway,Night-lit,Medium,40,Morning,Medium
 Drizzle,6.965,Highway,Night-lit,High,60,Evening,High
 Fog,7.217,Highway,Night-lit,Medium,100,Evening,High
 Storm,5.807,Urban,Daylight,Medium,100,Morning,High
@@ -4102,7 +4102,7 @@ Rain,8.98,Urban,Night-lit,High,50,Morning,Medium
 Clear,4.389,Rural,Night-lit,Medium,80,Night,Medium
 Drizzle,5.493,Intersection,Dawn/Dusk,Medium,50,Night,High
 Drizzle,5.485,Urban,Night-lit,High,60,Night,High
-Rain,2.552,Urban,Daylight,High,30,Night,Medium
+Rain,2.552,Urban,Daylight,High,30,Night,High
 Drizzle,8.957,Urban,Daylight,Medium,50,Afternoon,Medium
 Rain,5.709,Highway,Dawn/Dusk,Low,40,Afternoon,Medium
 Clear,2.921,Urban,Daylight,Medium,50,Morning,Medium
@@ -4115,7 +4115,7 @@ Rain,3.399,Highway,Dawn/Dusk,Very High,60,Night,High
 Rain,8.487,Intersection,Night-unlit,Medium,80,Morning,High
 Storm,4.565,Highway,Night-lit,Medium,50,Night,High
 Clear,3.635,Urban,Daylight,High,40,Evening,Medium
-Drizzle,5.925,Urban,Night-unlit,High,60,Morning,Medium
+Drizzle,5.925,Urban,Night-unlit,High,60,Morning,High
 Rain,7.675,Urban,Night-lit,Medium,60,Morning,Medium
 Storm,4.293,Urban,Night-unlit,Medium,100,Morning,High
 Clear,5.566,Urban,Dawn/Dusk,Medium,80,Evening,Medium
@@ -4125,10 +4125,10 @@ Drizzle,6.602,Urban,Night-lit,High,30,Morning,Medium
 Drizzle,4.211,Highway,Daylight,Medium,60,Afternoon,Medium
 Clear,4.752,Urban,Dawn/Dusk,Medium,50,Morning,Medium
 Drizzle,7.662,Highway,Dawn/Dusk,Very High,30,Night,High
-Clear,7.217,Urban,Night-unlit,Medium,60,Evening,High
+Clear,7.217,Urban,Night-unlit,Medium,60,Evening,Medium
 Drizzle,5.836,Urban,Daylight,Medium,60,Night,Medium
 Clear,2.848,Urban,Night-unlit,High,40,Afternoon,Medium
-Rain,4.58,Urban,Night-unlit,Medium,40,Evening,Medium
+Rain,4.58,Urban,Night-unlit,Medium,40,Evening,High
 Drizzle,5.007,Highway,Daylight,High,60,Afternoon,Medium
 Clear,3.627,Urban,Dawn/Dusk,Very High,60,Morning,Medium
 Fog,7.818,Rural,Night-unlit,High,80,Morning,High
@@ -4141,7 +4141,7 @@ Storm,4.847,Rural,Night-unlit,Low,60,Morning,Medium
 Storm,6.668,Rural,Daylight,Low,40,Morning,Medium
 Clear,8.965,Intersection,Daylight,High,60,Night,Medium
 Fog,6.979,Highway,Night-lit,Very High,30,Evening,High
-Clear,2.874,Rural,Night-lit,Medium,40,Evening,Medium
+Clear,2.874,Rural,Night-lit,Medium,40,Evening,Low
 Clear,5.589,Urban,Night-lit,Low,60,Morning,Medium
 Drizzle,4.547,Urban,Dawn/Dusk,High,30,Morning,Medium
 Rain,6.183,Rural,Dawn/Dusk,High,50,Night,High
@@ -4155,7 +4155,7 @@ Clear,9.175,Intersection,Dawn/Dusk,Medium,60,Afternoon,Medium
 Drizzle,7.216,Urban,Night-lit,Medium,80,Night,High
 Clear,3.588,Urban,Night-unlit,High,50,Morning,Medium
 Clear,6.109,Rural,Night-lit,High,80,Night,High
-Rain,6.436,Rural,Daylight,Medium,50,Night,High
+Rain,6.436,Rural,Daylight,Medium,50,Night,Medium
 Clear,5.045,Highway,Night-lit,Medium,60,Morning,Medium
 Storm,4.379,Intersection,Night-unlit,High,40,Night,High
 Clear,2.285,Urban,Night-lit,Very High,80,Morning,High
@@ -4184,16 +4184,16 @@ Clear,4.365,Highway,Daylight,Medium,40,Morning,Low
 Clear,8.465,Urban,Night-lit,High,40,Afternoon,Medium
 Fog,4.201,Highway,Dawn/Dusk,High,60,Night,High
 Clear,4.456,Urban,Night-lit,Medium,60,Night,Medium
-Drizzle,6.001,Rural,Night-unlit,High,40,Night,Medium
+Drizzle,6.001,Rural,Night-unlit,High,40,Night,High
 Clear,7.024,Highway,Daylight,Very High,60,Night,High
 Clear,7.216,Highway,Night-lit,Medium,40,Morning,Medium
 Clear,9.351,Rural,Daylight,High,50,Afternoon,Low
 Rain,1.305,Urban,Dawn/Dusk,Medium,100,Night,High
 Rain,0.647,Urban,Daylight,Low,60,Night,High
-Rain,6.936,Urban,Daylight,Low,50,Morning,Low
+Rain,6.936,Urban,Daylight,Low,50,Morning,Medium
 Drizzle,5.325,Highway,Dawn/Dusk,High,40,Morning,Medium
 Rain,3.551,Rural,Daylight,Low,30,Afternoon,Low
-Fog,7.941,Highway,Daylight,High,50,Afternoon,High
+Fog,7.941,Highway,Daylight,High,50,Afternoon,Medium
 Rain,3.211,Rural,Night-lit,Low,80,Evening,High
 Rain,2.521,Highway,Daylight,Medium,100,Afternoon,High
 Clear,3.338,Urban,Night-lit,Very High,60,Afternoon,High
@@ -4209,12 +4209,12 @@ Clear,4.185,Rural,Night-unlit,Low,60,Morning,Medium
 Clear,6.843,Urban,Daylight,Medium,50,Morning,Low
 Storm,6.836,Intersection,Daylight,Low,40,Afternoon,Medium
 Rain,4.182,Highway,Dawn/Dusk,High,40,Morning,High
-Clear,5.622,Rural,Night-unlit,Low,50,Morning,Low
+Clear,5.622,Rural,Night-unlit,Low,50,Morning,Medium
 Drizzle,3.752,Rural,Night-lit,High,50,Evening,Medium
 Drizzle,1.566,Highway,Daylight,High,80,Afternoon,High
-Rain,6.225,Intersection,Dawn/Dusk,Medium,50,Evening,Medium
+Rain,6.225,Intersection,Dawn/Dusk,Medium,50,Evening,High
 Rain,4.813,Urban,Daylight,Medium,50,Evening,Medium
-Storm,6.337,Highway,Daylight,High,60,Afternoon,Medium
+Storm,6.337,Highway,Daylight,High,60,Afternoon,High
 Drizzle,5.914,Rural,Night-lit,Very High,80,Night,High
 Fog,6.514,Highway,Daylight,Medium,80,Night,High
 Rain,4.619,Highway,Daylight,High,60,Afternoon,Medium
@@ -4227,13 +4227,13 @@ Clear,6.535,Rural,Daylight,Low,100,Night,Medium
 Rain,3.306,Rural,Daylight,Medium,60,Night,Medium
 Clear,6.574,Urban,Night-unlit,Medium,80,Night,High
 Rain,10.0,Urban,Daylight,Very High,30,Evening,Medium
-Drizzle,5.497,Rural,Night-lit,High,80,Morning,Low
+Drizzle,5.497,Rural,Night-lit,High,80,Morning,Medium
 Clear,3.701,Urban,Night-lit,High,80,Morning,High
 Drizzle,7.317,Highway,Night-lit,High,80,Night,High
 Clear,6.134,Intersection,Night-unlit,Very High,50,Afternoon,High
 Drizzle,2.96,Highway,Night-lit,High,40,Morning,Medium
 Drizzle,5.949,Highway,Night-unlit,High,100,Afternoon,High
-Drizzle,4.133,Intersection,Night-lit,Very High,60,Afternoon,Medium
+Drizzle,4.133,Intersection,Night-lit,Very High,60,Afternoon,High
 Clear,5.93,Highway,Daylight,Medium,60,Morning,Medium
 Rain,8.157,Urban,Dawn/Dusk,Low,60,Night,Medium
 Clear,7.973,Intersection,Night-lit,High,80,Evening,High
@@ -4253,19 +4253,19 @@ Clear,7.466,Intersection,Daylight,High,60,Night,Medium
 Rain,7.821,Urban,Night-lit,Medium,60,Morning,Medium
 Drizzle,8.463,Highway,Night-lit,High,80,Night,High
 Clear,3.277,Rural,Dawn/Dusk,Low,50,Morning,Medium
-Clear,6.228,Rural,Daylight,Low,80,Night,Low
+Clear,6.228,Rural,Daylight,Low,80,Night,Medium
 Rain,5.736,Highway,Daylight,High,100,Afternoon,High
 Drizzle,8.368,Urban,Night-unlit,Very High,60,Night,High
 Fog,5.583,Urban,Night-lit,Very High,60,Afternoon,High
 Rain,2.022,Urban,Night-lit,Very High,100,Night,High
 Rain,1.31,Highway,Dawn/Dusk,High,80,Morning,High
-Drizzle,3.945,Highway,Daylight,Low,100,Morning,Medium
+Drizzle,3.945,Highway,Daylight,Low,100,Morning,High
 Clear,7.587,Rural,Night-lit,High,40,Afternoon,Medium
 Fog,5.135,Rural,Night-unlit,High,50,Morning,High
 Fog,4.727,Highway,Dawn/Dusk,Medium,80,Afternoon,High
 Rain,5.63,Intersection,Daylight,Low,30,Morning,Low
 Rain,3.241,Urban,Night-lit,Medium,50,Afternoon,Medium
-Drizzle,4.359,Rural,Night-lit,Medium,40,Night,High
+Drizzle,4.359,Rural,Night-lit,Medium,40,Night,Medium
 Drizzle,6.633,Rural,Night-lit,High,60,Night,High
 Storm,7.022,Intersection,Daylight,Medium,80,Afternoon,High
 Storm,5.888,Highway,Night-lit,Medium,30,Morning,Medium
@@ -4285,12 +4285,12 @@ Drizzle,4.018,Urban,Daylight,High,30,Morning,Medium
 Clear,2.95,Rural,Daylight,Low,60,Night,Medium
 Fog,5.395,Highway,Dawn/Dusk,Medium,50,Night,High
 Rain,7.518,Urban,Daylight,Medium,50,Morning,Medium
-Storm,5.016,Rural,Night-unlit,Low,40,Night,Medium
+Storm,5.016,Rural,Night-unlit,Low,40,Night,High
 Clear,4.066,Urban,Night-lit,High,100,Evening,High
 Drizzle,6.18,Rural,Night-lit,Medium,50,Night,Medium
 Drizzle,6.53,Highway,Night-lit,Very High,40,Evening,High
 Drizzle,5.511,Highway,Night-lit,Low,40,Night,Medium
-Drizzle,2.659,Rural,Daylight,Very High,60,Afternoon,High
+Drizzle,2.659,Rural,Daylight,Very High,60,Afternoon,Medium
 Rain,5.397,Highway,Night-lit,Low,100,Afternoon,High
 Fog,7.104,Urban,Dawn/Dusk,High,50,Morning,High
 Rain,7.441,Urban,Night-lit,Low,80,Evening,High
@@ -4308,17 +4308,17 @@ Storm,4.843,Urban,Daylight,Medium,100,Morning,High
 Drizzle,4.849,Urban,Night-lit,Medium,80,Evening,Medium
 Storm,0.966,Urban,Night-lit,High,50,Night,High
 Clear,2.607,Highway,Daylight,High,100,Afternoon,High
-Drizzle,4.439,Urban,Daylight,High,60,Night,High
+Drizzle,4.439,Urban,Daylight,High,60,Night,Medium
 Clear,8.942,Urban,Night-unlit,Medium,60,Afternoon,Medium
 Clear,5.835,Urban,Night-unlit,Medium,80,Evening,High
 Clear,5.216,Highway,Daylight,Very High,30,Morning,Medium
 Clear,1.937,Urban,Night-lit,Very High,80,Morning,High
 Clear,3.511,Highway,Dawn/Dusk,High,40,Evening,Medium
-Rain,4.986,Urban,Daylight,High,100,Afternoon,Medium
-Drizzle,2.229,Urban,Daylight,Medium,50,Evening,High
+Rain,4.986,Urban,Daylight,High,100,Afternoon,High
+Drizzle,2.229,Urban,Daylight,Medium,50,Evening,Medium
 Clear,6.581,Intersection,Daylight,Medium,40,Morning,Medium
 Rain,5.799,Intersection,Dawn/Dusk,Very High,40,Afternoon,High
-Clear,7.009,Highway,Night-unlit,High,50,Night,High
+Clear,7.009,Highway,Night-unlit,High,50,Night,Medium
 Drizzle,4.286,Urban,Daylight,Medium,30,Evening,Medium
 Clear,10.0,Highway,Night-unlit,Very High,50,Night,High
 Clear,9.313,Urban,Night-lit,Medium,60,Afternoon,Medium
@@ -4329,11 +4329,11 @@ Clear,2.981,Urban,Night-lit,High,40,Morning,Medium
 Clear,4.283,Rural,Night-lit,High,100,Night,High
 Rain,3.866,Highway,Night-unlit,Low,40,Evening,High
 Clear,5.571,Rural,Night-unlit,Very High,60,Afternoon,Medium
-Fog,6.113,Urban,Dawn/Dusk,High,50,Night,Medium
+Fog,6.113,Urban,Dawn/Dusk,High,50,Night,High
 Clear,3.58,Urban,Dawn/Dusk,Medium,80,Evening,Medium
 Drizzle,3.401,Urban,Dawn/Dusk,Low,50,Evening,Medium
 Clear,6.875,Intersection,Night-unlit,High,40,Morning,Medium
-Clear,5.565,Urban,Daylight,Very High,80,Morning,High
+Clear,5.565,Urban,Daylight,Very High,80,Morning,Medium
 Clear,9.114,Rural,Daylight,High,40,Night,Medium
 Drizzle,6.327,Highway,Daylight,Medium,60,Night,Medium
 Drizzle,0.693,Highway,Dawn/Dusk,Medium,60,Afternoon,High
@@ -4378,28 +4378,28 @@ Fog,3.028,Urban,Dawn/Dusk,Very High,80,Night,High
 Clear,3.738,Intersection,Daylight,Low,100,Night,Medium
 Rain,4.484,Urban,Night-unlit,Very High,100,Evening,High
 Clear,8.568,Urban,Night-lit,High,50,Night,Medium
-Rain,5.643,Highway,Night-unlit,Medium,50,Morning,Medium
+Rain,5.643,Highway,Night-unlit,Medium,50,Morning,High
 Drizzle,5.921,Rural,Daylight,High,50,Morning,Medium
-Fog,7.471,Urban,Daylight,Very High,60,Morning,Medium
+Fog,7.471,Urban,Daylight,Very High,60,Morning,High
 Rain,6.436,Urban,Night-lit,Medium,30,Night,Medium
-Clear,4.418,Highway,Daylight,Medium,60,Afternoon,Low
+Clear,4.418,Highway,Daylight,Medium,60,Afternoon,Medium
 Storm,6.178,Highway,Dawn/Dusk,High,50,Morning,High
 Rain,6.143,Urban,Dawn/Dusk,Medium,50,Night,Medium
-Clear,6.628,Urban,Night-unlit,Low,30,Morning,Medium
+Clear,6.628,Urban,Night-unlit,Low,30,Morning,Low
 Drizzle,6.244,Rural,Daylight,Medium,50,Evening,Medium
-Fog,8.741,Highway,Daylight,Low,80,Morning,Medium
+Fog,8.741,Highway,Daylight,Low,80,Morning,Low
 Clear,4.725,Urban,Night-lit,Low,80,Evening,Medium
 Clear,6.521,Highway,Daylight,Low,60,Night,Medium
 Clear,4.828,Highway,Night-unlit,Medium,80,Morning,Medium
 Drizzle,5.133,Urban,Daylight,High,60,Afternoon,Medium
-Clear,5.957,Highway,Daylight,Low,60,Morning,Medium
+Clear,5.957,Highway,Daylight,Low,60,Morning,Low
 Drizzle,8.334,Highway,Daylight,High,60,Evening,Medium
 Clear,6.058,Highway,Night-lit,Low,30,Night,Medium
 Fog,3.363,Intersection,Daylight,Low,80,Morning,High
 Drizzle,8.283,Highway,Daylight,High,40,Morning,Medium
 Rain,4.005,Urban,Night-unlit,Medium,40,Evening,High
 Clear,6.001,Urban,Night-unlit,Low,30,Afternoon,Low
-Drizzle,3.476,Highway,Daylight,High,60,Morning,High
+Drizzle,3.476,Highway,Daylight,High,60,Morning,Medium
 Clear,3.434,Rural,Daylight,High,100,Morning,Medium
 Clear,2.516,Highway,Night-unlit,High,40,Afternoon,High
 Clear,3.403,Rural,Dawn/Dusk,Very High,30,Afternoon,Medium
@@ -4446,10 +4446,10 @@ Rain,7.724,Highway,Night-lit,High,40,Morning,Medium
 Clear,7.1,Urban,Daylight,Medium,60,Afternoon,Medium
 Clear,9.79,Rural,Daylight,Medium,40,Night,Low
 Clear,3.535,Urban,Daylight,High,40,Afternoon,Medium
-Fog,7.44,Highway,Daylight,Very High,40,Afternoon,High
-Rain,5.832,Urban,Daylight,High,60,Morning,High
+Fog,7.44,Highway,Daylight,Very High,40,Afternoon,Medium
+Rain,5.832,Urban,Daylight,High,60,Morning,Medium
 Rain,9.343,Highway,Dawn/Dusk,Medium,80,Afternoon,High
-Clear,2.527,Urban,Night-unlit,Medium,60,Afternoon,Medium
+Clear,2.527,Urban,Night-unlit,Medium,60,Afternoon,High
 Clear,6.527,Rural,Daylight,Low,80,Morning,Low
 Drizzle,4.854,Urban,Daylight,High,40,Evening,Medium
 Fog,6.956,Rural,Daylight,Medium,50,Morning,Medium
@@ -4457,14 +4457,14 @@ Clear,7.051,Urban,Dawn/Dusk,High,50,Evening,Medium
 Storm,5.083,Intersection,Daylight,Low,50,Evening,Medium
 Clear,4.21,Highway,Dawn/Dusk,Low,50,Evening,Medium
 Storm,4.394,Highway,Dawn/Dusk,Low,50,Morning,Medium
-Fog,4.34,Rural,Daylight,High,30,Afternoon,Medium
+Fog,4.34,Rural,Daylight,High,30,Afternoon,High
 Clear,5.755,Intersection,Daylight,Low,100,Afternoon,Medium
 Clear,2.011,Intersection,Dawn/Dusk,Medium,80,Morning,High
 Clear,5.817,Intersection,Daylight,Medium,80,Evening,Medium
 Clear,7.404,Urban,Night-unlit,Very High,40,Night,High
 Rain,5.785,Highway,Daylight,Very High,30,Evening,Medium
 Storm,5.491,Highway,Dawn/Dusk,High,40,Afternoon,High
-Drizzle,5.236,Rural,Daylight,Medium,60,Afternoon,Medium
+Drizzle,5.236,Rural,Daylight,Medium,60,Afternoon,Low
 Rain,5.018,Highway,Daylight,Very High,60,Evening,High
 Clear,4.528,Urban,Night-lit,High,80,Evening,High
 Clear,5.93,Rural,Daylight,Very High,50,Night,Medium
@@ -4488,7 +4488,7 @@ Rain,5.44,Urban,Night-lit,Medium,40,Morning,Medium
 Drizzle,5.796,Highway,Daylight,High,50,Night,Medium
 Drizzle,5.475,Urban,Night-lit,Medium,30,Evening,Medium
 Drizzle,6.367,Highway,Dawn/Dusk,Low,60,Morning,Medium
-Fog,6.495,Highway,Dawn/Dusk,Medium,60,Afternoon,High
+Fog,6.495,Highway,Dawn/Dusk,Medium,60,Afternoon,Medium
 Clear,3.36,Urban,Night-lit,Medium,30,Evening,Medium
 Drizzle,5.966,Urban,Night-unlit,Very High,30,Afternoon,Medium
 Clear,6.004,Rural,Dawn/Dusk,High,50,Morning,Medium
@@ -4511,11 +4511,11 @@ Drizzle,8.019,Intersection,Daylight,Medium,60,Night,Medium
 Drizzle,10.0,Highway,Night-unlit,Low,50,Morning,Medium
 Clear,7.541,Intersection,Daylight,High,40,Night,Medium
 Clear,7.576,Highway,Night-lit,High,60,Evening,Medium
-Fog,4.883,Intersection,Daylight,Medium,60,Morning,High
+Fog,4.883,Intersection,Daylight,Medium,60,Morning,Medium
 Clear,4.363,Urban,Daylight,Very High,60,Morning,Medium
 Clear,6.703,Rural,Night-lit,Medium,50,Morning,Medium
 Rain,5.586,Rural,Dawn/Dusk,Low,30,Evening,Medium
-Rain,8.285,Rural,Daylight,Medium,80,Morning,High
+Rain,8.285,Rural,Daylight,Medium,80,Morning,Medium
 Storm,4.164,Urban,Daylight,High,80,Morning,High
 Fog,4.471,Highway,Night-lit,Medium,80,Morning,High
 Clear,5.251,Highway,Night-lit,Low,30,Afternoon,Low
@@ -4565,12 +4565,12 @@ Clear,3.973,Urban,Night-unlit,Medium,40,Evening,Medium
 Drizzle,6.306,Urban,Daylight,Very High,40,Night,Medium
 Rain,6.486,Highway,Daylight,Low,30,Afternoon,Low
 Clear,5.966,Intersection,Daylight,Very High,80,Night,High
-Rain,5.958,Intersection,Night-lit,Medium,50,Night,Medium
+Rain,5.958,Intersection,Night-lit,Medium,50,Night,High
 Clear,3.215,Highway,Night-lit,High,40,Night,High
 Clear,7.788,Highway,Dawn/Dusk,High,40,Evening,Medium
 Clear,6.591,Highway,Dawn/Dusk,Low,30,Afternoon,Low
 Clear,5.453,Highway,Daylight,Medium,60,Night,Medium
-Drizzle,4.736,Urban,Dawn/Dusk,Very High,40,Evening,High
+Drizzle,4.736,Urban,Dawn/Dusk,Very High,40,Evening,Medium
 Rain,4.296,Urban,Night-lit,Low,80,Night,High
 Fog,7.011,Urban,Daylight,High,80,Afternoon,High
 Fog,4.56,Highway,Night-unlit,Very High,50,Evening,High
@@ -4585,7 +4585,7 @@ Fog,5.93,Intersection,Night-lit,Medium,60,Morning,High
 Clear,3.555,Urban,Daylight,Medium,50,Evening,Medium
 Fog,4.231,Urban,Dawn/Dusk,Very High,60,Evening,High
 Drizzle,2.765,Highway,Night-lit,Medium,50,Night,High
-Rain,6.094,Intersection,Daylight,Low,60,Afternoon,Low
+Rain,6.094,Intersection,Daylight,Low,60,Afternoon,Medium
 Clear,5.249,Rural,Night-lit,High,50,Afternoon,Medium
 Clear,2.974,Intersection,Dawn/Dusk,Medium,50,Morning,Medium
 Drizzle,3.257,Urban,Daylight,Low,40,Afternoon,Low
@@ -4604,7 +4604,7 @@ Clear,2.858,Urban,Night-unlit,Medium,50,Evening,High
 Clear,1.746,Urban,Dawn/Dusk,High,60,Morning,High
 Clear,6.656,Urban,Daylight,Very High,50,Night,Medium
 Clear,7.526,Rural,Night-lit,Very High,30,Night,Medium
-Rain,3.456,Urban,Daylight,High,60,Afternoon,High
+Rain,3.456,Urban,Daylight,High,60,Afternoon,Medium
 Drizzle,7.205,Highway,Dawn/Dusk,Very High,80,Evening,High
 Rain,6.987,Highway,Night-lit,Very High,60,Afternoon,High
 Rain,4.212,Highway,Night-lit,High,60,Afternoon,High
@@ -4613,14 +4613,14 @@ Drizzle,4.934,Highway,Night-lit,Low,50,Night,Medium
 Rain,4.75,Urban,Daylight,Medium,50,Evening,Medium
 Rain,4.588,Highway,Daylight,Low,80,Afternoon,Medium
 Fog,8.276,Rural,Night-lit,Medium,30,Morning,Medium
-Rain,6.626,Urban,Dawn/Dusk,Medium,50,Evening,High
+Rain,6.626,Urban,Dawn/Dusk,Medium,50,Evening,Medium
 Drizzle,1.31,Highway,Daylight,Medium,80,Morning,High
 Drizzle,5.585,Intersection,Dawn/Dusk,Medium,80,Evening,High
 Rain,3.802,Urban,Night-lit,Medium,40,Evening,Medium
 Clear,5.239,Rural,Night-lit,High,100,Morning,Medium
 Drizzle,8.651,Urban,Night-lit,Low,40,Night,Medium
 Drizzle,2.877,Urban,Daylight,Very High,60,Night,High
-Clear,5.032,Urban,Night-unlit,Medium,40,Night,High
+Clear,5.032,Urban,Night-unlit,Medium,40,Night,Medium
 Drizzle,8.248,Urban,Daylight,Low,30,Evening,Low
 Clear,4.948,Rural,Daylight,Medium,50,Morning,Low
 Rain,1.956,Rural,Night-lit,Very High,50,Evening,High
@@ -4646,11 +4646,11 @@ Clear,5.078,Rural,Night-unlit,High,60,Night,High
 Clear,7.071,Rural,Night-lit,Medium,60,Afternoon,Medium
 Rain,1.4,Rural,Daylight,Medium,50,Afternoon,Medium
 Drizzle,3.458,Urban,Daylight,High,60,Night,High
-Clear,4.417,Intersection,Night-lit,High,50,Evening,High
+Clear,4.417,Intersection,Night-lit,High,50,Evening,Medium
 Drizzle,2.76,Urban,Night-unlit,Medium,50,Night,High
 Storm,4.434,Highway,Night-lit,Medium,80,Afternoon,High
 Drizzle,6.507,Urban,Daylight,Medium,50,Night,Medium
-Drizzle,5.826,Rural,Daylight,High,60,Afternoon,High
+Drizzle,5.826,Rural,Daylight,High,60,Afternoon,Medium
 Rain,4.8,Intersection,Night-lit,Medium,50,Evening,High
 Rain,5.006,Intersection,Night-unlit,Medium,40,Afternoon,High
 Clear,6.264,Urban,Daylight,Very High,50,Morning,Medium
@@ -4662,14 +4662,14 @@ Fog,5.453,Urban,Night-lit,High,80,Morning,High
 Clear,5.129,Highway,Daylight,High,30,Afternoon,Medium
 Clear,4.327,Urban,Daylight,Low,50,Evening,Low
 Clear,6.675,Urban,Daylight,Medium,50,Evening,Medium
-Clear,10.0,Rural,Night-lit,Very High,60,Night,Medium
+Clear,10.0,Rural,Night-lit,Very High,60,Night,High
 Clear,3.763,Urban,Daylight,Low,100,Evening,Medium
 Fog,8.739,Rural,Dawn/Dusk,Very High,30,Morning,Medium
 Clear,8.536,Urban,Night-lit,Very High,40,Evening,Medium
 Clear,5.34,Urban,Night-unlit,Very High,60,Night,High
 Rain,4.719,Highway,Daylight,Medium,30,Morning,Medium
 Clear,1.483,Urban,Night-unlit,Medium,30,Afternoon,Medium
-Drizzle,3.055,Intersection,Daylight,Low,80,Evening,High
+Drizzle,3.055,Intersection,Daylight,Low,80,Evening,Medium
 Fog,0.4,Highway,Night-lit,Low,60,Evening,High
 Clear,7.256,Rural,Daylight,High,30,Night,Medium
 Rain,4.025,Urban,Night-unlit,Very High,80,Afternoon,High
@@ -4681,7 +4681,7 @@ Clear,3.966,Highway,Night-unlit,Very High,80,Morning,High
 Rain,3.48,Highway,Night-unlit,Very High,60,Night,High
 Fog,4.369,Highway,Night-lit,Low,80,Morning,High
 Clear,4.814,Highway,Daylight,Very High,80,Night,High
-Drizzle,1.624,Rural,Night-unlit,Low,30,Night,Medium
+Drizzle,1.624,Rural,Night-unlit,Low,30,Night,High
 Clear,7.069,Highway,Daylight,Very High,50,Night,Medium
 Rain,5.729,Urban,Night-lit,Medium,80,Morning,High
 Rain,4.978,Highway,Daylight,Low,50,Evening,Medium
@@ -4703,7 +4703,7 @@ Clear,4.464,Intersection,Daylight,Medium,40,Evening,Medium
 Clear,4.694,Urban,Night-unlit,High,80,Morning,High
 Rain,3.942,Intersection,Daylight,Low,30,Night,Medium
 Clear,5.155,Rural,Daylight,Medium,50,Morning,Low
-Rain,4.659,Intersection,Night-unlit,High,80,Evening,Medium
+Rain,4.659,Intersection,Night-unlit,High,80,Evening,High
 Rain,5.278,Urban,Daylight,High,40,Morning,Medium
 Clear,3.849,Intersection,Dawn/Dusk,Low,60,Evening,Medium
 Drizzle,7.632,Urban,Daylight,Very High,100,Morning,High
@@ -4711,7 +4711,7 @@ Drizzle,5.95,Intersection,Night-lit,Medium,40,Evening,Medium
 Rain,6.183,Highway,Daylight,Very High,40,Night,High
 Clear,6.436,Urban,Daylight,Medium,50,Morning,Medium
 Fog,8.522,Highway,Dawn/Dusk,Medium,50,Morning,High
-Clear,3.572,Highway,Night-lit,Medium,60,Morning,Medium
+Clear,3.572,Highway,Night-lit,Medium,60,Morning,High
 Rain,7.77,Urban,Night-lit,Medium,100,Afternoon,High
 Clear,6.029,Highway,Night-lit,Very High,100,Morning,High
 Fog,5.634,Urban,Night-lit,Very High,60,Morning,High
@@ -4728,7 +4728,7 @@ Drizzle,4.091,Urban,Dawn/Dusk,Medium,60,Afternoon,Medium
 Rain,7.191,Urban,Night-lit,Medium,40,Evening,Medium
 Clear,6.145,Rural,Daylight,Low,80,Afternoon,Low
 Storm,1.692,Urban,Dawn/Dusk,Low,40,Morning,High
-Clear,10.0,Highway,Dawn/Dusk,Low,30,Night,Low
+Clear,10.0,Highway,Dawn/Dusk,Low,30,Night,Medium
 Drizzle,2.436,Rural,Daylight,Medium,50,Morning,Medium
 Clear,5.44,Intersection,Daylight,Medium,60,Night,Medium
 Fog,5.609,Urban,Night-unlit,Medium,80,Morning,High
@@ -4740,14 +4740,14 @@ Clear,3.187,Urban,Daylight,Low,40,Night,Medium
 Fog,6.418,Intersection,Night-lit,Medium,80,Night,High
 Drizzle,0.923,Urban,Night-lit,Medium,100,Night,High
 Rain,4.125,Rural,Daylight,Medium,30,Night,Medium
-Rain,7.204,Urban,Daylight,Medium,80,Evening,Medium
+Rain,7.204,Urban,Daylight,Medium,80,Evening,High
 Clear,7.155,Urban,Dawn/Dusk,Medium,60,Night,Medium
 Fog,2.476,Highway,Night-lit,Low,40,Afternoon,High
-Rain,7.117,Highway,Daylight,High,60,Morning,High
+Rain,7.117,Highway,Daylight,High,60,Morning,Medium
 Rain,7.762,Highway,Daylight,Low,60,Evening,Medium
 Drizzle,9.19,Highway,Night-lit,Very High,50,Night,High
 Clear,8.478,Urban,Night-unlit,Low,60,Afternoon,Medium
-Rain,6.193,Highway,Night-lit,Medium,80,Afternoon,Medium
+Rain,6.193,Highway,Night-lit,Medium,80,Afternoon,High
 Fog,4.195,Highway,Daylight,Very High,60,Evening,High
 Rain,2.806,Rural,Daylight,Low,30,Morning,Medium
 Rain,1.012,Highway,Daylight,Very High,100,Morning,High
@@ -4781,7 +4781,7 @@ Storm,5.818,Intersection,Night-lit,Very High,100,Night,High
 Rain,5.153,Highway,Night-unlit,Low,100,Night,High
 Clear,2.607,Rural,Night-lit,Very High,60,Afternoon,High
 Drizzle,4.651,Urban,Night-lit,High,30,Afternoon,Medium
-Clear,3.508,Urban,Dawn/Dusk,Very High,80,Morning,Medium
+Clear,3.508,Urban,Dawn/Dusk,Very High,80,Morning,High
 Drizzle,6.44,Urban,Daylight,Medium,40,Evening,Medium
 Clear,3.696,Urban,Dawn/Dusk,Medium,60,Afternoon,Medium
 Drizzle,0.506,Highway,Daylight,High,50,Afternoon,High
@@ -4800,7 +4800,7 @@ Drizzle,4.67,Urban,Night-lit,High,30,Afternoon,Medium
 Clear,5.487,Highway,Dawn/Dusk,Medium,80,Afternoon,Medium
 Rain,7.212,Urban,Night-unlit,Very High,50,Morning,High
 Rain,5.483,Urban,Daylight,Low,60,Morning,Medium
-Clear,4.22,Urban,Daylight,Medium,50,Morning,Medium
+Clear,4.22,Urban,Daylight,Medium,50,Morning,Low
 Rain,0.949,Rural,Dawn/Dusk,Low,80,Evening,High
 Rain,8.108,Urban,Night-lit,Medium,40,Night,Medium
 Fog,9.077,Urban,Night-lit,High,40,Night,High
@@ -4848,7 +4848,7 @@ Clear,8.838,Rural,Night-unlit,High,80,Morning,Medium
 Clear,2.586,Urban,Night-lit,Low,60,Morning,Medium
 Drizzle,5.625,Urban,Dawn/Dusk,Medium,50,Afternoon,Medium
 Clear,4.365,Rural,Night-lit,Medium,100,Evening,High
-Clear,6.791,Highway,Night-unlit,Low,80,Afternoon,Low
+Clear,6.791,Highway,Night-unlit,Low,80,Afternoon,Medium
 Rain,6.097,Rural,Daylight,High,50,Morning,Medium
 Rain,10.0,Urban,Night-unlit,Medium,80,Afternoon,High
 Clear,5.03,Rural,Dawn/Dusk,High,60,Afternoon,Medium
@@ -4856,7 +4856,7 @@ Drizzle,1.44,Highway,Daylight,Medium,30,Night,Medium
 Fog,3.811,Rural,Night-lit,Low,100,Night,High
 Drizzle,5.287,Urban,Night-unlit,High,60,Morning,High
 Drizzle,7.873,Urban,Dawn/Dusk,Medium,30,Morning,Medium
-Rain,6.408,Intersection,Daylight,High,30,Evening,High
+Rain,6.408,Intersection,Daylight,High,30,Evening,Medium
 Drizzle,8.081,Highway,Daylight,High,60,Night,High
 Rain,2.523,Urban,Dawn/Dusk,Medium,60,Night,High
 Clear,4.003,Rural,Night-lit,Very High,50,Morning,Medium
@@ -4885,7 +4885,7 @@ Rain,2.91,Urban,Night-lit,Medium,40,Evening,High
 Rain,3.839,Highway,Daylight,Medium,50,Evening,Medium
 Rain,7.206,Intersection,Daylight,High,100,Morning,High
 Rain,2.679,Urban,Night-lit,Very High,80,Morning,High
-Fog,7.901,Urban,Daylight,High,60,Morning,Low
+Fog,7.901,Urban,Daylight,High,60,Morning,Medium
 Clear,8.085,Rural,Night-unlit,Medium,40,Afternoon,Medium
 Rain,5.67,Urban,Night-lit,Medium,100,Evening,High
 Clear,1.011,Highway,Night-unlit,High,60,Night,High
@@ -4896,8 +4896,8 @@ Clear,5.097,Highway,Daylight,Low,50,Evening,Low
 Clear,4.545,Urban,Night-lit,Medium,60,Afternoon,Medium
 Clear,4.492,Rural,Daylight,Medium,40,Night,Medium
 Rain,4.819,Urban,Daylight,Very High,80,Morning,High
-Clear,7.071,Highway,Daylight,Medium,30,Afternoon,Medium
-Drizzle,2.733,Highway,Daylight,High,40,Night,Medium
+Clear,7.071,Highway,Daylight,Medium,30,Afternoon,Low
+Drizzle,2.733,Highway,Daylight,High,40,Night,High
 Fog,2.821,Intersection,Daylight,Low,80,Evening,High
 Drizzle,10.0,Intersection,Night-lit,Very High,80,Afternoon,High
 Clear,4.274,Intersection,Night-lit,Very High,50,Night,High
@@ -4905,9 +4905,9 @@ Clear,2.692,Urban,Night-lit,Low,30,Night,Medium
 Rain,5.804,Highway,Daylight,Low,50,Morning,Medium
 Drizzle,6.435,Urban,Night-unlit,Very High,80,Evening,High
 Storm,2.685,Highway,Night-lit,Low,60,Evening,High
-Drizzle,6.889,Highway,Dawn/Dusk,High,40,Evening,High
-Clear,4.379,Rural,Daylight,High,80,Night,High
-Rain,1.457,Rural,Night-unlit,High,80,Evening,Medium
+Drizzle,6.889,Highway,Dawn/Dusk,High,40,Evening,Medium
+Clear,4.379,Rural,Daylight,High,80,Night,Medium
+Rain,1.457,Rural,Night-unlit,High,80,Evening,High
 Drizzle,2.642,Highway,Dawn/Dusk,Medium,30,Night,Medium
 Rain,5.711,Urban,Daylight,Low,50,Afternoon,Low
 Rain,1.541,Urban,Dawn/Dusk,Medium,60,Morning,High
@@ -4941,9 +4941,9 @@ Rain,5.82,Urban,Night-unlit,Low,60,Evening,Medium
 Rain,3.964,Urban,Night-unlit,Very High,60,Evening,High
 Clear,6.091,Highway,Night-lit,Medium,80,Night,High
 Clear,3.261,Highway,Daylight,Low,60,Morning,Medium
-Rain,6.874,Urban,Daylight,Medium,100,Morning,Medium
+Rain,6.874,Urban,Daylight,Medium,100,Morning,High
 Clear,4.87,Urban,Dawn/Dusk,Medium,50,Evening,Medium
-Drizzle,5.294,Highway,Night-lit,Medium,40,Night,High
+Drizzle,5.294,Highway,Night-lit,Medium,40,Night,Medium
 Clear,5.799,Rural,Daylight,Low,30,Afternoon,Low
 Drizzle,5.207,Highway,Night-lit,Very High,60,Evening,High
 Drizzle,7.052,Urban,Daylight,High,80,Night,Medium
@@ -4951,12 +4951,12 @@ Fog,3.125,Urban,Daylight,High,100,Night,High
 Clear,4.987,Rural,Night-lit,High,60,Afternoon,Medium
 Drizzle,5.984,Highway,Night-unlit,Medium,50,Morning,Medium
 Clear,7.662,Urban,Daylight,High,100,Evening,High
-Rain,2.538,Highway,Daylight,Very High,50,Afternoon,Medium
-Clear,2.553,Urban,Dawn/Dusk,High,60,Afternoon,High
+Rain,2.538,Highway,Daylight,Very High,50,Afternoon,High
+Clear,2.553,Urban,Dawn/Dusk,High,60,Afternoon,Medium
 Rain,4.64,Urban,Daylight,Medium,60,Night,Medium
 Fog,3.36,Highway,Night-unlit,Low,60,Morning,High
 Clear,6.488,Intersection,Night-unlit,Medium,100,Evening,High
-Rain,7.115,Urban,Dawn/Dusk,Medium,60,Night,Medium
+Rain,7.115,Urban,Dawn/Dusk,Medium,60,Night,High
 Fog,5.592,Intersection,Daylight,High,50,Night,High
 Clear,5.819,Urban,Night-unlit,High,30,Morning,Medium
 Drizzle,8.058,Rural,Daylight,Medium,50,Morning,Low
@@ -4964,12 +4964,12 @@ Drizzle,3.535,Urban,Dawn/Dusk,Very High,40,Afternoon,Medium
 Rain,0.911,Highway,Dawn/Dusk,Very High,80,Afternoon,High
 Clear,7.293,Intersection,Night-unlit,High,80,Night,High
 Fog,3.245,Intersection,Dawn/Dusk,Low,40,Afternoon,Medium
-Rain,5.422,Highway,Night-lit,High,50,Morning,Medium
+Rain,5.422,Highway,Night-lit,High,50,Morning,High
 Clear,3.579,Urban,Daylight,High,60,Evening,Medium
 Clear,2.671,Rural,Daylight,Medium,100,Night,High
-Drizzle,5.036,Intersection,Daylight,Medium,80,Night,High
+Drizzle,5.036,Intersection,Daylight,Medium,80,Night,Medium
 Rain,5.933,Urban,Night-lit,High,60,Night,High
-Drizzle,4.988,Urban,Night-unlit,High,80,Afternoon,Medium
+Drizzle,4.988,Urban,Night-unlit,High,80,Afternoon,High
 Clear,4.282,Urban,Dawn/Dusk,High,80,Evening,High
 Fog,7.654,Urban,Night-lit,High,50,Afternoon,Medium
 Clear,4.093,Urban,Night-lit,Very High,80,Night,High
@@ -5011,7 +5011,7 @@ Clear,4.097,Highway,Daylight,Medium,40,Afternoon,Low
 Drizzle,6.507,Intersection,Night-lit,Low,80,Afternoon,Medium
 Drizzle,3.791,Highway,Daylight,Medium,80,Afternoon,Medium
 Rain,1.382,Intersection,Night-lit,High,80,Afternoon,High
-Clear,4.985,Rural,Daylight,Medium,60,Morning,Medium
+Clear,4.985,Rural,Daylight,Medium,60,Morning,Low
 Drizzle,6.031,Urban,Night-unlit,High,60,Afternoon,High
 Fog,3.527,Intersection,Daylight,Medium,100,Morning,High
 Rain,7.97,Urban,Daylight,Medium,60,Morning,Medium
@@ -5019,7 +5019,7 @@ Drizzle,5.355,Urban,Dawn/Dusk,High,80,Evening,High
 Storm,6.602,Intersection,Daylight,Medium,50,Afternoon,Medium
 Clear,6.709,Highway,Daylight,Low,60,Morning,Low
 Clear,6.038,Highway,Daylight,Low,60,Afternoon,Low
-Drizzle,7.364,Urban,Night-lit,Low,50,Night,Medium
+Drizzle,7.364,Urban,Night-lit,Low,50,Night,Low
 Clear,8.131,Urban,Dawn/Dusk,Very High,100,Evening,High
 Clear,6.78,Rural,Daylight,Medium,60,Evening,Medium
 Clear,6.953,Urban,Daylight,High,80,Morning,Medium
@@ -5042,14 +5042,14 @@ Drizzle,2.947,Urban,Night-lit,Medium,50,Afternoon,Medium
 Drizzle,10.0,Rural,Dawn/Dusk,High,60,Morning,Medium
 Fog,3.887,Rural,Dawn/Dusk,High,60,Evening,High
 Drizzle,4.314,Intersection,Dawn/Dusk,Very High,80,Afternoon,High
-Clear,5.159,Intersection,Daylight,Medium,30,Night,Low
+Clear,5.159,Intersection,Daylight,Medium,30,Night,Medium
 Drizzle,7.905,Highway,Daylight,Medium,100,Morning,Medium
 Drizzle,7.057,Highway,Night-lit,Very High,80,Night,High
 Clear,3.147,Rural,Dawn/Dusk,Medium,60,Night,Medium
 Clear,7.609,Urban,Night-unlit,Low,40,Afternoon,Low
 Rain,2.931,Rural,Daylight,Very High,60,Evening,High
 Drizzle,4.244,Urban,Daylight,Low,40,Evening,Medium
-Rain,2.643,Urban,Dawn/Dusk,High,30,Morning,Medium
+Rain,2.643,Urban,Dawn/Dusk,High,30,Morning,High
 Drizzle,9.826,Rural,Night-lit,High,40,Afternoon,Medium
 Drizzle,2.026,Highway,Dawn/Dusk,Low,30,Night,Medium
 Clear,5.529,Highway,Daylight,Medium,40,Morning,Low
@@ -5071,13 +5071,13 @@ Fog,9.338,Urban,Night-unlit,Very High,40,Night,High
 Drizzle,9.77,Highway,Dawn/Dusk,Very High,60,Afternoon,High
 Storm,4.262,Rural,Daylight,Medium,80,Night,High
 Rain,8.089,Urban,Dawn/Dusk,Low,50,Morning,Medium
-Clear,5.36,Highway,Dawn/Dusk,Very High,50,Evening,Low
+Clear,5.36,Highway,Dawn/Dusk,Very High,50,Evening,Medium
 Clear,4.916,Urban,Night-lit,Medium,30,Afternoon,Low
 Rain,2.944,Urban,Daylight,Medium,60,Night,High
 Clear,5.522,Highway,Daylight,Medium,50,Evening,Medium
 Clear,4.442,Rural,Night-lit,Low,30,Evening,Low
 Clear,0.4,Urban,Night-unlit,Medium,30,Evening,High
-Clear,4.254,Intersection,Night-unlit,High,40,Afternoon,High
+Clear,4.254,Intersection,Night-unlit,High,40,Afternoon,Medium
 Clear,5.163,Rural,Daylight,Medium,80,Evening,Medium
 Drizzle,8.718,Rural,Night-lit,High,60,Evening,Medium
 Drizzle,2.546,Rural,Daylight,High,50,Morning,Medium
@@ -5087,17 +5087,17 @@ Clear,7.395,Urban,Night-lit,Low,50,Morning,Low
 Rain,7.83,Rural,Night-lit,High,80,Night,High
 Drizzle,6.001,Rural,Daylight,High,40,Night,Medium
 Fog,8.946,Intersection,Night-unlit,Medium,50,Evening,High
-Clear,7.931,Highway,Night-unlit,Medium,60,Night,Medium
+Clear,7.931,Highway,Night-unlit,Medium,60,Night,High
 Clear,8.146,Urban,Daylight,High,40,Night,Medium
 Drizzle,2.313,Rural,Night-lit,Very High,50,Night,High
-Clear,6.965,Urban,Daylight,Low,50,Evening,Medium
-Clear,4.673,Urban,Dawn/Dusk,High,100,Morning,Medium
+Clear,6.965,Urban,Daylight,Low,50,Evening,Low
+Clear,4.673,Urban,Dawn/Dusk,High,100,Morning,High
 Rain,4.946,Intersection,Night-lit,Medium,50,Morning,Medium
 Rain,2.863,Highway,Daylight,High,40,Evening,High
 Clear,6.443,Rural,Dawn/Dusk,Low,50,Morning,Low
 Drizzle,8.735,Rural,Daylight,High,40,Evening,Medium
 Rain,4.415,Highway,Daylight,High,50,Afternoon,Medium
-Drizzle,5.474,Urban,Night-lit,High,80,Evening,Medium
+Drizzle,5.474,Urban,Night-lit,High,80,Evening,High
 Clear,5.936,Urban,Night-lit,Low,80,Evening,Medium
 Clear,4.733,Urban,Daylight,High,60,Afternoon,Medium
 Clear,3.204,Rural,Night-unlit,High,60,Morning,High
@@ -5105,8 +5105,8 @@ Drizzle,8.048,Intersection,Daylight,High,50,Afternoon,Medium
 Rain,7.946,Rural,Dawn/Dusk,High,50,Night,High
 Fog,4.205,Rural,Daylight,High,40,Evening,Medium
 Fog,7.556,Intersection,Night-unlit,Medium,30,Afternoon,High
-Clear,3.726,Highway,Night-lit,High,60,Morning,High
-Clear,4.451,Urban,Daylight,High,30,Afternoon,Medium
+Clear,3.726,Highway,Night-lit,High,60,Morning,Medium
+Clear,4.451,Urban,Daylight,High,30,Afternoon,Low
 Storm,5.632,Urban,Night-unlit,High,60,Night,High
 Rain,0.477,Rural,Daylight,Medium,30,Afternoon,Medium
 Fog,2.322,Urban,Night-lit,Very High,60,Morning,High
@@ -5161,22 +5161,22 @@ Clear,4.646,Highway,Daylight,Very High,80,Morning,Medium
 Rain,5.279,Intersection,Night-lit,Very High,50,Evening,High
 Clear,8.829,Urban,Night-lit,High,50,Afternoon,Medium
 Clear,2.732,Rural,Night-unlit,High,30,Evening,Medium
-Clear,6.797,Urban,Night-lit,Very High,40,Morning,High
+Clear,6.797,Urban,Night-lit,Very High,40,Morning,Medium
 Clear,4.896,Highway,Daylight,High,60,Night,Medium
 Fog,3.076,Intersection,Night-unlit,Medium,80,Morning,High
 Drizzle,6.494,Urban,Dawn/Dusk,Very High,60,Evening,High
 Drizzle,6.074,Rural,Daylight,Medium,60,Evening,Medium
 Clear,3.8,Urban,Daylight,Medium,60,Afternoon,Medium
-Clear,6.453,Highway,Night-lit,Medium,40,Afternoon,Low
+Clear,6.453,Highway,Night-lit,Medium,40,Afternoon,Medium
 Clear,7.462,Highway,Dawn/Dusk,Medium,40,Morning,Medium
-Storm,9.968,Rural,Night-lit,Medium,60,Morning,Low
+Storm,9.968,Rural,Night-lit,Medium,60,Morning,High
 Clear,6.282,Highway,Daylight,Low,30,Afternoon,Low
 Clear,8.678,Highway,Daylight,Medium,40,Morning,Low
 Drizzle,1.921,Urban,Night-lit,High,100,Afternoon,High
 Clear,5.005,Intersection,Dawn/Dusk,Medium,40,Morning,Medium
 Clear,7.369,Highway,Night-unlit,Medium,40,Afternoon,Medium
 Drizzle,6.519,Urban,Night-unlit,Low,30,Afternoon,Medium
-Rain,6.516,Highway,Daylight,Medium,30,Morning,High
+Rain,6.516,Highway,Daylight,Medium,30,Morning,Medium
 Drizzle,7.318,Highway,Dawn/Dusk,High,60,Morning,Medium
 Storm,5.57,Urban,Daylight,Medium,50,Evening,Medium
 Rain,3.842,Urban,Daylight,High,60,Evening,Medium
@@ -5193,7 +5193,7 @@ Rain,2.824,Highway,Night-lit,Medium,100,Night,High
 Clear,9.431,Intersection,Night-unlit,Medium,50,Morning,Medium
 Rain,2.866,Urban,Daylight,Medium,60,Evening,High
 Clear,4.646,Urban,Daylight,High,60,Morning,Medium
-Drizzle,4.71,Highway,Daylight,Medium,100,Afternoon,High
+Drizzle,4.71,Highway,Daylight,Medium,100,Afternoon,Medium
 Drizzle,6.962,Highway,Night-lit,Medium,100,Afternoon,High
 Clear,8.465,Urban,Daylight,Very High,60,Morning,Medium
 Storm,5.142,Intersection,Dawn/Dusk,Medium,40,Evening,High
@@ -5203,39 +5203,39 @@ Rain,3.516,Urban,Dawn/Dusk,High,60,Evening,High
 Rain,6.829,Intersection,Dawn/Dusk,High,60,Evening,High
 Drizzle,5.738,Urban,Dawn/Dusk,High,80,Night,High
 Rain,5.196,Urban,Night-unlit,Medium,50,Night,High
-Rain,7.348,Intersection,Daylight,Medium,60,Evening,High
+Rain,7.348,Intersection,Daylight,Medium,60,Evening,Medium
 Clear,2.113,Intersection,Daylight,Medium,50,Night,High
 Clear,6.003,Urban,Night-unlit,High,80,Morning,High
 Rain,5.47,Highway,Daylight,Medium,60,Afternoon,Medium
 Storm,9.204,Intersection,Night-unlit,Medium,30,Morning,High
 Clear,7.575,Rural,Night-lit,Low,30,Evening,Low
-Rain,3.441,Rural,Daylight,Medium,80,Afternoon,Medium
+Rain,3.441,Rural,Daylight,Medium,80,Afternoon,High
 Clear,8.168,Urban,Daylight,Low,50,Evening,Low
 Clear,3.152,Highway,Night-unlit,Medium,100,Night,High
 Clear,5.677,Rural,Daylight,Low,60,Afternoon,Low
 Drizzle,6.108,Urban,Night-lit,Medium,50,Afternoon,Medium
-Fog,3.971,Urban,Daylight,High,100,Afternoon,Medium
-Clear,4.674,Rural,Night-lit,High,60,Night,Low
+Fog,3.971,Urban,Daylight,High,100,Afternoon,High
+Clear,4.674,Rural,Night-lit,High,60,Night,Medium
 Clear,8.334,Rural,Daylight,Very High,60,Afternoon,Medium
 Clear,5.345,Urban,Dawn/Dusk,Low,50,Evening,Medium
 Fog,5.085,Highway,Daylight,Very High,80,Afternoon,High
 Drizzle,5.408,Urban,Daylight,High,50,Afternoon,Medium
 Clear,8.069,Urban,Night-lit,Medium,60,Morning,Medium
-Drizzle,4.38,Rural,Daylight,Low,50,Night,Low
+Drizzle,4.38,Rural,Daylight,Low,50,Night,Medium
 Rain,4.822,Rural,Night-lit,Low,40,Evening,Medium
 Clear,5.005,Intersection,Dawn/Dusk,High,50,Morning,Medium
 Rain,4.821,Rural,Daylight,High,100,Morning,High
-Clear,4.541,Intersection,Dawn/Dusk,Medium,60,Night,High
+Clear,4.541,Intersection,Dawn/Dusk,Medium,60,Night,Medium
 Clear,2.831,Urban,Daylight,Low,60,Afternoon,Low
 Clear,4.064,Rural,Daylight,Medium,60,Afternoon,Low
 Drizzle,7.471,Highway,Daylight,High,80,Morning,Medium
 Clear,6.954,Highway,Night-unlit,Low,40,Morning,Medium
 Drizzle,2.591,Highway,Daylight,Medium,60,Evening,Medium
-Rain,8.698,Rural,Daylight,Medium,100,Night,High
+Rain,8.698,Rural,Daylight,Medium,100,Night,Medium
 Rain,3.381,Highway,Daylight,Low,30,Morning,Medium
 Drizzle,5.425,Highway,Daylight,Medium,40,Morning,Medium
-Clear,6.825,Highway,Night-unlit,Very High,60,Evening,Medium
-Drizzle,4.252,Highway,Dawn/Dusk,High,60,Afternoon,High
+Clear,6.825,Highway,Night-unlit,Very High,60,Evening,High
+Drizzle,4.252,Highway,Dawn/Dusk,High,60,Afternoon,Medium
 Clear,6.816,Highway,Dawn/Dusk,Medium,30,Evening,Medium
 Storm,3.88,Highway,Dawn/Dusk,Low,60,Evening,High
 Clear,3.534,Intersection,Night-lit,High,80,Afternoon,High
@@ -5247,10 +5247,10 @@ Rain,9.419,Urban,Daylight,Medium,40,Morning,Medium
 Fog,5.998,Highway,Night-unlit,Medium,60,Night,High
 Clear,5.118,Urban,Daylight,Medium,30,Night,Medium
 Clear,5.333,Intersection,Daylight,High,80,Afternoon,Medium
-Clear,8.241,Rural,Night-lit,High,80,Afternoon,Medium
+Clear,8.241,Rural,Night-lit,High,80,Afternoon,High
 Clear,4.622,Urban,Night-unlit,Low,80,Morning,Medium
 Clear,7.629,Intersection,Night-unlit,High,30,Evening,High
-Clear,6.433,Urban,Daylight,Medium,50,Morning,Medium
+Clear,6.433,Urban,Daylight,Medium,50,Morning,Low
 Clear,7.66,Rural,Night-lit,Medium,40,Afternoon,Low
 Drizzle,5.516,Urban,Night-lit,High,40,Night,Medium
 Drizzle,5.12,Urban,Daylight,Low,100,Evening,Medium
@@ -5285,14 +5285,14 @@ Rain,4.517,Highway,Daylight,High,80,Night,High
 Rain,4.585,Highway,Dawn/Dusk,Low,60,Afternoon,Medium
 Storm,4.965,Urban,Dawn/Dusk,Medium,50,Morning,High
 Storm,0.824,Urban,Daylight,Medium,50,Afternoon,High
-Clear,3.923,Intersection,Daylight,Very High,80,Afternoon,Medium
+Clear,3.923,Intersection,Daylight,Very High,80,Afternoon,High
 Clear,7.81,Rural,Night-lit,Low,80,Evening,Medium
 Drizzle,5.843,Highway,Night-unlit,Low,50,Evening,Medium
 Drizzle,6.553,Urban,Dawn/Dusk,Medium,80,Afternoon,Medium
 Clear,3.265,Urban,Daylight,Medium,80,Afternoon,Medium
 Clear,0.583,Urban,Daylight,High,50,Morning,Medium
 Drizzle,4.199,Highway,Night-unlit,Very High,50,Morning,High
-Clear,7.201,Highway,Dawn/Dusk,Low,40,Morning,Medium
+Clear,7.201,Highway,Dawn/Dusk,Low,40,Morning,Low
 Rain,7.979,Highway,Night-lit,Medium,100,Night,High
 Fog,2.672,Urban,Daylight,Medium,100,Night,High
 Drizzle,6.024,Intersection,Night-lit,High,50,Morning,Medium

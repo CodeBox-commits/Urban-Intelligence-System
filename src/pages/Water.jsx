@@ -2,23 +2,32 @@ import React, { useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import ChartCard from '../components/ChartCard.jsx';
 import ZoneSelector from '../components/ZoneSelector.jsx';
-import { predictWaterQuality } from '../services/api.js';
+import { DEFAULT_WATER_INPUTS, predictWaterQuality } from '../services/api.js';
 
-const waterFields = ['ph', 'hardness', 'solids', 'chloramines', 'sulfate', 'conductivity', 'turbidity'];
+const waterFields = [
+  ['ph', 'pH'],
+  ['hardness', 'Hardness'],
+  ['solids', 'Solids'],
+  ['chloramines', 'Chloramines'],
+  ['sulfate', 'Sulfate'],
+  ['conductivity', 'Conductivity'],
+  ['organic_carbon', 'Organic Carbon'],
+  ['temperature', 'Temperature'],
+  ['dissolved_oxygen', 'Dissolved Oxygen'],
+  ['turbidity', 'Turbidity'],
+];
+
+const buildWaterForm = (inputs = {}) =>
+  Object.fromEntries(
+    waterFields.map(([field]) => [field, String(inputs[field] ?? DEFAULT_WATER_INPUTS[field])])
+  );
 
 function Water({ selectedState, zones, user, onSaveZone }) {
   const [selectedZone, setSelectedZone] = useState(zones[0]?.zone || '');
   const [result, setResult] = useState(null);
+  const [error, setError] = useState('');
   const [testing, setTesting] = useState(false);
-  const [form, setForm] = useState({
-    ph: '7.2',
-    hardness: '185',
-    solids: '18000',
-    chloramines: '3.2',
-    sulfate: '310',
-    conductivity: '420',
-    turbidity: '3.1',
-  });
+  const [form, setForm] = useState(() => buildWaterForm());
   const [adminForm, setAdminForm] = useState({});
 
   React.useEffect(() => {
@@ -30,45 +39,34 @@ function Water({ selectedState, zones, user, onSaveZone }) {
   React.useEffect(() => {
     if (!zone) return;
 
+    const inputs = {
+      ...DEFAULT_WATER_INPUTS,
+      ...(zone.waterInputs || {}),
+    };
+
     setAdminForm({
       water_quality: zone.water_quality,
       water_score: zone.water_score,
-      ph: zone.waterInputs?.ph ?? 7,
-      hardness: zone.waterInputs?.hardness ?? 185,
-      solids: zone.waterInputs?.solids ?? 18000,
-      chloramines: zone.waterInputs?.chloramines ?? 3,
-      sulfate: zone.waterInputs?.sulfate ?? 310,
-      conductivity: zone.waterInputs?.conductivity ?? 420,
-      turbidity: zone.waterInputs?.turbidity ?? 3,
+      ...inputs,
     });
-    setForm((current) => ({
-      ...current,
-      ph: String(zone.waterInputs?.ph ?? current.ph),
-      hardness: String(zone.waterInputs?.hardness ?? current.hardness),
-      solids: String(zone.waterInputs?.solids ?? current.solids),
-      chloramines: String(zone.waterInputs?.chloramines ?? current.chloramines),
-      sulfate: String(zone.waterInputs?.sulfate ?? current.sulfate),
-      conductivity: String(zone.waterInputs?.conductivity ?? current.conductivity),
-      turbidity: String(zone.waterInputs?.turbidity ?? current.turbidity),
-    }));
+    setForm(buildWaterForm(inputs));
     setResult(null);
+    setError('');
   }, [zone]);
 
   if (!zone) {
     return <p className="text-sm text-gray-500">No area data available.</p>;
   }
 
-  const waterInputs = zone.waterInputs || {};
+  const waterInputs = {
+    ...DEFAULT_WATER_INPUTS,
+    ...(zone.waterInputs || {}),
+  };
 
-  const chartData = [
-    { name: 'pH', value: waterInputs.ph ?? 0 },
-    { name: 'Hardness', value: waterInputs.hardness ?? 0 },
-    { name: 'Solids', value: waterInputs.solids ?? 0 },
-    { name: 'Chloramines', value: waterInputs.chloramines ?? 0 },
-    { name: 'Sulfate', value: waterInputs.sulfate ?? 0 },
-    { name: 'Conductivity', value: waterInputs.conductivity ?? 0 },
-    { name: 'Turbidity', value: waterInputs.turbidity ?? 0 },
-  ];
+  const chartData = waterFields.map(([field, label]) => ({
+    name: label,
+    value: waterInputs[field] ?? 0,
+  }));
 
   const onTestChange = (event) => {
     const { name, value } = event.target;
@@ -78,8 +76,14 @@ function Water({ selectedState, zones, user, onSaveZone }) {
   const handleTest = async (event) => {
     event.preventDefault();
     setTesting(true);
+    setError('');
+    setResult(null);
     const response = await predictWaterQuality({ ...form, zone: selectedZone });
-    setResult(response.data);
+    if (response.error) {
+      setError(response.error);
+    } else {
+      setResult(response.data);
+    }
     setTesting(false);
   };
 
@@ -89,13 +93,7 @@ function Water({ selectedState, zones, user, onSaveZone }) {
       water_quality: adminForm.water_quality,
       water_score: Number(adminForm.water_score),
       waterInputs: {
-        ph: Number(adminForm.ph),
-        hardness: Number(adminForm.hardness),
-        solids: Number(adminForm.solids),
-        chloramines: Number(adminForm.chloramines),
-        sulfate: Number(adminForm.sulfate),
-        conductivity: Number(adminForm.conductivity),
-        turbidity: Number(adminForm.turbidity),
+        ...Object.fromEntries(waterFields.map(([field]) => [field, Number(adminForm[field])])),
       },
     });
   };
@@ -149,9 +147,9 @@ function Water({ selectedState, zones, user, onSaveZone }) {
         <section className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-gray-900">Try Water Model</h2>
           <form className="mt-4 grid gap-3 sm:grid-cols-2" onSubmit={handleTest}>
-            {waterFields.map((field) => (
+            {waterFields.map(([field, label]) => (
               <label key={field} className="space-y-1">
-                <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{field}</span>
+                <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{label}</span>
                 <input
                   name={field}
                   type="number"
@@ -172,6 +170,11 @@ function Water({ selectedState, zones, user, onSaveZone }) {
             <div className="mt-4 rounded-xl border border-blue-100 bg-blue-50 p-3 text-sm text-blue-900">
               <p className="font-semibold">Result: {predictionText}</p>
               {confidence && <p>Confidence: {confidence}</p>}
+            </div>
+          )}
+          {error && (
+            <div className="mt-4 rounded-xl border border-rose-100 bg-rose-50 p-3 text-sm font-medium text-rose-800">
+              {error}
             </div>
           )}
         </section>
@@ -202,9 +205,9 @@ function Water({ selectedState, zones, user, onSaveZone }) {
                 className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50"
               />
             </label>
-            {waterFields.map((field) => (
+            {waterFields.map(([field, label]) => (
               <label key={field} className="space-y-1">
-                <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{field}</span>
+                <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{label}</span>
                 <input
                   type="number"
                   step="0.1"
