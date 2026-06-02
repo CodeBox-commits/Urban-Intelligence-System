@@ -6,6 +6,7 @@ const baseLinks = [
   { name: 'Water Quality', path: '/water', icon: 'water' },
   { name: 'Air Quality', path: '/air', icon: 'air' },
   { name: 'Accidents', path: '/accidents', icon: 'accidents' },
+  { name: 'Fuel Monitoring', path: '/fuel', icon: 'fuel' },
 ];
 
 const iconPaths = {
@@ -14,6 +15,7 @@ const iconPaths = {
   air: 'M4 14.5a4.5 4.5 0 0 1 6.7-3.9A5.5 5.5 0 0 1 21 13.5a3.5 3.5 0 0 1-3.5 3.5H8.5A4.5 4.5 0 0 1 4 14.5Z',
   accidents: 'M12 4 21 20H3L12 4Zm0 5v4m0 4h.01',
   admin: 'M4 19h16M7 19V9m5 10V5m5 14v-7',
+  fuel: 'M7 7h10v5H7zM9 12v5m6-5v5M5 19h14',
 };
 
 function SidebarIcon({ name }) {
@@ -32,7 +34,7 @@ function SidebarIcon({ name }) {
 }
 
 function Sidebar({ isOpen, onClose, role }) {
-  const links = role === 'admin' ? [...baseLinks, { name: 'Admin Data', path: '/admin', icon: 'admin' }] : baseLinks;
+  const links = role === 'admin' ? [...baseLinks, { name: 'Admin Panel', path: '/admin', icon: 'admin' }] : baseLinks;
 
   const linkClass = ({ isActive }) =>
     [

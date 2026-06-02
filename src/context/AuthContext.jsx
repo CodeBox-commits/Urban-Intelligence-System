@@ -2,11 +2,9 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import {
   getInitialAuthState,
   isAdminRole,
-  resolveUserRole,
   signInWithEmailPassword,
   signUpWithEmailPassword,
   signOutUser,
-  subscribeToAuthChanges,
 } from '../services/auth.js';
 
 const AuthContext = createContext(null);
@@ -18,12 +16,8 @@ export function AuthProvider({ children }) {
   const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
-    let isMounted = true;
-
     const bootstrapAuth = async () => {
       const initialState = await getInitialAuthState();
-      if (!isMounted) return;
-
       setSession(initialState.session);
       setUser(initialState.user);
       setRole(initialState.role);
@@ -31,35 +25,6 @@ export function AuthProvider({ children }) {
     };
 
     bootstrapAuth();
-
-    const {
-      data: { subscription },
-    } = subscribeToAuthChanges((event, nextSession) => {
-      if (!isMounted) return;
-
-      setSession(nextSession);
-      setUser(nextSession?.user || null);
-
-      setTimeout(async () => {
-        if (!isMounted) return;
-
-        if (!nextSession?.user) {
-          setRole('guest');
-          setAuthLoading(false);
-          return;
-        }
-
-        const nextRole = await resolveUserRole(nextSession.user);
-        if (!isMounted) return;
-        setRole(nextRole);
-        setAuthLoading(false);
-      }, 0);
-    });
-
-    return () => {
-      isMounted = false;
-      subscription.unsubscribe();
-    };
   }, []);
 
   const login = async (credentials) => {

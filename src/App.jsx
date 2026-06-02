@@ -1,150 +1,52 @@
-
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar.jsx';
+import LoadingSkeleton from './components/LoadingSkeleton.jsx';
 import Navbar from './components/Navbar.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import Water from './pages/Water.jsx';
-import Air from './pages/Air.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import Sidebar from './components/Sidebar.jsx';
+import { useAuth } from './context/AuthContext.jsx';
 import Accident from './pages/Accident.jsx';
-import Login from './pages/Login.jsx';
 import AdminData from './pages/AdminData.jsx';
-import { DEFAULT_STATE, DEFAULT_WATER_INPUTS, regionConfig, stateOptions } from './services/api.js';
+import Air from './pages/Air.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import FuelMonitoring from './pages/FuelMonitoring.jsx';
+import Login from './pages/Login.jsx';
+import Water from './pages/Water.jsx';
+import { DEFAULT_STATE, FALLBACK_STATE_OPTIONS, fetchMeta } from './services/api.js';
 
-const STORAGE_KEY = 'urbaniq-zone-data';
-
-const withDefaultWaterInputs = (zone) => ({
-  ...zone,
-  waterInputs: {
-    ...DEFAULT_WATER_INPUTS,
-    ...(zone.waterInputs || {}),
-  },
-});
-
-const getInitialZoneData = () => {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      return Object.fromEntries(
-        Object.entries(parsed).map(([state, zones]) => [state, zones.map(withDefaultWaterInputs)])
-      );
-    }
-  } catch {
-    // Ignore localStorage parsing errors and fallback to config data.
-  }
-
-  return Object.fromEntries(
-    Object.entries(regionConfig).map(([state, config]) => [state, config.zones.map(withDefaultWaterInputs)])
-  );
-};
-
-function App() {
+function AppShell({ selectedState, stateOptions, onStateChange }) {
+  const { user, role, logout } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [selectedState, setSelectedState] = useState(DEFAULT_STATE);
-  const [user, setUser] = useState(null);
-  const [zoneDataByState, setZoneDataByState] = useState(getInitialZoneData);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(zoneDataByState));
-  }, [zoneDataByState]);
-
-  const selectedZones = useMemo(() => zoneDataByState[selectedState] || [], [zoneDataByState, selectedState]);
-
-  const handleSaveZone = (state, zoneName, updates) => {
-    setZoneDataByState((current) => ({
-      ...current,
-      [state]: (current[state] || []).map((zone) =>
-        zone.zone === zoneName
-          ? {
-              ...zone,
-              ...updates,
-              waterInputs: {
-                ...zone.waterInputs,
-                ...(updates.waterInputs || {}),
-              },
-            }
-          : zone
-      ),
-    }));
-  };
-
-  if (!user) {
-    return <Login onLogin={setUser} />;
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} role={user.role} />
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} role={role} />
 
       <div className="lg:pl-64">
         <Navbar
           onMenuClick={() => setSidebarOpen(true)}
           selectedState={selectedState}
           stateOptions={stateOptions}
-          onStateChange={setSelectedState}
+          onStateChange={onStateChange}
           user={user}
-          onLogout={() => setUser(null)}
+          role={role}
+          onLogout={logout}
         />
+
         <main className="mx-auto max-w-7xl p-6">
           <Routes>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route
-              path="/dashboard"
-              element={
-                <Dashboard
-                  selectedState={selectedState}
-                  zones={selectedZones}
-                  user={user}
-                  onSaveZone={handleSaveZone}
-                />
-              }
-            />
-            <Route
-              path="/water"
-              element={
-                <Water
-                  selectedState={selectedState}
-                  zones={selectedZones}
-                  user={user}
-                  onSaveZone={handleSaveZone}
-                />
-              }
-            />
-            <Route
-              path="/air"
-              element={
-                <Air
-                  selectedState={selectedState}
-                  zones={selectedZones}
-                  user={user}
-                  onSaveZone={handleSaveZone}
-                />
-              }
-            />
-            <Route
-              path="/accidents"
-              element={
-                <Accident
-                  selectedState={selectedState}
-                  zones={selectedZones}
-                  user={user}
-                  onSaveZone={handleSaveZone}
-                />
-              }
-            />
+            <Route path="/dashboard" element={<Dashboard selectedState={selectedState} />} />
+            <Route path="/water" element={<Water selectedState={selectedState} />} />
+            <Route path="/air" element={<Air selectedState={selectedState} />} />
+            <Route path="/accidents" element={<Accident selectedState={selectedState} />} />
+            <Route path="/fuel" element={<FuelMonitoring selectedState={selectedState} />} />
             <Route
               path="/admin"
               element={
-                user.role === 'admin' ? (
-                  <AdminData
-                    selectedState={selectedState}
-                    zones={selectedZones}
-                    onSaveZone={handleSaveZone}
-                  />
-                ) : (
-                  <Navigate to="/dashboard" replace />
-                )
+                <ProtectedRoute requiredRole="admin">
+                  <AdminData selectedState={selectedState} />
+                </ProtectedRoute>
               }
             />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
@@ -152,6 +54,62 @@ function App() {
         </main>
       </div>
     </div>
+  );
+}
+
+function App() {
+  const { authLoading, isAuthenticated } = useAuth();
+  const [selectedState, setSelectedState] = useState(DEFAULT_STATE);
+  const [stateOptions, setStateOptions] = useState(FALLBACK_STATE_OPTIONS);
+
+  useEffect(() => {
+    const loadMeta = async () => {
+      const response = await fetchMeta();
+      if (response.data?.stateOptions?.length) {
+        setStateOptions(response.data.stateOptions);
+        setSelectedState(response.data.defaultState || response.data.stateOptions[0].state || DEFAULT_STATE);
+      }
+    };
+
+    loadMeta();
+  }, []);
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[16rem_1fr]">
+          <LoadingSkeleton lines={8} className="min-h-[80vh]" />
+          <div className="space-y-6">
+            <LoadingSkeleton lines={4} />
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <LoadingSkeleton key={index} lines={3} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Routes>
+      <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />} />
+      <Route
+        path="/*"
+        element={
+          isAuthenticated ? (
+            <AppShell
+              selectedState={selectedState}
+              stateOptions={stateOptions}
+              onStateChange={setSelectedState}
+            />
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+    </Routes>
   );
 }
 

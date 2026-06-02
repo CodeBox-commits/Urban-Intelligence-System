@@ -91,7 +91,28 @@ const getIconKey = (label) => {
   return 'default';
 };
 
-function KPICard({ label, value, helper, tone = 'cyan' }) {
+function TrendBadge({ trend }) {
+  if (!trend || typeof trend.delta === 'undefined') {
+    return null;
+  }
+
+  const directionStyles = {
+    up: 'bg-rose-50 text-rose-600',
+    down: 'bg-emerald-50 text-emerald-600',
+    flat: 'bg-gray-100 text-gray-600',
+  };
+
+  const arrow = trend.direction === 'up' ? '↑' : trend.direction === 'down' ? '↓' : '•';
+
+  return (
+    <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${directionStyles[trend.direction] || directionStyles.flat}`}>
+      <span>{arrow}</span>
+      <span>{trend.delta}%</span>
+    </span>
+  );
+}
+
+function KPICard({ label, value, helper, tone = 'cyan', trend }) {
   const styles = toneClasses[tone] || toneClasses.cyan;
   const icon = icons[getIconKey(label)];
 
@@ -103,6 +124,9 @@ function KPICard({ label, value, helper, tone = 'cyan' }) {
           <p className={`mt-3 break-words text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl ${styles.accent}`}>
             {value}
           </p>
+          <div className="mt-3">
+            <TrendBadge trend={trend} />
+          </div>
         </div>
         <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ${styles.icon}`}>
           <svg className="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true">

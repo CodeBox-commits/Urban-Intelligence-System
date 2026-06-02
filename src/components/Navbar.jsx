@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user, onLogout }) {
+function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user, role, onLogout }) {
   return (
     <header className="sticky top-0 z-20 border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur">
       <div className="flex h-20 items-center justify-between gap-4 px-6">
@@ -43,20 +43,20 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user,
               ))}
             </select>
           </label>
-          {user?.role === 'admin' && (
+          {role === 'admin' && (
             <Link
               to="/admin"
               className="shrink-0 rounded-xl border border-gray-100 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:text-blue-600 hover:shadow-md"
             >
-              Admin Data
+              Admin Panel
             </Link>
           )}
           <div className="min-w-0 max-w-32 text-right lg:max-w-44">
-            <p className="truncate text-sm font-semibold text-gray-900">{user?.name || 'User'}</p>
-            <p className="text-xs capitalize text-gray-500">{user?.role}</p>
+            <p className="truncate text-sm font-semibold text-gray-900">{user?.email || 'User'}</p>
+            <p className="text-xs capitalize text-gray-500">{role}</p>
           </div>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white shadow-sm ring-4 ring-blue-50">
-            {(user?.name?.[0] || user?.email?.[0] || 'U').toUpperCase()}
+            {(user?.email?.[0] || 'U').toUpperCase()}
           </div>
           <button
             type="button"

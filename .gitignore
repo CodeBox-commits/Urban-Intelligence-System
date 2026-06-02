@@ -5,3 +5,5 @@ vite-dev*.log
 .vite/
 __pycache__/
 *.py[cod]
+backend/urbaniq.db
+*.sqlite3
