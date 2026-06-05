@@ -5,12 +5,18 @@ import io
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
+import sys
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 import joblib
+import logging
 import pandas as pd
 from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import Response
+from fastapi.responses import JSONResponse, Response
 from starlette.middleware.sessions import SessionMiddleware
 
 from train_models import MODEL_DIR, ensure_model_artifacts, train_and_save_model
@@ -38,6 +44,17 @@ from .schemas import (
 from .services.weather import build_weather_insights, get_weather_for_city
 
 app = FastAPI(title="UrbanIQ Smart City API", version="2.0.0")
+
+@app.exception_handler(Exception)
+async def generic_exception_handler(request: Request, exc: Exception):
+    if isinstance(exc, HTTPException):
+        raise exc
+
+    logging.exception("Unhandled exception for %s %s", request.method, request.url)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error. Please try again later."},
+    )
 
 app.add_middleware(
     CORSMiddleware,
@@ -365,14 +382,36 @@ def build_alerts(latest_aqi: list[dict], latest_water: list[dict], latest_accide
                 }
             )
 
+    if weather["temperature"] > 40:
+        alerts.append(
+            {
+                "id": "weather-heat",
+                "zone": weather["city"],
+                "severity": "warning",
+                "type": "Heat Alert",
+                "message": "Temperatures above 40°C may cause heat stress and demand emergency response.",
+            }
+        )
+
     if weather["condition"].lower() in {"rain", "thunderstorm", "drizzle"}:
         alerts.append(
             {
-                "id": "weather-rain",
+                "id": "weather-heavy-rain",
                 "zone": weather["city"],
                 "severity": "warning",
-                "type": "Weather Warning",
-                "message": "Rainfall conditions may increase travel and response risks.",
+                "type": "Flood Risk",
+                "message": "Heavy rain conditions can increase flood and accident risk.",
+            }
+        )
+
+    if weather["humidity"] < 20:
+        alerts.append(
+            {
+                "id": "weather-dry",
+                "zone": weather["city"],
+                "severity": "warning",
+                "type": "Water Scarcity Alert",
+                "message": "Very low humidity increases water stress and resource demand.",
             }
         )
 

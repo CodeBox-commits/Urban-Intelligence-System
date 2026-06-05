@@ -7,7 +7,6 @@ import KPICard from '../components/KPICard.jsx';
 import LoadingSkeleton from '../components/LoadingSkeleton.jsx';
 import NoDataState from '../components/NoDataState.jsx';
 import Table from '../components/Table.jsx';
-import WeatherWidget from '../components/WeatherWidget.jsx';
 import ZoneSelector from '../components/ZoneSelector.jsx';
 import { buildExportUrl, fetchFuelAnalytics, getDefaultDateRange } from '../services/api.js';
 
@@ -101,7 +100,7 @@ function FuelMonitoring({ selectedState }) {
         <KPICard label="EV Utilization" value={`${analytics?.evUtilization || 0}%`} helper="Charging utilization coverage" tone="cyan" />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
+      <div className="grid gap-6 xl:grid-cols-1">
         <ChartCard title="Fuel Trend" subtitle="Day-wise fuel availability and EV usage">
           {analytics?.trend?.length ? (
             <ResponsiveContainer width="100%" height="100%">
@@ -120,8 +119,6 @@ function FuelMonitoring({ selectedState }) {
             <NoDataState title="No fuel trend available" />
           )}
         </ChartCard>
-
-        <WeatherWidget weather={analytics?.weather} title="Weather Widget" />
       </div>
 
       <ChartCard title="Zone Fuel Snapshot" subtitle="Latest zone-wise energy availability">

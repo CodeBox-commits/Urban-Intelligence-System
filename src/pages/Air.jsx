@@ -237,7 +237,9 @@ function Air({ selectedState }) {
             onExportPdf={() => window.open(buildExportUrl({ ...exportParams, format: 'pdf' }), '_blank')}
           />
         </div>
-        <Table columns={airColumns} data={analytics?.tableRows || []} />
+        <div className="max-h-[360px] overflow-y-auto">
+          <Table columns={airColumns} data={analytics?.tableRows || []} />
+        </div>
       </section>
     </div>
   );

@@ -7,7 +7,6 @@ import KPICard from '../components/KPICard.jsx';
 import LoadingSkeleton from '../components/LoadingSkeleton.jsx';
 import NoDataState from '../components/NoDataState.jsx';
 import Table from '../components/Table.jsx';
-import WeatherWidget from '../components/WeatherWidget.jsx';
 import ZoneSelector from '../components/ZoneSelector.jsx';
 import { buildExportUrl, fetchAccidentAnalytics, getDefaultDateRange, predictAccidentRisk } from '../services/api.js';
 
@@ -150,7 +149,7 @@ function Accident({ selectedState }) {
         <KPICard label="Total Incidents" value={String(analytics?.totalIncidents || 0)} helper={`Risk level: ${analytics?.riskLevel || 'No Data'}`} tone="amber" />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
+      <div className="grid gap-6 xl:grid-cols-1">
         <ChartCard title="Accident Trend" subtitle="Incidents per day over the selected period">
           {analytics?.trend?.length ? (
             <ResponsiveContainer width="100%" height="100%">
@@ -166,8 +165,6 @@ function Accident({ selectedState }) {
             <NoDataState title="No accident trend available" />
           )}
         </ChartCard>
-
-        <WeatherWidget weather={analytics?.weather} title="Weather Widget" />
       </div>
 
       <div className="grid gap-6 xl:grid-cols-2">
@@ -252,7 +249,9 @@ function Accident({ selectedState }) {
             onExportPdf={() => window.open(buildExportUrl({ ...exportParams, format: 'pdf' }), '_blank')}
           />
         </div>
-        <Table columns={accidentColumns} data={analytics?.tableRows || []} />
+        <div className="max-h-[360px] overflow-y-auto">
+          <Table columns={accidentColumns} data={analytics?.tableRows || []} />
+        </div>
       </section>
     </div>
   );

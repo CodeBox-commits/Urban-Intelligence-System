@@ -7,7 +7,6 @@ import KPICard from '../components/KPICard.jsx';
 import LoadingSkeleton from '../components/LoadingSkeleton.jsx';
 import NoDataState from '../components/NoDataState.jsx';
 import Table from '../components/Table.jsx';
-import WeatherWidget from '../components/WeatherWidget.jsx';
 import ZoneSelector from '../components/ZoneSelector.jsx';
 import { DEFAULT_WATER_INPUTS, buildExportUrl, fetchWaterAnalytics, getDefaultDateRange, predictWaterQuality } from '../services/api.js';
 
@@ -144,7 +143,7 @@ function Water({ selectedState }) {
         <KPICard label="Water Quality" value={analytics?.waterQuality || 'No Data'} helper="Current selected-zone quality band" tone="cyan" />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.5fr_1fr]">
+      <div className="grid gap-6 xl:grid-cols-1">
         <ChartCard title="Water Quality Trend" subtitle="Day-wise water score movement">
           {analytics?.trend?.length ? (
             <ResponsiveContainer width="100%" height="100%">
@@ -160,8 +159,6 @@ function Water({ selectedState }) {
             <NoDataState title="No water trend available" />
           )}
         </ChartCard>
-
-        <WeatherWidget weather={analytics?.weather} title="Weather Widget" />
       </div>
 
       <div className="grid gap-6 xl:grid-cols-2">
@@ -225,7 +222,9 @@ function Water({ selectedState }) {
             onExportPdf={() => window.open(buildExportUrl({ ...exportParams, format: 'pdf' }), '_blank')}
           />
         </div>
-        <Table columns={waterColumns} data={analytics?.tableRows || []} />
+        <div className="max-h-[360px] overflow-y-auto">
+          <Table columns={waterColumns} data={analytics?.tableRows || []} />
+        </div>
       </section>
     </div>
   );

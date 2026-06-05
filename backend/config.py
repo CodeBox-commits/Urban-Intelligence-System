@@ -28,7 +28,7 @@ FRONTEND_ORIGINS = [
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "").strip()
 OPENWEATHER_BASE_URL = os.getenv(
     "OPENWEATHER_BASE_URL",
-    "https://api.openweathermap.org/data/2.5/weather",
+    "https://api.openweathermap.org/data/2.5",
 ).strip()
 
 ADMIN_CREDENTIALS = {
