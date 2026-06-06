@@ -40,14 +40,18 @@ DEFAULT_DAYS = 14
 
 SESSION_SECRET = os.getenv("URBANIQ_SESSION_SECRET", "urbaniq-simple-session-secret")
 
-FRONTEND_ORIGINS = [
-    origin.strip()
-    for origin in os.getenv(
-        "URBANIQ_CORS_ORIGINS",
-        "http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:3000,http://localhost:3000",
-    ).split(",")
-    if origin.strip()
+DEFAULT_FRONTEND_ORIGINS = [
+    "http://127.0.0.1:5173",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
 ]
+
+_raw_origins = os.getenv("URBANIQ_CORS_ORIGINS", ",".join(DEFAULT_FRONTEND_ORIGINS))
+FRONTEND_ORIGINS = []
+for origin in [origin.strip() for origin in _raw_origins.split(",") if origin.strip()] + DEFAULT_FRONTEND_ORIGINS:
+    if origin not in FRONTEND_ORIGINS:
+        FRONTEND_ORIGINS.append(origin)
 
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "").strip()
 OPENWEATHER_BASE_URL = os.getenv(

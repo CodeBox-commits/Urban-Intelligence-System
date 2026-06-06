@@ -26,8 +26,37 @@ export const apiClient = axios.create({
   withCredentials: true,
 });
 
-const errorMessage = (error, fallback) =>
-  error?.response?.data?.detail || error?.message || fallback;
+const formatValidationDetail = (detail) => {
+  if (typeof detail === 'string') {
+    return detail;
+  }
+
+  if (Array.isArray(detail)) {
+    const messages = detail.map((item) => {
+      if (typeof item === 'string') {
+        return item;
+      }
+      if (item?.msg) {
+        const loc = Array.isArray(item.loc) ? item.loc.slice(1).join('.') : item.loc;
+        return loc ? `${loc}: ${item.msg}` : item.msg;
+      }
+      return JSON.stringify(item);
+    });
+    return `Input value is outside allowed range. Please enter valid numeric values. ${messages.join(' ')}`;
+  }
+
+  if (detail && typeof detail === 'object') {
+    return detail.message || JSON.stringify(detail);
+  }
+
+  return null;
+};
+
+const errorMessage = (error, fallback) => {
+  const detail = error?.response?.data?.detail;
+  const formatted = formatValidationDetail(detail);
+  return formatted || error?.message || fallback;
+};
 
 const withRequest = async (request, fallbackMessage) => {
   try {

@@ -321,6 +321,15 @@ def fetch_rows(table_name: str, state: str, zone: str | None = None, start_date:
         ).fetchall()
 
 
+def latest_upload_timestamp() -> str | None:
+    with db_cursor() as cursor:
+        row = cursor.execute(
+            "select max(upload_date) as last_updated from upload_history where dataset_name in (?, ?, ?, ?, ?)",
+            ("aqi_data", "water_data", "accident_data", "resource_data", "fuel_data"),
+        ).fetchone()
+    return row["last_updated"] if row and row["last_updated"] else None
+
+
 def latest_rows_by_zone(rows: list[dict]) -> list[dict]:
     latest: dict[str, dict] = {}
     for row in rows:
@@ -511,11 +520,7 @@ def build_dashboard_payload(state: str, zone: str | None = None) -> dict:
             }
         )
 
-    latest_timestamp_candidates = []
-    for collection in (latest_aqi, latest_water, latest_accident, latest_resource, latest_fuel):
-        latest_timestamp_candidates.extend([row["created_at"] for row in collection if row.get("created_at")])
-
-    last_updated = max(latest_timestamp_candidates) if latest_timestamp_candidates else datetime.utcnow().isoformat()
+    last_updated = latest_upload_timestamp()
 
     return {
         "country": DEFAULT_COUNTRY,

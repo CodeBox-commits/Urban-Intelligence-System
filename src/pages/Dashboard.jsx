@@ -59,13 +59,34 @@ function Dashboard({ selectedState }) {
   }, [selectedState, selectedZone]);
 
   const zoneOptions = dashboard?.zoneOptions || [`All ${selectedState}`];
-  const lastUpdated = dashboard?.lastUpdated ? new Date(dashboard.lastUpdated).toLocaleString() : 'Unavailable';
+  const lastUpdated = dashboard?.lastUpdated ? new Date(dashboard.lastUpdated).toLocaleString() : 'No datasets uploaded';
   const alerts = dashboard?.alerts || [];
 
   const accidentChartData = dashboard?.accidentByZone || [];
   const waterChartData = dashboard?.waterQualityByZone || [];
   const resourceChartData = dashboard?.resourceByZone || [];
   const fuelChartData = dashboard?.fuelByZone || [];
+  const fuelByZoneMap = useMemo(
+    () => Object.fromEntries(fuelChartData.map((row) => [row.zone, row])),
+    [fuelChartData]
+  );
+  const fuelSnapshotData = useMemo(
+    () =>
+      resourceChartData.map((row) => {
+        const fuelRow = fuelByZoneMap[row.zone];
+        const fuelValue = fuelRow
+          ? Math.round(
+              (fuelRow.petrol_availability + fuelRow.diesel_availability + fuelRow.lpg_availability + fuelRow.ev_utilization) / 4
+            )
+          : null;
+        return {
+          zone: row.zone,
+          utilization: row.utilization,
+          fuel: fuelValue,
+        };
+      }),
+    [resourceChartData, fuelByZoneMap]
+  );
   const zoneNames = useMemo(
     () => (dashboard?.mapZones || []).map((zone) => zone.zone),
     [dashboard]
@@ -194,11 +215,7 @@ function Dashboard({ selectedState }) {
         <ChartCard title="Resource and Fuel Snapshot" subtitle="Live urban operations coverage by zone">
           {resourceChartData.length || fuelChartData.length ? (
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={resourceChartData.map((row) => ({
-                zone: row.zone,
-                utilization: row.utilization,
-                fuel: fuelChartData.find((fuel) => fuel.zone === row.zone)?.petrol_availability || 0,
-              }))} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+              <BarChart data={fuelSnapshotData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
                 <XAxis dataKey="zone" axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 12 }} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 12 }} />
