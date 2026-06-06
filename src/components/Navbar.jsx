@@ -28,13 +28,8 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user,
           </div>
         </div>
 
-<<<<<<< HEAD
-        <div className="hidden shrink-0 items-center gap-5 md:flex">
-          <label className="flex shrink-0 items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2">
-=======
         <div className="hidden min-w-0 items-center gap-3 md:flex">
           <label className="flex items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2">
->>>>>>> 04cffbe3dfa6d91461a08109e6202a210fa78ffc
             <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">State</span>
             <select
               value={selectedState}
@@ -48,13 +43,6 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user,
               ))}
             </select>
           </label>
-<<<<<<< HEAD
-          <div className="min-w-20 max-w-32 text-right lg:max-w-40">
-            <p className="truncate text-sm font-semibold text-gray-900" title={user.name}>
-              {user.name}
-            </p>
-            <p className="text-xs capitalize text-gray-500">{user.role}</p>
-=======
           {role === 'admin' && (
             <Link
               to="/admin"
@@ -69,16 +57,11 @@ function Navbar({ onMenuClick, onStateChange, selectedState, stateOptions, user,
           </div>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white shadow-sm ring-4 ring-blue-50">
             {(user?.email?.[0] || 'U').toUpperCase()}
->>>>>>> 04cffbe3dfa6d91461a08109e6202a210fa78ffc
           </div>
           <button
             type="button"
             onClick={onLogout}
-<<<<<<< HEAD
-            className="shrink-0 rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-100"
-=======
             className="shrink-0 rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-gray-800"
->>>>>>> 04cffbe3dfa6d91461a08109e6202a210fa78ffc
           >
             Sign Out
           </button>
