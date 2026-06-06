@@ -11,16 +11,16 @@ import ZoneSelector from '../components/ZoneSelector.jsx';
 import { DEFAULT_WATER_INPUTS, buildExportUrl, fetchWaterAnalytics, getDefaultDateRange, predictWaterQuality } from '../services/api.js';
 
 const waterFields = [
-  ['ph', 'pH'],
-  ['hardness', 'Hardness'],
-  ['solids', 'Solids'],
-  ['chloramines', 'Chloramines'],
-  ['sulfate', 'Sulfate'],
-  ['conductivity', 'Conductivity'],
-  ['organic_carbon', 'Organic Carbon'],
-  ['temperature', 'Temperature'],
-  ['dissolved_oxygen', 'Dissolved Oxygen'],
-  ['turbidity', 'Turbidity'],
+  ['ph', 'pH', 0, 14],
+  ['hardness', 'Hardness', 0, 1000],
+  ['solids', 'Solids', 0, 100000],
+  ['chloramines', 'Chloramines', 0, 20],
+  ['sulfate', 'Sulfate', 0, 1000],
+  ['conductivity', 'Conductivity', 0, 2000],
+  ['organic_carbon', 'Organic Carbon', 0, 50],
+  ['temperature', 'Temperature', 0, 100],
+  ['dissolved_oxygen', 'Dissolved Oxygen', 0, 30],
+  ['turbidity', 'Turbidity', 0, 20],
 ];
 
 const waterColumns = [
@@ -74,10 +74,14 @@ function Water({ selectedState }) {
   const lastUpdated = analytics?.lastUpdated ? new Date(analytics.lastUpdated).toLocaleString() : 'Unavailable';
   const waterInputs = DEFAULT_WATER_INPUTS;
 
-  const chartData = waterFields.map(([field, label]) => ({
-    name: label,
-    value: Number(form[field] || waterInputs[field]),
-  }));
+  const chartData = waterFields.map(([field, label, , max]) => {
+    const rawVal = Number(form[field] || waterInputs[field]);
+    const value = Math.max(0, Math.min(rawVal, max));
+    return {
+      name: label,
+      value,
+    };
+  });
 
   const handleFilterChange = ({ field, value }) => {
     setFilters((current) => ({ ...current, [field]: value }));
@@ -85,11 +89,26 @@ function Water({ selectedState }) {
 
   const onTestChange = (event) => {
     const { name, value } = event.target;
+    const fieldDef = waterFields.find(([f]) => f === name);
+    if (fieldDef && value !== '') {
+      const val = Number(value);
+      const [, , , max] = fieldDef;
+      if (Number.isNaN(val) || val < 0 || val > max * 5) {
+        return;
+      }
+    }
     setForm((current) => ({ ...current, [name]: value }));
   };
 
   const handleTest = async (event) => {
     event.preventDefault();
+    for (const [field, label, min, max] of waterFields) {
+      const val = Number(form[field]);
+      if (Number.isNaN(val) || val < min || val > max) {
+        setPredictionError(`${label} must be between ${min} and ${max}.`);
+        return;
+      }
+    }
     setTesting(true);
     setPredictionError('');
     setResult(null);
@@ -178,13 +197,15 @@ function Water({ selectedState }) {
           <h2 className="text-lg font-semibold text-gray-900">Try Water Model</h2>
           <p className="mt-1 text-sm text-gray-500">Prediction requests go directly to FastAPI and remain separate from uploaded analytics data.</p>
           <form className="mt-4 grid gap-3 sm:grid-cols-2" onSubmit={handleTest}>
-            {waterFields.map(([field, label]) => (
+            {waterFields.map(([field, label, min, max]) => (
               <label key={field} className="space-y-1">
                 <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{label}</span>
                 <input
                   name={field}
                   type="number"
                   step="0.1"
+                  min={min}
+                  max={max}
                   value={form[field]}
                   onChange={onTestChange}
                   className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50"

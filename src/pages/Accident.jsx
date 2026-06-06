@@ -19,8 +19,8 @@ const optionFields = [
 ];
 
 const numericPredictionFields = [
-  ['visibility', 'Visibility'],
-  ['speed_limit', 'Speed Limit'],
+  ['visibility', 'Visibility', 0, 20],
+  ['speed_limit', 'Speed Limit', 10, 140],
 ];
 
 const accidentColumns = [
@@ -91,11 +91,26 @@ function Accident({ selectedState }) {
 
   const handlePredictionChange = (event) => {
     const { name, value } = event.target;
+    const fieldDef = numericPredictionFields.find(([f]) => f === name);
+    if (fieldDef && value !== '') {
+      const val = Number(value);
+      const [, , min, max] = fieldDef;
+      if (Number.isNaN(val) || val < min - 10 || val > max * 5) {
+        return;
+      }
+    }
     setPredictionForm((current) => ({ ...current, [name]: value }));
   };
 
   const handlePredictionSubmit = async (event) => {
     event.preventDefault();
+    for (const [field, label, min, max] of numericPredictionFields) {
+      const val = Number(predictionForm[field]);
+      if (Number.isNaN(val) || val < min || val > max) {
+        setPredictionError(`${label} must be between ${min} and ${max}.`);
+        return;
+      }
+    }
     setPredicting(true);
     setPredictionError('');
     setPredictionResult(null);
@@ -205,13 +220,15 @@ function Accident({ selectedState }) {
                 </select>
               </label>
             ))}
-            {numericPredictionFields.map(([field, label]) => (
+            {numericPredictionFields.map(([field, label, min, max]) => (
               <label key={field} className="space-y-1">
                 <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{label}</span>
                 <input
                   name={field}
                   type="number"
                   step="0.1"
+                  min={min}
+                  max={max}
                   value={predictionForm[field]}
                   onChange={handlePredictionChange}
                   className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50"

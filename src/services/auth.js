@@ -1,3 +1,5 @@
+import { loginRequest, logoutRequest, fetchSession } from './api.js';
+
 const STORAGE_KEY = 'urbaniq_auth_v1';
 
 const defaultAuthState = {
@@ -44,25 +46,57 @@ const readState = () => {
   }
 };
 
-export const getInitialAuthState = async () => readState();
+export const getInitialAuthState = async () => {
+  const localState = readState();
+  if (localState && localState.session) {
+    const response = await fetchSession();
+    if (!response.error && response.data?.is_authenticated) {
+      const user = response.data.email 
+        ? { email: response.data.email, name: response.data.email.split('@')[0] } 
+        : localState.user;
+      const state = {
+        session: { user },
+        user,
+        role: normalizeRole(response.data.role),
+      };
+      saveState(state);
+      return state;
+    } else {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
+      return defaultAuthState;
+    }
+  }
+  return defaultAuthState;
+};
 
 export const signInWithEmailPassword = async ({ email, password, name } = {}) => {
-  // Simple local auth rules for demo purposes
-  // If a `name` is provided, create a regular user session (no password required)
   if (name && String(name).trim()) {
+    const userEmail = `${String(name).trim().toLowerCase()}@urbaniq.com`;
+    const response = await loginRequest({ email: userEmail, password: 'user-default' });
+    if (response.error) {
+      return { data: null, error: response.error };
+    }
     const user = { name: String(name).trim() };
     const state = { session: { user }, user, role: USER_ROLES.USER };
     saveState(state);
     return { data: state, error: null };
   }
 
-  // Admin login: allow two emails with same password
-  const allowedAdmins = ['team19@urbaniq.com', 'admin@urbaniq.com'];
-  if (email && password && allowedAdmins.includes(String(email).trim().toLowerCase()) && password === 'team19') {
-    const user = { email: String(email).trim(), name: String(email).split('@')[0] };
-    const state = { session: { user }, user, role: USER_ROLES.ADMIN };
-    saveState(state);
-    return { data: state, error: null };
+  if (email && password) {
+    const response = await loginRequest({ email, password });
+    if (response.error) {
+      return { data: null, error: response.error };
+    }
+    if (response.data && response.data.role === 'admin') {
+      const user = { email: String(email).trim(), name: String(email).split('@')[0] };
+      const state = { session: { user }, user, role: USER_ROLES.ADMIN };
+      saveState(state);
+      return { data: state, error: null };
+    } else {
+      return { data: null, error: 'Access denied. Administrator privileges required.' };
+    }
   }
 
   return { data: null, error: 'Invalid credentials.' };
@@ -76,6 +110,7 @@ export const signOutUser = async () => {
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch (e) {}
+  await logoutRequest();
   return { error: null };
 };
 
@@ -86,3 +121,4 @@ export const subscribeToAuthChanges = () => ({
     },
   },
 });
+

@@ -12,16 +12,16 @@ import ZoneSelector from '../components/ZoneSelector.jsx';
 import { buildExportUrl, fetchAqiAnalytics, getDefaultDateRange, predictAQICategory } from '../services/api.js';
 
 const predictionFields = [
-  ['pm25', 'PM2.5'],
-  ['pm10', 'PM10'],
-  ['no2', 'NO2'],
-  ['so2', 'SO2'],
-  ['co', 'CO'],
-  ['o3', 'O3'],
-  ['nh3', 'NH3'],
-  ['temperature', 'Temperature'],
-  ['humidity', 'Humidity'],
-  ['wind_speed', 'Wind Speed'],
+  ['pm25', 'PM2.5', 0, 1000],
+  ['pm10', 'PM10', 0, 1000],
+  ['no2', 'NO2', 0, 500],
+  ['so2', 'SO2', 0, 500],
+  ['co', 'CO', 0, 100],
+  ['o3', 'O3', 0, 500],
+  ['nh3', 'NH3', 0, 500],
+  ['temperature', 'Temperature', -10, 60],
+  ['humidity', 'Humidity', 0, 100],
+  ['wind_speed', 'Wind Speed', 0, 150],
 ];
 
 const airColumns = [
@@ -90,11 +90,26 @@ function Air({ selectedState }) {
 
   const handlePredictionChange = (event) => {
     const { name, value } = event.target;
+    const fieldDef = predictionFields.find(([f]) => f === name);
+    if (fieldDef && value !== '') {
+      const val = Number(value);
+      const [, , min, max] = fieldDef;
+      if (Number.isNaN(val) || val < min - 20 || val > max * 5) {
+        return;
+      }
+    }
     setPredictionForm((current) => ({ ...current, [name]: value }));
   };
 
   const handlePredictionSubmit = async (event) => {
     event.preventDefault();
+    for (const [field, label, min, max] of predictionFields) {
+      const val = Number(predictionForm[field]);
+      if (Number.isNaN(val) || val < min || val > max) {
+        setPredictionError(`${label} must be between ${min} and ${max}.`);
+        return;
+      }
+    }
     setPredicting(true);
     setPredictionError('');
     setPredictionResult(null);
@@ -193,13 +208,15 @@ function Air({ selectedState }) {
             </div>
           </div>
           <form className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-5" onSubmit={handlePredictionSubmit}>
-            {predictionFields.map(([field, label]) => (
+            {predictionFields.map(([field, label, min, max]) => (
               <label key={field} className="space-y-1">
                 <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">{label}</span>
                 <input
                   name={field}
                   type="number"
                   step="0.1"
+                  min={min}
+                  max={max}
                   value={predictionForm[field]}
                   onChange={handlePredictionChange}
                   className="w-full rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50"

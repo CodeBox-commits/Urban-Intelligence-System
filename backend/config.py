@@ -4,10 +4,34 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+def _load_env_file() -> None:
+    env_path = BASE_DIR / ".env"
+    if env_path.exists():
+        try:
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    if "=" in line:
+                        key, val = line.split("=", 1)
+                        key = key.strip()
+                        val = val.strip()
+                        if val.startswith('"') and val.endswith('"'):
+                            val = val[1:-1]
+                        elif val.startswith("'") and val.endswith("'"):
+                            val = val[1:-1]
+                        os.environ[key] = val
+        except Exception:
+            pass
+
+_load_env_file()
+
 BACKEND_DIR = BASE_DIR / "backend"
 BACKEND_DIR.mkdir(exist_ok=True)
 
-DATABASE_PATH = Path(os.getenv("URBANIQ_DB_PATH", BACKEND_DIR / "urbaniq.db"))
+DATABASE_PATH = Path(os.getenv("URBANIQ_DB_PATH", str(BACKEND_DIR / "urbaniq.db")))
 DATABASE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 DEFAULT_COUNTRY = "India"
