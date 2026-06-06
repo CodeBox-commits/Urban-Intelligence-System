@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from __future__ import annotations
 
 from pathlib import Path
@@ -274,3 +275,6 @@ def predict_aqi(input_data: AQIPredictionInput) -> dict[str, Any]:
 @app.post("/api/traffic/predict")
 def predict_accident(input_data: AccidentPredictionInput) -> dict[str, Any]:
     return predict_accident_payload(input_data)
+=======
+from backend.main import app
+>>>>>>> 04cffbe3dfa6d91461a08109e6202a210fa78ffc
