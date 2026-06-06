@@ -8,7 +8,10 @@ import Water from './pages/Water.jsx';
 import Air from './pages/Air.jsx';
 import Accident from './pages/Accident.jsx';
 import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
 import AdminData from './pages/AdminData.jsx';
+import LoadingSkeleton from './components/LoadingSkeleton.jsx';
+import { useAuth } from './context/AuthContext.jsx';
 import { DEFAULT_STATE, DEFAULT_WATER_INPUTS, regionConfig, stateOptions } from './services/api.js';
 
 const STORAGE_KEY = 'urbaniq-zone-data';
@@ -42,14 +45,23 @@ const getInitialZoneData = () => {
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedState, setSelectedState] = useState(DEFAULT_STATE);
-  const [user, setUser] = useState(null);
   const [zoneDataByState, setZoneDataByState] = useState(getInitialZoneData);
+  const { authLoading, isAuthenticated, user, role, logout } = useAuth();
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(zoneDataByState));
   }, [zoneDataByState]);
 
   const selectedZones = useMemo(() => zoneDataByState[selectedState] || [], [zoneDataByState, selectedState]);
+  const appUser = useMemo(
+    () => ({
+      ...user,
+      name: user?.user_metadata?.name || user?.email || 'User',
+      email: user?.email,
+      role,
+    }),
+    [role, user]
+  );
 
   const handleSaveZone = (state, zoneName, updates) => {
     setZoneDataByState((current) => ({
@@ -69,13 +81,26 @@ function App() {
     }));
   };
 
-  if (!user) {
-    return <Login onLogin={setUser} />;
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6">
+        <LoadingSkeleton lines={5} className="mx-auto mt-16 h-72 max-w-xl rounded-2xl" />
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    );
   }
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} role={user.role} />
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} role={appUser.role} />
 
       <div className="lg:pl-64">
         <Navbar
@@ -83,8 +108,8 @@ function App() {
           selectedState={selectedState}
           stateOptions={stateOptions}
           onStateChange={setSelectedState}
-          user={user}
-          onLogout={() => setUser(null)}
+          user={appUser}
+          onLogout={logout}
         />
         <main className="mx-auto max-w-7xl p-6">
           <Routes>
@@ -95,7 +120,7 @@ function App() {
                 <Dashboard
                   selectedState={selectedState}
                   zones={selectedZones}
-                  user={user}
+                  user={appUser}
                   onSaveZone={handleSaveZone}
                 />
               }
@@ -106,7 +131,7 @@ function App() {
                 <Water
                   selectedState={selectedState}
                   zones={selectedZones}
-                  user={user}
+                  user={appUser}
                   onSaveZone={handleSaveZone}
                 />
               }
@@ -117,7 +142,7 @@ function App() {
                 <Air
                   selectedState={selectedState}
                   zones={selectedZones}
-                  user={user}
+                  user={appUser}
                   onSaveZone={handleSaveZone}
                 />
               }
@@ -128,7 +153,7 @@ function App() {
                 <Accident
                   selectedState={selectedState}
                   zones={selectedZones}
-                  user={user}
+                  user={appUser}
                   onSaveZone={handleSaveZone}
                 />
               }
@@ -136,7 +161,7 @@ function App() {
             <Route
               path="/admin"
               element={
-                user.role === 'admin' ? (
+                appUser.role === 'admin' ? (
                   <AdminData
                     selectedState={selectedState}
                     zones={selectedZones}
