@@ -1,4 +1,11 @@
-import { supabase, isSupabaseConfigured } from './supabaseClient.js';
+import axios from 'axios';
+
+const SESSION_STORAGE_KEY = 'urbaniq-auth-session';
+
+const authApi = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000',
+  timeout: 5000,
+});
 
 const defaultAuthState = {
   session: null,
@@ -21,41 +28,31 @@ export const normalizeRole = (role) => {
 
 export const isAdminRole = (role) => normalizeRole(role) === USER_ROLES.ADMIN;
 
-const getAppRoleFromUser = (user) => user?.app_metadata?.role || null;
-
-export const resolveUserRole = async (user) => {
-  if (!user) return USER_ROLES.GUEST;
-
-  const appRole = getAppRoleFromUser(user);
-  if (appRole) return normalizeRole(appRole);
-
-  if (!isSupabaseConfigured || !supabase) {
-    return USER_ROLES.USER;
-  }
-
+const readSession = () => {
   try {
-    const { data, error } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle();
-    if (!error && data?.role) {
-      return normalizeRole(data.role);
-    }
+    const stored = localStorage.getItem(SESSION_STORAGE_KEY);
+    return stored ? JSON.parse(stored) : null;
   } catch {
-    return USER_ROLES.USER;
+    return null;
   }
-
-  return USER_ROLES.USER;
 };
 
+const saveSession = (session) => {
+  localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(session));
+};
+
+const clearSession = () => {
+  localStorage.removeItem(SESSION_STORAGE_KEY);
+};
+
+const getErrorMessage = (error, fallback) => error?.response?.data?.detail || error?.message || fallback;
+
+export const resolveUserRole = async (user) => normalizeRole(user?.role || USER_ROLES.USER);
+
 export const getInitialAuthState = async () => {
-  if (!isSupabaseConfigured || !supabase) {
-    return defaultAuthState;
-  }
+  const session = readSession();
 
-  const {
-    data: { session },
-    error,
-  } = await supabase.auth.getSession();
-
-  if (error || !session?.user) {
+  if (!session?.user) {
     return defaultAuthState;
   }
 
@@ -67,84 +64,59 @@ export const getInitialAuthState = async () => {
 };
 
 export const signInWithEmailPassword = async ({ email, password }) => {
-  if (!isSupabaseConfigured || !supabase) {
+  try {
+    const response = await authApi.post('/auth/login', { email, password });
+    const session = response.data.session || { user: response.data.user };
+    saveSession(session);
+
+    return {
+      data: {
+        session,
+        user: response.data.user,
+        role: await resolveUserRole(response.data.user),
+      },
+      error: null,
+    };
+  } catch (error) {
     return {
       data: null,
-      error: 'Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.',
+      error: getErrorMessage(error, 'Login failed.'),
     };
   }
-
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  if (error) {
-    return { data: null, error: error.message };
-  }
-
-  return {
-    data: {
-      session: data.session,
-      user: data.user,
-      role: await resolveUserRole(data.user),
-    },
-    error: null,
-  };
 };
 
 export const signUpWithEmailPassword = async ({ email, password }) => {
-  if (!isSupabaseConfigured || !supabase) {
+  try {
+    const response = await authApi.post('/auth/signup', { email, password });
+    const session = response.data.session || { user: response.data.user };
+    saveSession(session);
+
+    return {
+      data: {
+        session,
+        user: response.data.user,
+        role: await resolveUserRole(response.data.user),
+        needsEmailConfirmation: false,
+      },
+      error: null,
+    };
+  } catch (error) {
     return {
       data: null,
-      error: 'Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.',
+      error: getErrorMessage(error, 'Signup failed.'),
     };
   }
-
-  const emailRedirectTo =
-    typeof window !== 'undefined' ? `${window.location.origin}/login` : undefined;
-
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: {
-        role: USER_ROLES.USER,
-      },
-      ...(emailRedirectTo ? { emailRedirectTo } : {}),
-    },
-  });
-
-  if (error) {
-    return { data: null, error: error.message };
-  }
-
-  return {
-    data: {
-      session: data.session,
-      user: data.user,
-      role: await resolveUserRole(data.user),
-      needsEmailConfirmation: !data.session,
-    },
-    error: null,
-  };
 };
 
 export const signOutUser = async () => {
-  if (!isSupabaseConfigured || !supabase) {
-    return { error: null };
-  }
-
-  const { error } = await supabase.auth.signOut();
-  return { error: error?.message || null };
+  clearSession();
+  return { error: null };
 };
 
-export const subscribeToAuthChanges = (callback) => {
-  if (!isSupabaseConfigured || !supabase) {
-    return { data: { subscription: { unsubscribe: () => {} } } };
-  }
-
-  return supabase.auth.onAuthStateChange((event, session) => {
-    callback(event, session);
-  });
-};
+export const subscribeToAuthChanges = () => ({
+  data: {
+    subscription: {
+      unsubscribe: () => {},
+    },
+  },
+});

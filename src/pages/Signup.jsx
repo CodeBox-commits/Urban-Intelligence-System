@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
-import { isSupabaseConfigured } from '../services/supabaseClient.js';
 
 function Signup() {
   const navigate = useNavigate();
@@ -55,12 +54,6 @@ function Signup() {
       <p className="mt-2 text-sm leading-6 text-gray-500">
         New accounts are created as user access by default. Admin accounts should still be managed separately.
       </p>
-
-      {!isSupabaseConfigured && (
-        <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm font-medium text-amber-700">
-          Supabase environment variables are not configured yet.
-        </div>
-      )}
 
       {error && (
         <div className="mt-5 rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-medium text-rose-700">

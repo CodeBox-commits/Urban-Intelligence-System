@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import hashlib
+import hmac
+import secrets
+import sqlite3
 from pathlib import Path
 
 import joblib
@@ -12,6 +16,7 @@ from train_models import MODEL_DIR, ensure_model_artifacts, train_and_save_model
 
 
 app = FastAPI(title="UrbanIQ ML API", version="1.0.0")
+DB_PATH = Path(__file__).resolve().parent / "backend" / "urbaniq.db"
 
 app.add_middleware(
     CORSMiddleware,
@@ -34,6 +39,7 @@ MODEL_FILES = {
 }
 
 MODEL_ARTIFACTS: dict[str, dict] = {}
+VALID_ROLES = {"admin", "user"}
 
 MODEL_SMOKE_INPUTS = {
     "water": {
@@ -108,6 +114,63 @@ class AccidentPredictionInput(BaseModel):
     time_of_day: str
 
 
+class AuthInput(BaseModel):
+    email: str
+    password: str = Field(..., min_length=1)
+
+
+def get_db_connection() -> sqlite3.Connection:
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    connection = sqlite3.connect(DB_PATH)
+    connection.row_factory = sqlite3.Row
+    return connection
+
+
+def hash_password(password: str, salt: str | None = None) -> tuple[str, str]:
+    password_salt = salt or secrets.token_hex(16)
+    password_hash = hashlib.pbkdf2_hmac(
+        "sha256",
+        password.encode("utf-8"),
+        password_salt.encode("utf-8"),
+        100_000,
+    ).hex()
+    return password_salt, password_hash
+
+
+def verify_password(password: str, salt: str, expected_hash: str) -> bool:
+    _, password_hash = hash_password(password, salt)
+    return hmac.compare_digest(password_hash, expected_hash)
+
+
+def normalize_email(email: str) -> str:
+    return email.strip().lower()
+
+
+def public_user(row: sqlite3.Row) -> dict:
+    role = row["role"] if row["role"] in VALID_ROLES else "user"
+    return {
+        "id": row["id"],
+        "email": row["email"],
+        "role": role,
+    }
+
+
+def ensure_auth_tables() -> None:
+    with get_db_connection() as connection:
+        connection.execute(
+            """
+            create table if not exists users (
+              id integer primary key autoincrement,
+              email text not null unique,
+              password_salt text not null,
+              password_hash text not null,
+              role text not null default 'user',
+              created_at text not null default current_timestamp
+            )
+            """
+        )
+
+
 def validate_artifact(name: str, artifact: dict) -> None:
     pipeline = artifact["pipeline"]
     feature_names = artifact["feature_names"]
@@ -140,7 +203,59 @@ def load_artifacts() -> None:
 
 @app.on_event("startup")
 def startup_event() -> None:
+    ensure_auth_tables()
     load_artifacts()
+
+
+@app.post("/auth/signup")
+def signup(input_data: AuthInput) -> dict:
+    email = normalize_email(input_data.email)
+    if not email or "@" not in email:
+        raise HTTPException(status_code=400, detail="Enter a valid email address.")
+
+    salt, password_hash = hash_password(input_data.password)
+
+    try:
+        with get_db_connection() as connection:
+            cursor = connection.execute(
+                """
+                insert into users (email, password_salt, password_hash, role)
+                values (?, ?, ?, 'user')
+                """,
+                (email, salt, password_hash),
+            )
+            row = connection.execute(
+                "select id, email, role from users where id = ?",
+                (cursor.lastrowid,),
+            ).fetchone()
+    except sqlite3.IntegrityError as exc:
+        raise HTTPException(status_code=409, detail="An account already exists for this email.") from exc
+
+    user = public_user(row)
+    return {
+        "session": {"user": user},
+        "user": user,
+    }
+
+
+@app.post("/auth/login")
+def login(input_data: AuthInput) -> dict:
+    email = normalize_email(input_data.email)
+
+    with get_db_connection() as connection:
+        row = connection.execute(
+            "select id, email, password_salt, password_hash, role from users where email = ?",
+            (email,),
+        ).fetchone()
+
+    if not row or not verify_password(input_data.password, row["password_salt"], row["password_hash"]):
+        raise HTTPException(status_code=401, detail="Invalid email or password.")
+
+    user = public_user(row)
+    return {
+        "session": {"user": user},
+        "user": user,
+    }
 
 
 def predict_from_artifact(artifact_name: str, payload: dict) -> tuple[str | int, float]:

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
-import { isSupabaseConfigured } from '../services/supabaseClient.js';
 
 function Login() {
   const navigate = useNavigate();
@@ -41,12 +40,6 @@ function Login() {
         <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">UrbanIQ Access</p>
         <h1 className="mt-1 text-2xl font-semibold tracking-tight text-gray-900">Sign in</h1>
         <p className="mt-1 text-sm text-gray-500">Use your registered email and password to continue.</p>
-
-        {!isSupabaseConfigured && (
-          <div className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm font-medium text-amber-700">
-            Supabase environment variables are not configured yet.
-          </div>
-        )}
 
         {error && (
           <div className="mt-5 rounded-xl border border-rose-200 bg-rose-50 p-4 text-sm font-medium text-rose-700">
