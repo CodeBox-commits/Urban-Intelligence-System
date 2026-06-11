@@ -33,8 +33,13 @@ apiClient.interceptors.request.use(
       if (raw) {
         const parsed = JSON.parse(raw);
         if (parsed.user && parsed.user.email) {
-          config.headers['X-User-Email'] = parsed.user.email;
-          config.headers['X-User-Role'] = parsed.role;
+          if (config.headers.set) {
+            config.headers.set('X-User-Email', parsed.user.email);
+            config.headers.set('X-User-Role', parsed.role);
+          } else {
+            config.headers['X-User-Email'] = parsed.user.email;
+            config.headers['X-User-Role'] = parsed.role;
+          }
         }
       }
     } catch (e) {
@@ -162,7 +167,6 @@ export const uploadDataset = async ({ dataset, file, state = DEFAULT_STATE }) =>
     () =>
       apiClient.post(`/api/admin/upload/${dataset}`, formData, {
         params: { state },
-        headers: { 'Content-Type': 'multipart/form-data' },
       }),
     `Unable to upload ${dataset} dataset.`
   );
