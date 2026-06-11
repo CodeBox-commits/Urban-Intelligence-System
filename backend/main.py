@@ -6,6 +6,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 import sys
+import os
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 if str(ROOT_DIR) not in sys.path:
