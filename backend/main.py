@@ -63,12 +63,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# Determine if running in a cross-origin production environment to configure session cookies
-is_production = True
-for origin in FRONTEND_ORIGINS:
-    if "localhost" in origin or "127.0.0.1" in origin:
-        is_production = False
-        break
+# Check if running in production via env var, fallback to checking if any deployed origins exist
+is_production = os.getenv("ENVIRONMENT", "").lower() == "production"
+if not is_production:
+    # If any non-localhost origin is configured, assume production mode for cookies
+    for origin in FRONTEND_ORIGINS:
+        if "localhost" not in origin and "127.0.0.1" not in origin:
+            is_production = True
+            break
 
 if is_production:
     app.add_middleware(

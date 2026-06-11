@@ -163,10 +163,23 @@ export const uploadDataset = async ({ dataset, file, state = DEFAULT_STATE }) =>
   const formData = new FormData();
   formData.append('file', file);
 
+  const extraHeaders = {};
+  try {
+    const raw = localStorage.getItem('urbaniq_auth_v1');
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed.user && parsed.user.email) {
+        extraHeaders['X-User-Email'] = parsed.user.email;
+        extraHeaders['X-User-Role'] = parsed.role;
+      }
+    }
+  } catch (e) {}
+
   return withRequest(
     () =>
       apiClient.post(`/api/admin/upload/${dataset}`, formData, {
         params: { state },
+        headers: extraHeaders,
       }),
     `Unable to upload ${dataset} dataset.`
   );
