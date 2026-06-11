@@ -63,7 +63,27 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax")
+# Determine if running in a cross-origin production environment to configure session cookies
+is_production = True
+for origin in FRONTEND_ORIGINS:
+    if "localhost" in origin or "127.0.0.1" in origin:
+        is_production = False
+        break
+
+if is_production:
+    app.add_middleware(
+        SessionMiddleware,
+        secret_key=SESSION_SECRET,
+        same_site="none",
+        https_only=True,
+    )
+else:
+    app.add_middleware(
+        SessionMiddleware,
+        secret_key=SESSION_SECRET,
+        same_site="lax",
+        https_only=False,
+    )
 
 MODEL_FILES = {
     "water": MODEL_DIR / "water_model.pkl",
