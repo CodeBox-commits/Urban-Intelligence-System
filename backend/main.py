@@ -287,6 +287,20 @@ def current_session_user(request: Request) -> dict:
     user = request.session.get("user")
     if user:
         return user
+
+    # Fallback to headers if cookies are blocked in cross-origin environments
+    email = request.headers.get("x-user-email")
+    role = request.headers.get("x-user-role")
+    if email:
+        normalized_email = email.strip().lower()
+        is_admin = normalized_email in ADMIN_CREDENTIALS
+        resolved_role = "admin" if (role == "admin" and is_admin) else "user"
+        return {
+            "email": normalized_email,
+            "role": resolved_role,
+            "is_authenticated": True
+        }
+
     return {"email": None, "role": "guest", "is_authenticated": False}
 
 

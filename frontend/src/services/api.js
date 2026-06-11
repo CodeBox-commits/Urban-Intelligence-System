@@ -26,6 +26,25 @@ export const apiClient = axios.create({
   withCredentials: true,
 });
 
+apiClient.interceptors.request.use(
+  (config) => {
+    try {
+      const raw = localStorage.getItem('urbaniq_auth_v1');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.user && parsed.user.email) {
+          config.headers['X-User-Email'] = parsed.user.email;
+          config.headers['X-User-Role'] = parsed.role;
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
 const formatValidationDetail = (detail) => {
   if (typeof detail === 'string') {
     return detail;
