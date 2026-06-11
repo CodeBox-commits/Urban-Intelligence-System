@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - URBANIQ_SESSION_SECRET=local-development-session-secret-key-123
+      - URBANIQ_CORS_ORIGINS=http://localhost,http://localhost:80,http://localhost:5173
+      - OPENWEATHER_API_KEY=e566071cbce7efac5fff2396d366f40f
+      - URBANIQ_DB_PATH=/app/backend_db/urbaniq.db
+    volumes:
+      - backend_db:/app/backend_db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        - VITE_API_BASE_URL=http://localhost:8000
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend_db:

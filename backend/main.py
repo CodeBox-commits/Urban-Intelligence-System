@@ -19,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 from starlette.middleware.sessions import SessionMiddleware
 
-from train_models import MODEL_DIR, ensure_model_artifacts, train_and_save_model
+from ml.train_models import MODEL_DIR, ensure_model_artifacts, train_and_save_model
 
 from .config import (
     ADMIN_CREDENTIALS,
